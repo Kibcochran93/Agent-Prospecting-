@@ -320,6 +320,14 @@ def _state_json() -> dict:
     owners = decisions.owner_reviews()
     steps = _facts(accounts, standing, flags, copy_cache, owners)
 
+    # Declined kib_decisions, by account_key. Exposed so an Overlooked lead --
+    # read fresh from Apollo/HubSpot on every load, with no record in
+    # `accounts` at all -- can be permanently dismissed and stay dismissed.
+    # The write already goes through /decide into decisions/, same as every
+    # other Declined; this is only the read side, so a dismissed lead does not
+    # need to be re-declined by hand on every refresh.
+    declined_keys = sorted(k for k, d in standing.items() if d.decision == "Declined")
+
     today = datetime.now(timezone.utc).date().isoformat()
     all_jobs = jobs.all_jobs()
     jobs_today = {j.account_key: j for j in all_jobs if j.queued_at[:10] == today}
@@ -370,6 +378,7 @@ def _state_json() -> dict:
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "pending": pending,
         "queueable": queueable,
+        "declined_keys": declined_keys,
         "context_notes": context_notes[:30],
         "budget": {
             "used": spent_today, "max": jobs.MAX_PER_DAY, "left": budget_left,

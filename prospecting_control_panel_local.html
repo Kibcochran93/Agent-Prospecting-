@@ -576,6 +576,17 @@
   }
 
   // ---------- pending review table, backed by the bridge ----------
+  // next_step.py's UNDECIDED blocker ends with "Approve or decline on the
+  // board." -- accurate in contexts with no decide buttons of their own, but
+  // this table has Approve/Decline right there in the same row, so repeating
+  // "do it elsewhere" here just contradicts the row it's sitting in. Strip
+  // that one clause; every other blocker (ASK_OWNER's, for instance) has no
+  // such clause and passes through unchanged.
+  function pendingBlockerText(r) {
+    const blocker = (r.blocker || "").replace(/\s*Approve or decline on the board\.\s*$/, "");
+    return blocker ? (r.waiting_on + " — " + blocker) : r.waiting_on;
+  }
+
   function renderPendingTable() {
     const tb = $("tbl-pending");
     if (!bridgeOk) { tb.innerHTML = '<tr><td colspan="5"><div class="banner warn">Bridge not connected — connect above to see pending review.</div></td></tr>'; return; }
@@ -586,7 +597,7 @@
         <td><strong>${esc(r.institution || "—")}</strong></td>
         <td>${esc(r.motion||"Unclear")}</td>
         <td>${esc(r.account_owner||"—")}</td>
-        <td class="muted">${esc(r.waiting_on)} — ${esc(r.blocker)}</td>
+        <td class="muted">${esc(pendingBlockerText(r))}</td>
         <td>
           <div class="actions">
             <select class="reason-sel" data-key="${esc(r.account_key)}">
@@ -629,6 +640,20 @@
   }
 
   // ---------- approved, waiting on a run ----------
+  // next_step.py's COPY-stage blocker -- "Approved, and no copy exists for
+  // this account." -- is the correct, honest answer for every account that
+  // hasn't had a Campaign Builder run yet, which on most days is most of this
+  // table. Repeating that identical sentence in the one column meant to say
+  // what's different about each row buries the rows that actually do carry
+  // something else to read (an Account Context finding, say). The Queue
+  // button's own label already says COPY, so the default case adds nothing
+  // here; only render the sentence when it isn't the default.
+  const GENERIC_COPY_BLOCKER = "Approved, and no copy exists for this account.";
+  function queueableBlockerText(r) {
+    if (r.blocker === GENERIC_COPY_BLOCKER) return "—";
+    return r.waiting_on + " — " + r.blocker;
+  }
+
   function renderQueueableTable() {
     const tb = $("tbl-queueable");
     if (!bridgeOk) { tb.innerHTML = '<tr><td colspan="4"><div class="banner warn">Bridge not connected.</div></td></tr>'; return; }
@@ -638,7 +663,7 @@
       <tr data-key="${esc(r.account_key)}">
         <td><strong>${esc(r.institution)}</strong></td>
         <td>${esc(r.motion||"Unclear")}</td>
-        <td class="muted">${esc(r.waiting_on)} — ${esc(r.blocker)}</td>
+        <td class="muted">${esc(queueableBlockerText(r))}</td>
         <td><button class="btn primary sm act-queue" data-key="${esc(r.account_key)}" data-stage="${esc(r.stage)}">Queue ${esc(r.stage)}</button></td>
       </tr>`).join("");
     tb.querySelectorAll(".act-queue").forEach(b => b.addEventListener("click", onQueueRow));
@@ -683,7 +708,7 @@
         <td><strong>${esc(c.name)}</strong></td>
         <td>${c.num_steps}</td>
         <td class="num">${c.unique_scheduled||0}</td>
-        <td class="num">${fmtPct(c.open_rate_unfiltered)}</td>
+        <td class="num">${c.unique_scheduled ? fmtPct(c.open_rate_unfiltered) : "—"}</td>
         <td>
           ${reviewedDrafts[c.id]
             ? '<span class="chip clear">reviewed</span>'
@@ -829,6 +854,13 @@
     return count > 0 && count <= 2;
   };
 
+  // Real institution name when Apollo/HubSpot supplied one, else the
+  // person's name -- "—" is this module's own placeholder for "no
+  // institution", not a value worth logging or keying a decision on.
+  function leadLabel(it) {
+    return (it.institution && it.institution !== "—") ? it.institution : it.name;
+  }
+
   async function loadSiteVisitors() {
     const el = $("visitor-list");
     el.innerHTML = '<div class="log-item muted">Checking site visits and form fills…</div>';
@@ -878,7 +910,16 @@
       items.push({ source: "HubSpot form", error: errCopy("HubSpot", err) });
     }
     const errors = items.filter(i => i.error);
-    const overlooked = items.filter(i => !i.error).sort((a,b) => (b.when||"").localeCompare(a.when||""));
+    // Permanently dismissed leads ("Not ICP") write a real Declined decision
+    // through /decide, same mechanism as everything else -- see the
+    // act-dismiss handler below. declined_keys is /api/state's read side of
+    // that write, so a dismissed lead doesn't come back just because this
+    // list is read fresh from Apollo/HubSpot, with nothing of its own to
+    // remember, on every load.
+    const declined = new Set((bridgeState && bridgeState.declined_keys) || []);
+    const overlooked = items.filter(i => !i.error)
+      .filter(it => !declined.has(accountKeyGuess(leadLabel(it))))
+      .sort((a,b) => (b.when||"").localeCompare(a.when||""));
     if (!overlooked.length && !errors.length) {
       el.innerHTML = '<div class="log-item muted">No overlooked North American leads right now.</div>';
       return;
@@ -889,7 +930,10 @@
           <span class="ts">${esc(it.when)}</span>
           <span>${esc(it.name)} — <strong>${esc(it.institution)}</strong> <span class="chip info">${esc(it.source)}</span> ${it.heChip}
             <span class="muted">${esc(it.detail)}</span></span>
-          <button class="btn sm act-visitor" data-idx="${idx}" style="margin-left:auto">Act on this</button>
+          <span style="margin-left:auto; display:flex; gap:6px">
+            <button class="btn sm act-dismiss" data-idx="${idx}">Not ICP</button>
+            <button class="btn sm act-visitor" data-idx="${idx}">Act on this</button>
+          </span>
         </div>`).join("");
     el.querySelectorAll(".act-visitor").forEach(b => b.addEventListener("click", (ev) => {
       const idx = Number(ev.currentTarget.dataset.idx);
@@ -900,7 +944,27 @@
       $("br-name").value = it.name || "";
       $("br-inst").value = it.institution === "—" ? "" : it.institution;
       $("panel-check").scrollIntoView({ behavior: "smooth", block: "start" });
-      logActivity("visitor_actioned", it.institution || it.name, "sent to Run a check now (" + it.source + ")");
+      logActivity("visitor_actioned", leadLabel(it), "sent to Run a check now (" + it.source + ")");
+    }));
+    el.querySelectorAll(".act-dismiss").forEach(b => b.addEventListener("click", async (ev) => {
+      const idx = Number(ev.currentTarget.dataset.idx);
+      const it = overlooked[idx];
+      if (!it) return;
+      const label = leadLabel(it);
+      const key = accountKeyGuess(label);
+      ev.currentTarget.disabled = true;
+      try {
+        const result = await decideBridge({
+          accountKey: key, account: label, decision: "Declined",
+          kind: "kib_decision", note: "Not ICP",
+        });
+        logActivity("visitor_dismissed", label, "marked not ICP → " + result.file);
+        await pollState();
+        await loadSiteVisitors();
+      } catch (err) {
+        alert("Could not record that: " + err.message);
+        ev.currentTarget.disabled = false;
+      }
     }));
   }
 
@@ -1040,7 +1104,8 @@
     const el = $("log-list");
     if (!items.length) { el.innerHTML = '<div class="log-item muted">Nothing logged yet.</div>'; return; }
     const labels = { approve: "Approved", decline: "Declined", queue: "Queued a run", draft_reviewed: "Marked reviewed",
-      briefing_run: "Ran a briefing", visitor_actioned: "Overlooked lead actioned", contact_picked: "Contact sent to Run a briefing" };
+      briefing_run: "Ran a briefing", visitor_actioned: "Overlooked lead actioned", contact_picked: "Contact sent to Run a briefing",
+      visitor_dismissed: "Marked not ICP" };
     el.innerHTML = items.map(v =>
       `<div class="log-item"><span class="ts">${esc(timeAgo(v.ts))}</span><span>${esc(labels[v.type]||v.type)} — <strong>${esc(v.subject)}</strong>${v.detail ? " · "+esc(v.detail) : ""}</span></div>`
     ).join("");
