@@ -1,0 +1,52 @@
+TRAIL: ['START Campaign Builder', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'MESSAGE Campaign Builder']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Campaign Builder
+=== OUTPUT ===
+## Checkpoint 2: Trigger research
+
+Research date: **September 4, 2026**.
+
+### Keep
+
+**Eunice Tarver, Tulsa Community College — M3**
+
+- **Trigger:** TCC’s Academic Success Coaching program received national recognition. Six coaches currently serve about 2,100 students annually, placing a defined, scaled student-success operation under Tarver’s executive remit.  
+  **Source:** Tulsa Community College, “TCC Academic Coaching Program Earns National Recognition.”  
+  **Source date:** April 10, 2026. ([tulsacc.edu](https://www.tulsacc.edu/about-tcc/news-stories/tcc-academic-coaching-program-earns-national-recognition))
+- **Hook:** How TCC measures progress and gives six coaches timely visibility across that student population.
+- **Incumbent:** Not verified.
+
+**Mary Ann Tietjen, Creighton University — M3**
+
+- **Trigger:** Creighton became a 2026 FirstGen Forward Network Champion. Its Success Center contributed to the work, and the First-Flight pilot launched in spring 2026. Tietjen is directly named as a leader in the initiative.  
+  **Source:** Creighton University, “Creighton recognized as a national leader in first-gen student success.”  
+  **Source date:** April 14, 2026. ([creighton.edu](https://www.creighton.edu/news/creighton-recognized-national-leader-first-gen-student-success))
+- **Hook:** Supporting continuous improvement and proactive outreach as the first-generation support model scales.
+- **Incumbent:** Not verified.
+
+**Shaniqua Adams, Wiley University — M3**
+
+- **Trigger:** Wiley reported 1,137 students for Fall 2026, up 14.5% year over year. Returning students produced 81% of the growth; fall-to-fall retention reached 69.2%.  
+  **Source:** Wiley University, “Wiley University Reaches 1,137 Students as Retention Drives Fall 2026 Enrollment Growth.”  
+  **Source date:** August 27, 2026. ([wileyc.edu](https://www.wileyc.edu/news/wiley-university-reaches-1-137-students))
+- **Hook:** Sustaining the retention gains as the returning-student population and overall workload expand.
+- **Incumbent:** Not verified.
+
+### Drop
+
+**Jennifer Harpham, University of Akron — M5 conditional**
+
+- A 2026 financial-aid administrative review documents regulated workflows, staffing vacancies, technology responsibilities and a support-center partnership. It does **not** identify an audit finding, evidence gap, deadline or active readiness project. Those are operating facts, not a qualifying trigger. ([uakron.edu](https://www.uakron.edu/provost/docs/aar/Financial%20Aid%20OAA.pdf))
+- **Recommendation:** Drop. No current M5 trigger was found.
+- **Incumbent:** The review names PeopleSoft and Blackboard Student Services, but neither should be used as a hook because no current evidence problem is established.
+
+**Jonathan Summers, Cedar Crest College — M5 conditional**
+
+- Cedar Crest announced record Fall 2026 enrollment, including students from ten countries. That establishes cohort growth, but not a Student and Exchange Visitor Information System evidence gap, reporting deadline or compliance project.  
+  **Source:** Cedar Crest College, “Cedar Crest College Achieves Historic Enrollment Growth.”  
+  **Source date:** September 1, 2026. ([cedarcrest.edu](https://www.cedarcrest.edu/cedar-crest-college-achieves-historic-enrollment-growth/))
+- **Recommendation:** Drop. Enrollment growth alone does not qualify M5, and writing from it would be a category assumption.
+- **Incumbent:** Not verified.
+
+**Checkpoint 2 result:** Advance **Tarver, Tietjen and Adams**. Drop **Harpham and Summers**.

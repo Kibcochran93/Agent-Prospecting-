@@ -1,0 +1,28 @@
+{
+  "written_at": "2026-09-10T17:40:00+00:00",
+  "written_by": "Apollo website visitors pull, read-only, session-driven",
+  "record": {
+    "kind": "live_intent_signal",
+    "institution": "University of North Dakota",
+    "account_key": "north dakota",
+    "signal": "Zauna Synnott, Office of Student Services Manager, CNPD, identified visiting seatsone.com. 16 visits in total, most recent 2026-08-25. Apollo's computed intent for the window: low.",
+    "person": "Zauna Synnott",
+    "person_title": "Office of Student Services Manager, CNPD",
+    "total_visits": 16,
+    "last_visit": "2026-08-25",
+    "apollo_intent": "low",
+    "source": "Apollo website visitors, person-level, tracked domain seatsone.com",
+    "source_date": "2026-08-25",
+    "age_days": 16,
+    "stale": false,
+    "staleness_note": "16 days old as of 2026-09-10. Within the 30 day rule.",
+    "confidentiality": "internal_only",
+    "confidentiality_note": "Person-level identification of a named individual browsing our site. Never quoted, never referenced to the prospect, and never phrased so as to imply their browsing was observed. It may inform which motion to pursue and who to research.",
+    "email_addresses_withheld": true,
+    "coverage_note": "Apollo identifies visitors at person level for United States traffic only, and attaches a confidence tier. Absence of a visitor here is not evidence nobody visited.",
+    "in_pipeline": false,
+    "pipeline_note": "This institution has no record in ledger-outbox and no row on the board. It is inbound interest nobody is working.",
+    "imperatives_found": []
+  },
+  "record_sha256": "8ebb61644fd89bffb3479a0918d24e3e59e2e401c3864181084554cf43b36d49"
+}

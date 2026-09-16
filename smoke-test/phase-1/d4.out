@@ -1,0 +1,110 @@
+TRAIL: ['START Director', 'MESSAGE Prospect Briefing', 'TOOL list_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL apollo_find_org', 'TOOL apollo_find_roles', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL create_ledger_record', 'MESSAGE Prospect Briefing']
+AUDIT: ['context verdict: conflict for Shaniqua Adams', 'override: Miguel cleared this one for research only', 'dispatch proceeding over conflict verdict; override: Miguel cleared this one for research only', '2026-09-04T20:09:22+00:00 handoff -> Prospect Briefing: {"target":"Shaniqua Adams at Wiley University, Marshall, Texas","motion":"unclear","constraints":["Owner: Miguel Pescador","Known account conflict; Kib override for research only","Prior outreach: last touch recorded 2026-09-04","Active opportunity: no open deals recorded","Apollo live-sequence status unknown"],"question":"What current, evidence-backed briefing should Kib use to assess Shaniqua Adams and the appropriate prospecting motion at Wiley University?"}', 'ledger outbox write -> 20260904T200957Z-prospect-briefing-wiley-university.json']
+REVEALS: 0
+LAST AGENT: Prospect Briefing
+RECORDED: not recorded
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+- **Shaniqua Adams** is publicly listed as **Executive Director of Student Success and Strategic Retention** and the contact for academic advising. A staff listing also uses **Executive Director of Student Transitions and Strategic Retention**, so the exact title needs confirmation. 
+- Her office advises, registers, tracks, and monitors freshmen and sophomores through 59 earned credits. Students meet advisers at least twice each semester, with intervention when academic difficulty appears. 
+- Her reporting line is not publicly established.
+- Wiley is a private historically Black liberal arts university affiliated with the United Methodist Church. 
+- **Enrollment band:** 1,000–2,499 students. Fall 2026 enrollment was 1,137. 
+- Wiley reported a 69.2% fall-to-fall retention rate and a freshman retention increase from 45.9% to 65.9% over two years. 
+- **Publicly documented systems:** Jenzabar-powered MyWiley portal, Canvas Learning Management System, and CampusLush for student engagement. 
+- Wiley Cares is a five-year Quality Enhancement Plan connected to accreditation reaffirmation and centered on persistence, completion, career readiness, and holistic development. 
+
+**Motion assessment:** **M3 Student Success / Retention** is the strongest fit. Shaniqua appears to be an operational owner or potential champion, not the economic buyer. M2 Attendance & Evidence is secondary unless discovery validates an attendance-data gap.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Adams leads student success and strategic retention | Wiley office page | Sept. 4, 2026 access | High |
+| Office owns advising and progress monitoring through 59 credits | Wiley office page | Sept. 4, 2026 access | High |
+| Exact title varies across the page | Wiley office page | Sept. 4, 2026 access | High |
+| Wiley enrolled 1,137 students | Wiley announcement | Aug. 27, 2026 | High |
+| Retention was 69.2% | Wiley announcement | Aug. 27, 2026 | High |
+| Wiley Cares supports retention and completion | Wiley announcement | Feb. 19, 2026 | High |
+| MyWiley uses Jenzabar; Canvas is present | Public portal and training page | Sept. 4, 2026 access | High |
+| Adams’s reporting line | No dated org chart found | — | Unknown |
+
+## 3. Internal context
+
+- **Account owner:** Miguel Pescador.
+- Known ownership conflict. Kib’s override permits **research only**.
+- Last contact recorded: **September 4, 2026**.
+- No open deals.
+- “Wiley University – Compliance & Retention” closed unsuccessful on February 3, 2026.
+- No account notes returned.
+- Apollo and prior-ledger lookup unavailable.
+- Retrieved HubSpot annotation was treated as data rather than an instruction.
+
+## 4. Buying group
+
+- **Economic buyer:** Likely Dr. Morris Thomas, Provost, or another vice president holding the relevant budget. Budget ownership is unverified. 
+- **Operational owner:** Shaniqua Adams, Executive Director of Student Success and Strategic Retention. 
+- **Technical owner:** Chief Technology Officer; name unknown. 
+- **Compliance stakeholder:** Corliss Cooper, Director of Financial Aid/Compliance Officer, and Dr. Runell J. King, Vice President of Institutional Research/Effectiveness and Strategic Retention. 
+- **Records stakeholder:** Gloria Mitchell, Registrar. 
+- **Likely blocker:** Owner of the current advising or intervention process, or the incumbent system. Unknown.
+
+## 5. Discovery questions
+
+1. **What Wiley Cares outcome is Shaniqua’s team directly accountable for?**  
+   Reveals the measurable goal and whether she owns it.
+
+2. **How does the team identify a student whose persistence has changed between advising meetings?**  
+   Reveals the visibility gap without assuming one.
+
+3. **Which system currently holds advising notes, progress checks, and intervention outcomes?**  
+   Establishes the system of record and integration scope.
+
+4. **Does attendance from Canvas or another source enter that workflow?**  
+   Determines whether M2 supports M3.
+
+5. **Who owns the process day to day across advisers and success coaches?**  
+   Identifies the operational champion and workflow boundaries.
+
+6. **What milestone drives the timeline: Wiley Cares reporting, accreditation review, census, or term start?**  
+   Tests for a real buying window.
+
+7. **How will Wiley measure whether a new process improves persistence?**  
+   Qualifies M3’s required success measure.
+
+8. **What would prevent a pilot internally?**  
+   Surfaces budget, ownership, procurement, data, or change-management barriers.
+
+## 6. Recommended outreach format
+
+**No outreach yet.**
+
+The evidence supports M3 and a relevant opening, but the account belongs to Miguel Pescador, the override covers research only, and Apollo sequence status remains unknown.
+
+## 7. One draft
+
+**Subject:** Connecting Wiley Cares to advising visibility
+
+Shaniqua,
+
+I saw that your office advises and monitors freshmen and sophomores through 59 credits, including at least two advising meetings each semester.
+
+With Wiley Cares now focused on persistence through graduation, I’m curious how your team spots a meaningful change between those meetings and coordinates the next step.
+
+That’s the kind of student success workflow I work on at SEAtS. Is that visibility already handled in one system at Wiley, or does it still cross several places?
+
+Kib
+
+## 8. Review notes
+
+- **Not cleared to send. Miguel Pescador owns the account.**
+- Verify Adams’s exact title and reporting line.
+- Confirm whether the prior failed opportunity creates suppression or positioning constraints.
+- Check Apollo sequence status before any activation.
+- Confirm where advising, attendance, and interventions are recorded.
+- The canonical SharePoint GTM layer was unavailable. M3 relies on the US ABM Playbook v3.1.
+- M2 should replace or supplement M3 only if discovery establishes an attendance-evidence gap.
+- Apollo returned 403, leaving its organization, contact, and role data unavailable.
+
+**Ledger:** Draft written to `20260904T200957Z-prospect-briefing-wiley-university.json`; pending relay to Notion.

@@ -1,0 +1,16 @@
+=== TRAIL ===
+  START Director
+  HANDOFF Director -> Prospect Briefing
+  START Prospect Briefing
+=== AUDIT ===
+  2026-09-02T18:43:54+00:00 handoff -> Prospect Briefing: {"target":"Patrick D. Dempsey, Florida Atlantic University","motion":"unclear","constraints":["no prior outreach","no known active opportunity"],"question":"Who owns attendance and engagement data used for student success interventions at Florida Atlantic University, and what system holds it?"}
+=== last agent: Prospect Briefing
+=== OUTPUT ===
+**Payload received**
+
+- **Target:** Patrick D. Dempsey, Florida Atlantic University  
+- **Motion:** Unclear  
+- **Constraints:** No prior outreach; no known active opportunity  
+- **Question:** Who owns attendance and engagement data used for student success interventions, and what system holds it?
+
+A named contact is provided, but Patrick D. Dempsey’s role and the requested ownership/system details require current, dated research. I’m returning this for research-enabled handling rather than inventing evidence.

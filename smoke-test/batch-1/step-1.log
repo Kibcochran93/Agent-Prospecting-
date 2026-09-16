@@ -1,0 +1,25 @@
+TRAIL: ['START Campaign Builder', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'MESSAGE Campaign Builder']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Campaign Builder
+=== OUTPUT ===
+## Checkpoint 1: Segment definition
+
+This is **not one segment or one campaign**. It separates into four motion-led segments. Enrollment bands, accreditors, and systems are not yet verified.
+
+| Contact | Segment | Named motion | Decision | Message must ultimately be built on |
+|---|---|---|---|---|
+| **Eunice Tarver, Tulsa Community College** | Public community college; Oklahoma; student success executive | **M3 Student Success / Retention** | Keep | A current retention priority, data gap, and need for earlier progress visibility across a largely commuter student population. |
+| **Mary Ann Tietjen, Creighton University** | Private university; Nebraska; Success Center operational leader | **M3 Student Success / Retention** | Keep | A current Success Center initiative, the data available to its staff, and how intervention is coordinated. M4 is close, but her title alone does not establish a coordinated-care workflow problem. |
+| **Jennifer Harpham, University of Akron** | Public university; Ohio; financial-aid leader | **M5 Compliance & Audit Evidence** | Conditional keep | A dated evidence gap, reporting deadline, accreditation cycle, or manual reconciliation issue involving financial aid. Her title alone is insufficient. |
+| **Shaniqua Adams, Wiley University** | Private historically Black university; Texas; student success and transitions executive | **M3 Student Success / Retention** | Keep | A current persistence or transition initiative, its success measure, and where staff lack timely visibility. |
+| **Odessa Mathis, California Career Institute** | Private career institution; California; financial-aid and Title IV operational owner | **No confirmed fit yet** | **Drop from this batch** | M9 would require verified health-sciences **and clock-hour** status. M5 would require a dated evidence gap or deadline. Her title alone cannot establish either. |
+| **Jonathan Summers, Cedar Crest College** | Private college; Pennsylvania; international-student-services leader | **M5 Compliance & Audit Evidence** | Conditional keep | A current Student and Exchange Visitor Information System cohort, reporting deadline, or evidence-reconciliation problem. Do not build it merely on international-student support. |
+
+### Proposed segments
+
+1. **M3 student-success leaders:** Tarver, Tietjen, Adams.  
+2. **M5 evidence owners:** Harpham and Summers, subject to current qualifying triggers.  
+3. **Potential M9 clock-hour career institution:** Mathis, excluded until institutional and program fit are verified.
+
+HubSpot ownership and the absence of open opportunities are recorded constraints, not motion evidence. **Checkpoint 1 stops here.**

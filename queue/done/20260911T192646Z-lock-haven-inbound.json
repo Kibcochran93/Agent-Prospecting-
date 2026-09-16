@@ -1,0 +1,19 @@
+{
+  "id": "20260911T192646Z-lock-haven-inbound",
+  "account": "Lock Haven University",
+  "account_key": "lock haven",
+  "stage": "INBOUND",
+  "state": "done",
+  "queued_at": "2026-09-11T19:26:46+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "2026-09-15T15:14:27+00:00",
+  "finished_at": "2026-09-15T15:15:04+00:00",
+  "exit_code": 0,
+  "log": "C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260911T192646Z-lock-haven-inbound.log",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": "RECORDED: C:\\Agent Prospecting Ops\\seats-prospecting\\ledger-outbox\\20260915T151503Z-context-known-active-robin-rockey.json | === OUTPUT === | status='known_active' account='Lock Haven University' person='Robin Rockey' searched=[\"HubSpot companies, name='Lock Haven University', matched company 8675145453; retrieved this run.\", \"HubSpot companies, domain='lockhaven.edu' plus name variants, matched c"
+}

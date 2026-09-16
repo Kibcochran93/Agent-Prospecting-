@@ -1,0 +1,86 @@
+Error getting response
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Agent Prospecting Ops\seats-prospecting\src\seats_prospecting\cli.py", line 89, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\src\seats_prospecting\cli.py", line 85, in main
+    return asyncio.run(_main(args))
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\KibCochran\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Users\KibCochran\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\KibCochran\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\src\seats_prospecting\cli.py", line 59, in _main
+    result = await run(agent, _read_input(args), context=ctx, session=session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\src\seats_prospecting\runner.py", line 82, in run
+    result = await Runner.run(
+             ^^^^^^^^^^^^^^^^^
+        agent, user_input, context=ctx, session=session, max_turns=max_turns
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\agents\run.py", line 321, in run
+    return await runner.run(
+           ^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\agents\run.py", line 551, in run
+    return await self._run_impl(starting_agent, input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\agents\run.py", line 1701, in _run_impl
+    turn_result = await model_task
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\agents\run_internal\run_loop.py", line 2431, in run_single_turn
+    new_response = await get_new_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<16 lines>...
+    )
+    ^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\agents\run_internal\run_loop.py", line 2585, in get_new_response
+    new_response = await get_response_with_retry(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\agents\run_internal\model_retry.py", line 612, in get_response_with_retry
+    response = await _await_model_attempt(get_response(), timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\agents\run_internal\model_retry.py", line 296, in _await_model_attempt
+    return await awaitable
+           ^^^^^^^^^^^^^^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\agents\models\openai_responses.py", line 571, in get_response
+    response = await self._fetch_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\agents\models\openai_responses.py", line 824, in _fetch_response
+    response = await client.responses.create(**create_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\openai\resources\responses\responses.py", line 2884, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+    ...<49 lines>...
+    )
+    ^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\openai\_base_client.py", line 1979, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\openai\_base_client.py", line 1681, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\openai\_base_client.py", line 594, in _build_request
+    kwargs["content"] = openapi_dumps(json_data) if is_given(json_data) and json_data is not None else None
+                        ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Agent Prospecting Ops\seats-prospecting\.venv\Lib\site-packages\openai\_utils\_json.py", line 25, in openapi_dumps
+    ).encode()
+      ~~~~~~^^
+UnicodeEncodeError: 'utf-8' codec can't encode character '\udc9d' in position 4866: surrogates not allowed

@@ -1,0 +1,19 @@
+{
+  "id": "20260915T201614Z-city-colleges-chicago-harold-washington-copy",
+  "account": "City Colleges of Chicago - Harold Washington College",
+  "account_key": "city colleges chicago harold washington",
+  "stage": "COPY",
+  "state": "queued",
+  "queued_at": "2026-09-15T20:16:14+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "",
+  "finished_at": "",
+  "exit_code": null,
+  "log": "",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": ""
+}

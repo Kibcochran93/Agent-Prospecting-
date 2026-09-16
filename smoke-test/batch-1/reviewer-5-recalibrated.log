@@ -1,0 +1,84 @@
+TRAIL: ['START Reviewer', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'MESSAGE Reviewer']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Reviewer
+=== OUTPUT ===
+## Batch type
+
+**Cadence copy:** touches 2–4 for four recipients. I am grading whether each successive touch adds something the earlier touches did not, alongside the six rewrite grounds.
+
+## Walk of the six
+
+1. **Never-say hit — clean.**  
+   No prohibited terminology, surveillance framing, British spelling, or named compliance shortfall.
+
+2. **Unsupported claim about the recipient — fails.**  
+   > “At TCC’s scale, time spent assembling context reduces the capacity available for direct student support.”
+
+   This asserts that TCC staff currently spend time assembling context and consequently lose support capacity. It is presented as fact, not a hypothesis, and no dated source appears in the artifact.
+
+   > “The next investment decision also needs evidence that support is timely, consistent and connected to persistence.”
+
+   This asserts both a forthcoming investment decision and an evidence deficiency without a dated source.
+
+3. **No recipient-specific anchor — clean at cadence level.**  
+   The cadences use institution-specific anchors: TCC’s six coaches and approximately 2,100 students, Creighton’s First-Flight program, and Wiley’s 117 additional returning students.
+
+4. **Same institution, same problem — fails.**  
+   Dewayne’s cadence says:
+
+   > “Take one coach’s weekly caseload and mark every point where staff assemble context by hand.”
+
+   Eunice’s cadence says:
+
+   > “At TCC’s scale, time spent assembling context reduces the capacity available for direct student support.”
+
+   Both TCC recipients are being approached about staff assembling context and the resulting loss of coaching capacity. The language has been adjusted for seniority, but the reason to reply is substantially the same.
+
+5. **Register mismatch — clean.**  
+   Dewayne, Mary Ann, and Shaniqua receive practitioner-level workflow language. Eunice receives investment, capacity, funding, and persistence language appropriate to a VP-level role.
+
+6. **Invented motion — clean.**  
+   No composed motion name appears.
+
+## Cadence additivity
+
+- **Dewayne Dickens — fails.** Touch 4 repeats touch 3’s one-coach, one-week workflow test:
+
+  > “Take one coach’s weekly caseload and mark every point where staff assemble context by hand.”
+
+  > “One coach and one week of decisions should reveal whether the constraint is missing information or too many places to check.”
+
+  The second sentence relabels the same diagnostic rather than adding a distinct reason to engage.
+
+- **Eunice Tarver — passes additivity.** The sequence moves from outcome and funding evidence, to staff-capacity economics, to an offered decision framework.
+
+- **Mary Ann Tietjen — fails.** Touch 4 repackages the previous two touches:
+
+  > “A concise First-Flight review could cover student touchpoints, staff handoffs and the evidence gathered at each stage.”
+
+  Student experience/touchpoints and staff coordination/handoffs were already introduced in touch 2, then mapped in touch 3. Touch 4 adds no new evidence, question, or distinct angle.
+
+- **Shaniqua Adams — passes additivity.** The cadence progresses from increased returning-student volume, to the risk of changes being hidden across records, to a concrete caseload review.
+
+## Producing agent’s check
+
+The producing agent’s answers are claims, not evidence.
+
+I **disagree** with:
+
+- **“Recipient-specific details and angles: Yes.”** Recipient-specific details exist, but the two TCC roles converge on the same context-assembly and coaching-capacity problem.
+- **“Would one recipient notice a repeated template: No.”** Template repetition is not the relevant cadence test. Dewayne and Mary Ann would receive touch 4s that materially repeat earlier touches.
+
+The remaining answers concern batch-level variety and do not establish cadence additivity.
+
+## Verdict
+
+**Gets rewritten.**
+
+The batch fails **ground 2, unsupported recipient claims**, **ground 4, same institution/same problem**, and the **cadence additivity rule** for Dewayne Dickens and Mary Ann Tietjen.
+
+## Observations
+
+- The recipient-facing imperatives are not operator instructions and therefore are not artifact-integrity leaks.
+- The producing agent’s self-check is designed around first-touch batch differentiation rather than the governing test for touches 2–4.

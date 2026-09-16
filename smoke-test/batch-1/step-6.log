@@ -1,0 +1,126 @@
+TRAIL: ['START Campaign Builder', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL create_ledger_record', 'TOOL create_manual_email_drafts', 'MESSAGE Campaign Builder']
+AUDIT: ['ledger outbox write -> 20260904T152507Z-campaign-builder-multi-account-batch-tulsa-community-college-creighton-univer.json', "apollo create_manual_email_drafts 'M3 Student Success follow-up, 4 contacts, Sep 2026' -> 200, as your Apollo user, through OAuth", 'apollo sequence 6a9ae2e4f310d70010bda1a9: 12 of 12 steps recorded']
+REVEALS: 0
+LAST AGENT: Campaign Builder
+=== OUTPUT ===
+### Tulsa Community College, Dewayne Dickens, touch 2, day 14
+**To: Dewayne Dickens, Senior Director of the Center for Community and Learning**
+**Subject:** Where coaching judgment meets the queue
+
+Dewayne,
+
+One pattern we see in coaching teams is that the hard part isn’t caring for students. It’s turning a long list into a sensible order of work.
+
+When several students need support at once, what determines who a coach contacts first?
+
+### Tulsa Community College, Dewayne Dickens, touch 3, day 35
+**To: Dewayne Dickens, Senior Director of the Center for Community and Learning**
+**Subject:** A small workflow test
+
+Dewayne,
+
+A useful test is to take one coach’s weekly caseload and mark where staff had to assemble context by hand.
+
+I can outline that exercise for TCC’s coaching workflow.
+
+### Tulsa Community College, Dewayne Dickens, touch 4, day 56
+**To: Dewayne Dickens, Senior Director of the Center for Community and Learning**
+**Subject:** One coach, one week
+
+Dewayne,
+
+Rather than discuss a broad rollout, I’d start with one coach and one week of decisions. That usually shows whether the issue is missing information or simply too many places to check.
+
+### Tulsa Community College, Eunice Tarver, touch 2, day 14
+**To: Eunice Tarver, Vice President of Student Success and Chief Student Affairs Officer**
+**Subject:** Evidence beyond program reach
+
+Eunice,
+
+For an established coaching model, reach answers only one part of the investment question. Leadership also needs to know whether support is timely, consistent and connected to persistence.
+
+Those measures make the next funding decision more defensible.
+
+### Tulsa Community College, Eunice Tarver, touch 3, day 35
+**To: Eunice Tarver, Vice President of Student Success and Chief Student Affairs Officer**
+**Subject:** The cost side of coaching
+
+Eunice,
+
+The status quo carries a cost when skilled coaches spend time assembling context instead of supporting students.
+
+A focused review could separate capacity constraints from information gaps.
+
+### Tulsa Community College, Eunice Tarver, touch 4, day 56
+**To: Eunice Tarver, Vice President of Student Success and Chief Student Affairs Officer**
+**Subject:** A decision brief, not a demo
+
+Eunice,
+
+I can prepare a one-page decision framework covering reach, staff capacity, timeliness and persistence. It would give TCC a neutral way to test whether further investment is warranted.
+
+### Creighton University, Mary Ann Tietjen, touch 2, day 14
+**To: Mary Ann Tietjen, Senior Director of The Success Center**
+**Subject:** Learning while First-Flight is running
+
+Mary Ann,
+
+A year-long pilot creates two kinds of learning: what students experience and what staff must do to keep support coordinated.
+
+Capturing both during the year is easier than reconstructing the operating story afterward.
+
+### Creighton University, Mary Ann Tietjen, touch 3, day 35
+**To: Mary Ann Tietjen, Senior Director of The Success Center**
+**Subject:** What other pilot teams uncover
+
+Mary Ann,
+
+In student-success pilots, the useful finding is often a handoff: where information moves late, loses context or depends on one person’s memory.
+
+That can be mapped without changing the pilot itself.
+
+### Creighton University, Mary Ann Tietjen, touch 4, day 56
+**To: Mary Ann Tietjen, Senior Director of The Success Center**
+**Subject:** A First-Flight learning map
+
+Mary Ann,
+
+I can sketch a simple learning map for First-Flight: student touchpoints, staff handoffs and the evidence to review at year’s end.
+
+### Wiley University, Shaniqua Adams, touch 2, day 14
+**To: Shaniqua Adams, Executive Director of Student Success and Strategic Retention**
+**Subject:** More returning students, same working week
+
+Shaniqua,
+
+Retention growth changes the shape of the work. More continuing students means more progress to review alongside the incoming class, even when the team and working week stay the same.
+
+Prioritization becomes part of sustaining the result.
+
+### Wiley University, Shaniqua Adams, touch 3, day 35
+**To: Shaniqua Adams, Executive Director of Student Success and Strategic Retention**
+**Subject:** What teams usually miss
+
+Shaniqua,
+
+When advising volume grows, the weak point is often not effort. It’s a change in a student’s pattern sitting unnoticed across separate records.
+
+A simple workflow map can expose those gaps.
+
+### Wiley University, Shaniqua Adams, touch 4, day 56
+**To: Shaniqua Adams, Executive Director of Student Success and Strategic Retention**
+**Subject:** A focused caseload review
+
+Shaniqua,
+
+I’d suggest reviewing one advising caseload: what staff check, where the information sits and which changes should move a student forward in the queue.
+
+## Batch differentiation check
+
+1. Shared opening structures: **No.**
+2. Shared closing moves: **No.**
+3. Details and angles specific to each recipient: **Yes.**
+4. Would one recipient notice a repeated template: **No.**
+5. Sentence lengths and shapes varied: **Yes.**
+
+No touch is merely a chase. All twelve drafts were saved to Apollo in a paused sequence; no contacts were enrolled. Ledger draft: `20260904T152507Z-campaign-builder-multi-account-batch-tulsa-community-college-creighton-univer.json`.

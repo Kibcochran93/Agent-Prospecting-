@@ -1,0 +1,28 @@
+{
+  "written_at": "2026-09-10T17:40:00+00:00",
+  "written_by": "Apollo website visitors pull, read-only, session-driven",
+  "record": {
+    "kind": "live_intent_signal",
+    "institution": "Edmonds College",
+    "account_key": "edmonds",
+    "signal": "Jim Mulik, VP Finance & Operations, identified visiting seatsone.com. 36 visits in total, most recent 2026-09-03. Apollo's computed intent for the window: low.",
+    "person": "Jim Mulik",
+    "person_title": "VP Finance & Operations",
+    "total_visits": 36,
+    "last_visit": "2026-09-03",
+    "apollo_intent": "low",
+    "source": "Apollo website visitors, person-level, tracked domain seatsone.com",
+    "source_date": "2026-09-03",
+    "age_days": 7,
+    "stale": false,
+    "staleness_note": "7 days old as of 2026-09-10. Within the 30 day rule.",
+    "confidentiality": "internal_only",
+    "confidentiality_note": "Person-level identification of a named individual browsing our site. Never quoted, never referenced to the prospect, and never phrased so as to imply their browsing was observed. It may inform which motion to pursue and who to research.",
+    "email_addresses_withheld": true,
+    "coverage_note": "Apollo identifies visitors at person level for United States traffic only, and attaches a confidence tier. Absence of a visitor here is not evidence nobody visited.",
+    "in_pipeline": false,
+    "pipeline_note": "This institution has no record in ledger-outbox and no row on the board. It is inbound interest nobody is working.",
+    "imperatives_found": []
+  },
+  "record_sha256": "6a4e9f95c103917c889029f9b2375d31f20dd4acc165cbcba2c668a37bd322c0"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "20260910T153925Z-kennesaw-copy",
+  "account": "Kennesaw State University, Kennesaw, Georgia",
+  "account_key": "kennesaw",
+  "stage": "COPY",
+  "state": "failed",
+  "queued_at": "2026-09-10T15:39:25+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "2026-09-15T15:12:34+00:00",
+  "finished_at": "2026-09-15T15:12:34+00:00",
+  "exit_code": 2,
+  "log": "",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": "No briefing record for Kennesaw State University, Kennesaw, Georgia, so there is nothing to write copy from. Run a briefing first; a campaign run with no record would invent the account."
+}

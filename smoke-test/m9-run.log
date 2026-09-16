@@ -1,0 +1,17 @@
+TOOLS: ['list_knowledge', 'search_knowledge', 'search_knowledge', 'search_knowledge', 'read_knowledge', 'read_knowledge', 'read_knowledge', 'read_knowledge']
+=== OUTPUT ===
+### Step 1: Segment definition
+
+- **Institution type:** Standalone nursing schools and nursing schools within universities
+- **Enrollment band:** Not specified
+- **Region:** United States
+- **Accreditor:** Not specified
+- **Systems in place:** Not specified
+- **Confirmed motion:** **M9, US Health Sciences: clock-hour attendance and Title IV evidence**
+- **Entry offer:** **Clock-Hour Attendance Evidence Review**
+
+**Is clinical rotation visibility and placement coordination the right lead? No.** The authoritative ABM playbook overrides that framing. Placement systems already own that category; SEAtS should be positioned adjacent to them, focused on clock-hour attendance and Title IV evidence.
+
+The segment still needs splitting before targeting: standalone nursing programs and university-based nursing schools have different structures. M9 also requires confirming clock-hour status before qualification.
+
+Please confirm this Step 1 definition and provide the enrollment band, region scope, accreditor criteria, and known systems.

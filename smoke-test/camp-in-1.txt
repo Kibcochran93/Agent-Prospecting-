@@ -1,0 +1,9 @@
+﻿Work order test run, operator Kib.
+
+target: US regional public universities in the South, enrollment 5,000 to 15,000
+motion: M3 Student Success / Retention
+constraints:
+- Net-new only. Any institution owned by another SEAtS rep comes out of the list.
+- Arkansas State Jonesboro and ASU Mountain Home are owned by a colleague. Exclude both.
+- No Apollo sequence creation on this run. Copy for manual paste only.
+question: Which segment slice has the strongest dated trigger evidence right now, and what does the buying group look like per institution type?

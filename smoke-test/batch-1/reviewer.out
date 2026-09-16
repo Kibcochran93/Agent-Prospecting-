@@ -1,0 +1,63 @@
+TRAIL: ['START Reviewer', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'MESSAGE Reviewer']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Reviewer
+=== OUTPUT ===
+## Verdict: **Gets rewritten**
+
+The producing agent reports an all-pass. **I disagree.** Its answers are not supported by the copy.
+
+### Differentiation failures
+
+1. **Shared opening approach**
+   - “**The national recognition for TCC’s Academic Success Coaching program caught my attention.**”
+   - “**TCC’s April award says the coaching model is working.**”
+
+   Both Tulsa messages open from the same recognition and then reinterpret it as a visibility problem. The wording changes, but the construction and evidence do not.
+
+2. **Shared closing move**
+   - “**How does that visibility work at TCC today?**”
+   - “**What evidence will matter most when Creighton reviews the pilot?**”
+   - “**Would that visibility complement how your team currently monitors freshmen and sophomores?**”
+
+   Three messages close with the same discovery-question move. The agent’s “No” is incorrect.
+
+3. **Institution-specific is not the same as recipient-specific**
+   - “**Six coaches supporting roughly 2,100 students is meaningful reach.**”
+   - “**The executive question now may be how to understand its effect consistently across the 2,100 students served each year.**”
+
+   The Tulsa detail is reused across both recipients. Adding “executive question” does not make the underlying evidence recipient-specific.
+
+4. **The product paragraph exposes the template**
+   - “**SEAtS helps success teams connect those progress checks with the work coaches already do.**”
+   - “**That’s where SEAtS tends to fit: helping institutions connect attendance, engagement and intervention...**”
+   - “**SEAtS brings attendance and engagement into one view...**”
+   - “**SEAtS helps institutions link attendance, engagement and intervention...**”
+   - “**SEAtS gives advising teams a timely view of attendance and engagement...**”
+
+   Every message follows the same product construction: SEAtS + connect/link/view + attendance and engagement + earlier action. A recipient seeing two would notice the template. Sentence shapes are not sufficiently varied.
+
+### Same-institution duplication
+
+**Tulsa Community College:** Both messages use the coaching award, the same 2,100-student figure, and the same earlier-visibility problem. The practitioner/executive distinction is superficial.
+
+**Creighton University:** Both messages are built on the first-generation initiative and the same participation/persistence visibility problem:
+
+- “**...only if staff can see where participation and persistence begin to change.**”
+- “**...leadership needs a clear view of whether students are connecting with support and continuing to persist.**”
+
+“Staff” becoming “leadership” is title-swapping, not a distinct role-specific problem.
+
+### Account coverage and value
+
+- **Wiley University is single-threaded.**
+- The paired Tulsa and Creighton messages do not add distinct account-level value; they repeat the same evidence and problem for a second title.
+- No touch merely complains about a previous unanswered message.
+
+### Register, guardrails, and motion
+
+- The Vice President and Vice Provost messages use the repeated operational list “**attendance, engagement and intervention**.” For board-register recipients, this is too close to the practitioner construction used elsewhere in the batch rather than being framed around executive outcomes, persistence, and prioritized support.
+- No “Student CRM,” named-institution compliance shortfall, surveillance language, or British spelling appears.
+- The content maps to the named **M3 Student Success / Retention** motion. No invented motion is stated.
+
+The batch requires rewriting because of repeated account problems, insufficient persona differentiation, shared closing moves, and an obvious product-paragraph template.

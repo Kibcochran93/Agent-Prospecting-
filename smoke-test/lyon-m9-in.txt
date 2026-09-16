@@ -1,0 +1,8 @@
+Work order test run, operator Kib.
+
+target: Lyon College, Batesville, Arkansas
+motion: M9 US Health Sciences clock-hour attendance and Title IV evidence
+constraints:
+- Owned by a colleague. Flag for owner review. No outreach without Kib's yes.
+- New dental school, first cohort fall 2027. Vet program in accreditation.
+question: Lyon's dental students attend lectures, labs and clinics and report absences through a school workflow. Should we position clinical placement and rotation management here, or not? Answer against the playbook and say what you are relying on.

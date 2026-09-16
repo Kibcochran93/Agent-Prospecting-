@@ -1,0 +1,183 @@
+[probe] campaign tools: [
+  "apollo_find_org",
+  "apollo_find_roles",
+  "apollo_reveal_person",
+  "create_ledger_record",
+  "create_sequence_inactive",
+  "list_knowledge",
+  "read_knowledge",
+  "search_knowledge",
+  "web_search"
+]
+
+==============================================================================
+APPROVAL REQUIRED — the run is halted and nothing has executed.
+==============================================================================
+agent: Campaign Builder
+tool:  create_sequence_inactive
+
+arguments as they will be sent:
+  {
+    "proposal": {
+      "sequence_name": "M3 SACSCOC Regional Public Universities 5K-15K - Trigger-Led - Sep 2026",
+      "touches": [
+        {
+          "step": 1,
+          "day_offset": 0,
+          "subject": "From 73.4% to 80%",
+          "body": "UTC has moved its enrollment plan into implementation, with first-year retention targeted to reach 80% by 2030.\n\nWith EAB Navigate already coordinating advising, where does actual attendance and engagement enter the picture early enough to change a student’s path?\n\nKib",
+          "recipient_role": "University of Tennessee at Chattanooga - VP Student Success or equivalent"
+        },
+        {
+          "step": 2,
+          "day_offset": 3,
+          "subject": "One gap in the Mocs Flight Plan",
+          "body": "The eight-workgroup model makes student success a shared responsibility. It can also make it harder to see where a student first disengages and who should act.\n\nIs that information reaching the retention team before academic performance confirms the problem?\n\nKib",
+          "recipient_role": "University of Tennessee at Chattanooga - VP Student Success or equivalent"
+        },
+        {
+          "step": 3,
+          "day_offset": 7,
+          "subject": "Beyond another advising dashboard",
+          "body": "SEAtS connects attendance and engagement with the workflow that routes support and records what happened next.\n\nThat may be relevant where Navigate remains the advising platform but the Mocs Flight Plan needs a broader operational view. Worth comparing the two scopes?\n\nKib",
+          "recipient_role": "University of Tennessee at Chattanooga - VP Student Success or equivalent"
+        },
+        {
+          "step": 4,
+          "day_offset": 12,
+          "subject": "Best owner at UTC?",
+          "body": "Would the right starting point be Student Success, the Retention workgroup or Platforms and Solutions Optimization?\n\nThe ownership matters more here than the software discussion.\n\nKib",
+          "recipient_role": "University of Tennessee at Chattanooga - VP Student Success or equivalent"
+        },
+        {
+          "step": 5,
+          "day_offset": 19,
+          "subject": "A marker for later",
+          "body": "I’ll leave this with one observation: reaching 80% will depend on how quickly UTC can turn what happens between formal advising contacts into coordinated action.\n\nKib",
+          "recipient_role": "University of Tennessee at Chattanooga - VP Student Success or equivalent"
+        },
+        {
+          "step": 6,
+          "day_offset": 0,
+          "subject": "Scaling what LSUS fixed",
+          "body": "LSUS has already shown that redesigning student support can materially improve second- and third-year persistence.\n\nThe next question is whether that model can scale as enrollment passes 11,000 without losing the individualized support behind the gains.\n\nHow are you measuring that?\n\nKib",
+          "recipient_role": "Louisiana State University Shreveport - VP Student Success or equivalent"
+        },
+        {
+          "step": 7,
+          "day_offset": 3,
+          "subject": "The students balancing three jobs",
+          "body": "LSUS describes a student body in which work, family and academics often compete for the same hours.\n\nA missed pattern may therefore matter more than a single missed class. Can success teams see that pattern while there’s still time to intervene?\n\nKib",
+          "recipient_role": "Louisiana State University Shreveport - VP Student Success or equivalent"
+        },
+        {
+          "step": 8,
+          "day_offset": 7,
+          "subject": "A readiness exercise, not a reset",
+          "body": "I’m not suggesting LSUS replace the support framework that is producing results.\n\nWe use a short readiness exercise to identify which attendance, engagement and advising data reach success teams, where delays remain, and what should happen automatically versus through staff judgment.\n\nWould that be useful?\n\nKib",
+          "recipient_role": "Louisiana State University Shreveport - VP Student Success or equivalent"
+        },
+        {
+          "step": 9,
+          "day_offset": 12,
+          "subject": "Where this sits at LSUS",
+          "body": "Does the next phase of the redesign belong with Student Success, Academic Affairs or the team centralizing advising?\n\nI’d rather direct the question accurately than assume the organization chart tells the whole story.\n\nKib",
+          "recipient_role": "Louisiana State University Shreveport - VP Student Success or equivalent"
+        },
+        {
+          "step": 10,
+          "day_offset": 19,
+          "subject": "Keeping the gains intact",
+          "body": "The important result at LSUS is not simply record enrollment. It’s that more students are staying.\n\nI’ll stop here, but the scaling question remains worth revisiting as the centralized model develops.\n\nKib",
+          "recipient_role": "Louisiana State University Shreveport - VP Student Success or equivalent"
+        },
+        {
+          "step": 11,
+          "day_offset": 0,
+          "subject": "Protecting freshman momentum",
+          "body": "UA Little Rock’s Fall 2025 results show unusually strong growth among continuing freshmen and sophomores.\n\nAs those cohorts move forward, can each college see the same progress checks and intervention history, or does the picture still depend on departmental processes?\n\nKib",
+          "recipient_role": "University of Arkansas at Little Rock - VP Student Success or equivalent"
+        },
+        {
+          "step": 12,
+          "day_offset": 3,
+          "subject": "Analytics inside departmental reports",
+          "body": "Your strategic plan calls for embedding student-success data into departmental reporting.\n\nThe practical test is what happens after a department sees the data: who owns the student’s next step, and can the institution measure whether it helped?\n\nKib",
+          "recipient_role": "University of Arkansas at Little Rock - VP Student Success or equivalent"
+        },
+        {
+          "step": 13,
+          "day_offset": 7,
+          "subject": "A practical progress-check pilot",
+          "body": "SEAtS can connect attendance and engagement with prioritized support while leaving consequential decisions with university staff.\n\nA small pilot around one growing cohort could test the workflow without turning it into an institution-wide system project. Is that direction relevant?\n\nKib",
+          "recipient_role": "University of Arkansas at Little Rock - VP Student Success or equivalent"
+        },
+        {
+          "step": 14,
+          "day_offset": 12,
+          "subject": "Academic Affairs or Student Affairs?",
+          "body": "UA Little Rock appears to divide retention work across Academic Affairs, Student Affairs and the colleges.\n\nWhich office is accountable for coordinating the institution-wide process?\n\nKib",
+          "recipient_role": "University of Arkansas at Little Rock - VP Student Success or equivalent"
+        },
+        {
+          "step": 15,
+          "day_offset": 19,
+          "subject": "As the larger cohorts advance",
+          "body": "The strongest time to examine a retention workflow may be while continuing enrollment is improving, before larger cohorts expose where handoffs differ.\n\nI’ll leave the thought there.\n\nKib",
+          "recipient_role": "University of Arkansas at Little Rock - VP Student Success or equivalent"
+        },
+        {
+          "step": 16,
+          "day_offset": 0,
+          "subject": "The next test after 78%",
+          "body": "Murray State reached its highest first-to-second-year retention rate in five years, while Spring 2026 headcount moved in the opposite direction.\n\nThat combination makes the next question less about one headline rate and more about which students are persisting across terms and programs.\n\nIs that view available today?\n\nKib",
+          "recipient_role": "Murray State University - VP Student Success or equivalent"
+        },
+        {
+          "step": 17,
+          "day_offset": 3,
+          "subject": "What the recapture work reveals",
+          "body": "The campaign that helped eligible students return shows how much can change through targeted action.\n\nCould the same process start sooner, using attendance and engagement before a student reaches the non-registration list?\n\nKib",
+          "recipient_role": "Murray State University - VP Student Success or equivalent"
+        },
+        {
+          "step": 18,
+          "day_offset": 7,
+          "subject": "From recapture to earlier action",
+          "body": "SEAtS links what happens in class and across campus to a routed support workflow, with staff retaining control over the response.\n\nThat would not replace Murray State’s retention work. It would move part of it upstream. Open to a brief comparison?\n\nKib",
+          "recipient_role": "Murray State University - VP Student Success or equivalent"
+        },
+        {
+          "step": 19,
+          "day_offset": 12,
+          "subject": "Who owns the upstream step?",
+          "body": "Is earlier persistence work led by Student Affairs and Enrollment Management, the Center for Student Engagement and Success, or Academic Affairs?\n\nI don’t want to send a platform question to the office that only owns the outcome report.\n\nKib",
+          "recipient_role": "Murray State University - VP Student Success or equivalent"
+        },
+        {
+          "step": 20,
+          "day_offset": 19,
+          "subject": "A different starting point",
+          "body": "Murray State has evidence that outreach can bring students back. The remaining opportunity may be identifying the same students before they leave.\n\nNo need to respond unless that becomes an active priority.\n\nKib",
+          "recipient_role": "Murray State University - VP Student Success or equivalent"
+        }
+      ],
+      "contact_count": 0,
+      "source_list": "Institutions must be public four-year regional universities in SACSCOC geography; Fall 2025 total headcount between 5,000 and 15,000 inclusive; fit M3 Student Success / Retention; have a dated trigger from September 3, 2025 or later consisting of an active retention implementation, measurable retention change, enrollment shift, new student-success leadership, or student-success technology review. Tighter slice requires an active implementation within the last 12 months plus a published numerical retention target or comparable measurable implementation evidence. Shortlisted institutions: University of Tennessee at Chattanooga, Louisiana State University Shreveport, University of Arkansas at Little Rock, and Murray State University. Exclude Arkansas State University–Jonesboro and Arkansas State University–Mountain Home. Exclude any institution owned by another SEAtS representative after CRM verification. Ownership remains unverified for all shortlisted institutions. No contacts enrolled."
+    }
+  }
+
+Read the copy above, not your memory of what was proposed earlier.
+Rejecting ends the write path for this run. It is not a request for a
+revised proposal.
+==============================================================================
+
+[probe] decision = reject
+
+=== final output ===
+The inactive Apollo sequence creation was rejected. No sequence was created, activated, or enrolled. The write path for this run is closed.
+
+=== run audit ===
+rejected: create_sequence_inactive
+
+[probe] gate fired 1 time(s), decision was reject

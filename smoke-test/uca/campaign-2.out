@@ -1,0 +1,24 @@
+TRAIL: ['START Campaign Builder', 'TOOL search_knowledge', 'TOOL ?', 'TOOL ?', 'TOOL ?', 'TOOL ?', 'MESSAGE Campaign Builder']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Campaign Builder
+=== OUTPUT ===
+## Checkpoint 2: Trigger research
+
+**No qualifying segment-level trigger found.** Public evidence does not support a current Arkansas segment of 5,000–15,000-headcount public universities running EMS or Virtual EMS.
+
+### Findings
+
+- **University of Arkansas at Pine Bluff:** The 2025–26 student handbook documents EMS-based event reservations and a multi-office approval workflow. Source date: **October 28, 2025**. This is current enough to establish EMS use, but enrollment fit remains unverified. ([uapb.edu](https://uapb.edu/wp-content/uploads/2025/10/ROAR-Workbook-2025-2026-Final-Book-10_28_25.pdf?utm_source=openai))
+- **Arkansas Tech University:** A university document dated **2025** identifies Ad Astra, not EMS, as its centralized tool for class and event scheduling. It does not fit the incumbent-system condition. ([atu.edu](https://www.atu.edu/registrar/docs/Ad%20Astra%20Academics.pdf?utm_source=openai))
+- **UA Little Rock:** Current operating pages document Mazevo. The switch from Ad Astra to Mazevo occurred on **March 31, 2023**. The implementation announcement is **stale** and cannot serve as a hook, but current pages confirm Mazevo use. It does not fit the EMS condition. ([ualr.edu](https://ualr.edu/housing/reservation-requests/?utm_source=openai))
+- **Southern Arkansas University:** Its current facilities page describes requests submitted by email attachment. It does not document EMS or Virtual EMS in a dated public source. **System unverified.** ([saumag.edu](https://www.saumag.edu/facilities/?utm_source=openai))
+- **University of Central Arkansas:** Excluded entirely under the ownership constraint.
+
+### Trigger assessment
+
+For the sole possible account, UAPB, I found **current operational evidence of EMS use**, but no qualifying replacement trigger such as a recent procurement, implementation review, leadership change, audit finding, or documented scheduling modernization initiative.
+
+**Conclusion:** There is not yet evidence of a real multi-institution segment under the confirmed filters. At present, this looks like one possible account, not a campaign segment.
+
+Confirm whether to proceed to checkpoint 3 and test the list formally, or widen the incumbent condition beyond EMS/Virtual EMS.

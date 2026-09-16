@@ -1,0 +1,111 @@
+TRAIL: ["START Director", "hubspot_find_account", "hubspot_account_deals", "HANDOFF -> Prospect Briefing", "START Prospect Briefing", "list_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "apollo_find_org", "apollo_find_roles", "apollo_reveal_person", "apollo_reveal_person", "apollo_reveal_person", "apollo_reveal_person", "search_knowledge", "search_knowledge", "create_ledger_record"]
+AUDIT:
+  2026-09-03T16:26:43+00:00 handoff -> Prospect Briefing: {"target":"Tracy Finch, Registrar, Arkansas State University-Jonesboro","motion":"unclear","constraints":["HubSpot company 8805368803 exists","No associated deals or active opportunity on record","Prior outreach is unverified","Previous run assumed no prior outreach without verification"],"question":"How is attendance and participation evidence captured today, who owns it, and which Sales_Motions motion does the evidence support?"}
+  apollo reveal 1/25: 6198d1fd2111b80001b4755a -> Christina Kostick (Director of Financial Aid)
+  apollo reveal 2/25: 54a5d106746869320915feaa -> Tracy Finch (Registrar)
+  apollo reveal 3/25: 5e5c406d6d77c10001d3826f -> Dan Howard (Executive Vice Chancellor and Provost)
+  apollo reveal 4/25: 57e148f1a6da987de59bc007 -> Christopher Boothman (Vice Chancellor for Distance Education & Technology/Chief Information Officer (CIO))
+  ledger outbox write -> 20260903T162718Z-prospect-briefing-arkansas-state-university-jonesboro.json
+REVEALS: 4
+LAST AGENT: Prospect Briefing
+
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+- **Tracy Finch** is currently listed as **Registrar** at Arkansas State University-Jonesboro. 
+- The Registrar’s Office manages registration-related records and the WN non-attendance process. Its broader reporting line is not recently documented.
+- A-State is a public research university with **17,926 students reported for fall 2025**. 
+- **Systems documented:**
+  - **Ellucian Banner:** Student Information System.
+  - **Canvas:** Official Learning Management System; enrollments synchronize from Banner approximately every 24 hours. 
+- **Best-supported current evidence flow:**
+  1. Faculty determine whether students attended physical classes.
+  2. For online courses, Canvas login is used for initial WN eligibility.
+  3. Canvas retains more detailed participation evidence, including assignments, discussions, quizzes, conferences and activity timestamps.
+  4. Faculty enter WN outcomes in Banner Self-Service, not Canvas. 
+- A-State acknowledges that initial attendance can be difficult to track because students may add and drop courses during the reporting window. 
+- **Likely motion: M2 Attendance & Evidence.** The evidence shows distributed capture across faculty practice, Canvas and Banner. M5 is secondary because no specific audit deadline or defined compliance-evidence gap was found.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Finch is Registrar | Official Registrar page | Accessed Sept. 3, 2026 | High |
+| Canvas is the official LMS | A-State Knowledge Base | Updated July 2026 | High |
+| Banner is the SIS and supplies Canvas enrollments | A-State Knowledge Base | Updated Feb. 2026 | High |
+| Faculty assign WN during the initial attendance window | Official registration guidance | Accessed Sept. 3, 2026 | High |
+| Any Canvas login disqualifies an online student from WN | Official registration guidance | Accessed Sept. 3, 2026 | High |
+| WN grades are entered in Banner, not Canvas | Faculty WN guide | Displayed 2025 | High, possibly stale |
+| Canvas offers granular participation analytics | A-State Knowledge Base | Updated July–Aug. 2026 | High |
+| A-State reported 17,926 students | Official news release | Sept. 5, 2025 | High |
+| Physical-class capture method is decentralized | Inference from published process | Sept. 3, 2026 | Medium |
+
+## 3. Internal context
+
+- HubSpot company **8805368803** exists, per work order.
+- No associated deals or active opportunity, per work order.
+- Prior outreach remains unverified.
+- No internal communication or CRM access was available to check previous contact history.
+
+## 4. Buying group
+
+- **Economic buyer:** Unknown. A current, sourced reporting line was not established.
+- **Operational owner:** Tracy Finch, Registrar, for Banner outcomes and record correction. Faculty appear to own initial physical attendance determination.
+- **Technical owner:** Chris Boothman, Vice Chancellor for Distance Education and Technology/Chief Information Officer; official page accessed September 3, 2026. 
+- **Compliance stakeholder:** Christina Kostick, Director of Financial Aid, listed by Apollo on August 8, 2026; official verification remains open.
+- **Likely blocker:** Distributed ownership among faculty, Registrar, A-State Online and Information Technology Services.
+- **Finch’s role:** Operational owner or process coordinator, not a confirmed economic buyer.
+
+## 5. Discovery questions
+
+1. **How do instructors record physical attendance during the first 11 class days?**  
+   Reveals whether capture is standardized or locally maintained.
+
+2. **Does the Registrar receive attendance evidence, or only the resulting WN submission?**  
+   Separates evidence ownership from records processing.
+
+3. **For online courses, is WN eligibility based only on Canvas login or reviewed against meaningful participation?**  
+   Tests whether login and participation are being treated differently.
+
+4. **Who reviews exceptions when Canvas activity and an instructor’s record disagree?**  
+   Identifies the operational owner and reconciliation burden.
+
+5. **Can attendance and participation evidence be assembled across courses without requesting it instructor by instructor?**  
+   Tests whether a validated M2 evidence gap exists.
+
+6. **What deadline drives the process: census, financial-aid reconciliation, accreditation or another reporting event?**  
+   Determines whether M5 should replace M2.
+
+7. **What would prevent changing this process: faculty adoption, policy, integration or ownership?**  
+   Identifies the likely blocker and viable pilot scope.
+
+## 6. Recommended outreach format
+
+**Email.** Finch owns a visible workflow with a specific systems handoff. The note should seek process clarification rather than assume a deficiency.
+
+## 7. Draft
+
+**Subject: A-State’s WN evidence flow**
+
+Tracy,
+
+I was looking at A-State’s WN process and noticed the split between Canvas activity for online courses and the final grade entry in Banner.
+
+I couldn’t tell how physical-class attendance is captured before faculty submit the WN, or whether your office receives the underlying evidence rather than just the outcome.
+
+Is that process consistent across departments, or does each instructor maintain the record differently?
+
+Kib Cochran  
+Solutions Engineer  
+SEAtS Software
+
+## 8. Review notes
+
+- No public source identifies a centralized physical-class attendance tool.
+- Public evidence does not establish whether reconciliation between Canvas, Banner and faculty records is manual.
+- Ownership is distributed; Finch’s exact authority over faculty capture remains unverified.
+- **Recommendation would change to M5** if discovery uncovers a named audit, accreditation or financial-aid deadline.
+- M2 is not qualified until an evidence gap and pilot scope are validated.
+- Prior outreach must be checked before use.
+
+**Ledger:** Draft written to `20260903T162718Z-prospect-briefing-arkansas-state-university-jonesboro.json`; Notion relay is pending.

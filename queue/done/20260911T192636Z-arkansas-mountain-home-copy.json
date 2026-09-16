@@ -1,0 +1,19 @@
+{
+  "id": "20260911T192636Z-arkansas-mountain-home-copy",
+  "account": "Arkansas State University-Mountain Home",
+  "account_key": "arkansas mountain home",
+  "stage": "COPY",
+  "state": "done",
+  "queued_at": "2026-09-11T19:26:36+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "2026-09-15T15:12:34+00:00",
+  "finished_at": "2026-09-15T15:12:54+00:00",
+  "exit_code": 0,
+  "log": "C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260911T192636Z-arkansas-mountain-home-copy.log",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": "- **Status:** Draft only, not cleared to send. |  | I will use only the supplied dated facts. The briefing conclusion guides the qualification angle but is not evidence. Please confirm checkpoint 1 before I draft the email."
+}

@@ -1,0 +1,119 @@
+TRAIL: ["START Director", "hubspot_find_account", "hubspot_account_notes", "hubspot_account_notes", "HANDOFF -> Prospect Briefing", "START Prospect Briefing", "list_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "apollo_find_org", "apollo_find_roles", "apollo_reveal_person", "apollo_reveal_person", "apollo_reveal_person", "apollo_reveal_person", "search_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "apollo_find_roles", "search_knowledge", "create_ledger_record"]
+
+AUDIT:
+  2026-09-03T16:50:13+00:00 handoff -> Prospect Briefing: {"target":"Tracy Finch, Registrar, Arkansas State University (main Jonesboro campus)","motion":"unclear","constraints":["Use HubSpot company 8675051709; company 8805368803 is the stale domainless duplicate","Prior outreach reached support and another university contact in 2025","A colleague was told in 2025 that the institution had a three-year incumbent contract","Website-intent alerts exist; treat them as signals, not proof","HubSpot lifecycle is lead; deal detail is unavailable"],"question":"How is attendance and participation evidence captured today, who owns it, and which Sales_Motions motion does the evidence support?"}
+  apollo reveal 1/25: 6198d1fd2111b80001b4755a -> Christina Kostick (Director of Financial Aid)
+  apollo reveal 2/25: 5e5c406d6d77c10001d3826f -> Dan Howard (Executive Vice Chancellor and Provost)
+  apollo reveal 3/25: 54a5d106746869320915feaa -> Tracy Finch (Registrar)
+  apollo reveal 4/25: 57e148f1a6da987de59bc007 -> Christopher Boothman (Vice Chancellor for Distance Education & Technology/Chief Information Officer (CIO))
+  ledger outbox write -> 20260903T165053Z-prospect-briefing-arkansas-state-university.json
+
+REVEALS: 4
+LAST AGENT: Prospect Briefing
+
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+- **Tracy Finch:** Registrar, Arkansas State University, Jonesboro.
+- **Office remit:** Registration, grading, academic records, FERPA compliance, course evaluations, and academic/classroom scheduling.
+- **Institution:** Public research university.
+- **Enrollment band:** 15,000–20,000; fall 2025 enrollment was 17,926.
+- **Documented systems:** Canvas Learning Management System and Banner Student Information System.
+- **Current evidence workflow:**
+  - Information Technology Services creates Canvas course shells from Banner enrollment data.
+  - Faculty determine non-attendance and assign WN grades.
+  - For online courses, WN eligibility is based on whether the student ever logged into Canvas.
+  - Canvas can record Roll Call attendance and defined participation events.
+  - Registrar handles enrollment-record corrections and reinstatement documentation.
+  - Institutional Data and Analytics manages census data used for official, financial-aid, and accreditation reporting.
+- **Conclusion:** Capture appears distributed across faculty practice, Canvas, Banner, Registrar workflows, and census reporting. A single institution-wide attendance owner or authoritative attendance system was **not verified**. citeturn0search1turn0search5turn0search6turn1search2turn1search4turn1search5turn1search10
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Finch is Registrar | A-State Registrar page | Accessed Sep. 3, 2026 | High |
+| Registrar owns academic records, grading and FERPA compliance | A-State Registrar page | Accessed Sep. 3, 2026 | High |
+| Fall 2025 enrollment was 17,926 | A-State news release | Sep. 5, 2025 | High |
+| Canvas shells are populated from Banner enrollments | A-State Knowledge Base | Updated circa Sep. 2025 | High |
+| Canvas exposes defined participation events | A-State Knowledge Base | Accessed Sep. 3, 2026 | High |
+| Canvas Roll Call reports contain SIS, student, date, status and timestamp fields | A-State Knowledge Base | Accessed Sep. 3, 2026 | Medium |
+| Online WN status depends on never logging into Canvas | A-State registration page | Accessed Sep. 3, 2026 | High |
+| Census data support financial-aid and accreditation reporting | A-State Institutional Data and Analytics | Accessed Sep. 3, 2026 | High |
+| Tracy Finch, Christina Kostick and Chris Boothman occupy Registrar, Financial Aid and technology roles | Apollo | Aug. 8–22, 2026 | Medium |
+
+## 3. Internal context
+
+- Use HubSpot company **8675051709**; **8805368803** is reportedly stale.
+- Prior 2025 outreach reportedly reached support and another contact.
+- A colleague reportedly heard of a three-year incumbent contract in 2025.
+- Website-intent alerts are signals only.
+- Lifecycle reportedly is lead; deal information is unavailable.
+- **HubSpot was unavailable**, so none of these internal facts was independently verified.
+
+## 4. Buying group
+
+- **Economic buyer:** Unknown. Interim Provost William McLean or finance leadership may hold budget, but budget ownership is unverified.
+- **Operational owner:** Tracy Finch for enrollment-record consequences; faculty for course-level capture. Institution-wide ownership remains unknown.
+- **Technical owner:** Chris Boothman, Vice Chancellor for Distance Education and Technology and Chief Information Officer.
+- **Compliance stakeholder:** Christina Kostick, Director of Financial Aid; Registrar and Institutional Data and Analytics also touch relevant evidence.
+- **Likely blocker:** Owner of the reported incumbent contract, currently unknown.
+- **Finch’s role:** Operational and compliance stakeholder, not a verified economic buyer. citeturn0search4turn0search5turn0search6
+
+## 5. Discovery questions
+
+1. **Which record is authoritative when Canvas activity and an instructor’s attendance record disagree?**  
+   Reveals the actual system of record and exception process.
+
+2. **Is Roll Call used across A-State or only by individual instructors and programs?**  
+   Separates an available feature from an institutional workflow.
+
+3. **Who owns the WN review during the opening census period?**  
+   Identifies the daily operational owner.
+
+4. **How does attendance or participation evidence move from Canvas into Banner, Financial Aid, or reporting workflows?**  
+   Reveals integration and manual reconciliation.
+
+5. **Which participation events count for online attendance beyond a login?**  
+   Tests whether the evidence is academically meaningful.
+
+6. **What deadline creates the most pressure: census, aid review, accreditation, audit, or term start?**  
+   Establishes urgency and motion qualification.
+
+7. **What incumbent contract covers this process, and when can alternatives be evaluated?**  
+   Tests timing and the reported three-year constraint.
+
+8. **What would prevent a pilot in one course group or program?**  
+   Surfaces governance, faculty adoption, integration, and procurement blockers.
+
+## 6. Recommended outreach format
+
+**Email.** Finch is publicly confirmed, owns relevant record workflows, and can answer or redirect the ownership question. Keep it narrow because no evidence gap or contract window has been verified.
+
+**Motion:** **M2 Attendance & Evidence** is the strongest working fit. The evidence concerns capture and participation records, not a demonstrated audit deadline, so M5 is secondary. M2 remains unqualified until an evidence gap and pilot scope are established.
+
+## 7. Draft
+
+**Subject:** Who owns the attendance record?
+
+Tracy,
+
+I saw that A-State uses Canvas activity for the online WN rule, while instructors still determine whether a student attended and the Registrar handles the resulting enrollment record.
+
+When those records don’t line up, where does the authoritative attendance record sit today: Canvas, Banner, or somewhere else?
+
+I work with SEAtS on attendance and participation evidence. I’m trying to understand whether this sits with your office or another team at A-State.
+
+Kib
+
+## 8. Review notes
+
+- Canvas is documented, but institution-wide Roll Call adoption is not.
+- No authoritative attendance system or overall process owner was verified.
+- Banner integration beyond enrollment provisioning remains unknown.
+- The incumbent vendor and contract term need confirmation.
+- Arkansas attendance-linked funding was not assumed.
+- M5 would become stronger if a specific audit, accreditation, Financial Aid, or reporting deadline surfaces.
+- No internal account history could be checked.
+
+**Ledger:** Draft written to `20260903T165053Z-prospect-briefing-arkansas-state-university.json`; awaiting relay to Notion.

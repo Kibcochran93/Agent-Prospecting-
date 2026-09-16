@@ -1,0 +1,108 @@
+TRAIL: ["START Director", "hubspot_find_account", "hubspot_account_deals", "HANDOFF -> Prospect Briefing", "START Prospect Briefing", "list_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "apollo_find_org", "apollo_find_roles", "apollo_find_roles", "search_knowledge", "search_knowledge", "search_knowledge", "apollo_reveal_person", "apollo_reveal_person", "apollo_reveal_person", "apollo_reveal_person", "create_ledger_record"]
+AUDIT:
+  2026-09-03T16:29:47+00:00 handoff -> Prospect Briefing: {"target":"Patrick D. Dempsey, Florida Atlantic University","motion":"unclear","constraints":["Existing HubSpot company record 8674812621","Lifecycle stage: opportunity","One associated deal reported; status unavailable due HubSpot 403","Prior outreach unverified","Verify motion against Sales_Motions"],"question":"Who owns attendance and engagement data used for student success interventions, and what system holds it?"}
+  apollo reveal 1/25: 5c3e720fa3ae616c12cba1bf -> William Gallart (Associate Director, Enterprise Applications)
+  apollo reveal 2/25: 640f14aee8dbab0001ca925f -> Marie Demassi (University Registrar)
+  apollo reveal 3/25: 631862cfffa504000107cdc0 -> John Pritchett (University Provost)
+  apollo reveal 4/25: 66920803ef0bb200019fe7e4 -> Jessica Meith (Director of Student Success Management, Office of the Provost / Division of Academic Affairs)
+  ledger outbox write -> 20260903T163045Z-prospect-briefing-florida-atlantic-university.json
+REVEALS: 4
+LAST AGENT: Prospect Briefing
+
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+- **Patrick D. Dempsey, MBA, M.Ed.** is Executive Director, Academic Support & Student Learning at Florida Atlantic University (FAU). He oversees Center for Learning and Student Success programs including supplemental instruction, tutoring, and eSuccess. His reporting line is not publicly verified. 
+- **Likely role in this buying group:** operational stakeholder and referral source, not confirmed enterprise owner of attendance or engagement data.
+- FAU is a public university with **32,248 students enrolled in fall 2025**, placing it in the 30,000+ band. 
+- **Best-supported answer:** Student Success Management within the Office of the Provost likely owns the intervention use case. Jessica Meith, Director of Student Success Management, administers student-success functions and applies data analytics to academic and operational improvement. 
+- **System holding the intervention workflow:** EAB Navigate, branded as FAU’s Success Network. It supports progress reports, alerts, prioritization, outreach, and intervention records. 
+- **Underlying data sources:** Canvas and Banner feed Navigate through integrations established by the Office of Information Technology. That architecture was documented in FAU’s 2022–23 report and must be reverified. 
+- **Attendance capture is distributed:** Canvas contains course activity; instructors can also use integrated tools such as Top Hat for attendance. No current evidence establishes one university-wide attendance system of record. 
+
+**Motion:** **M3 Student Success / Retention.** M2 Attendance & Evidence is secondary. The immediate question concerns using data for intervention, which fits M3; an institution-wide attendance evidence gap has not been validated.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Dempsey leads Academic Support & Student Learning and CLASS programs | FAU CLASS contact page | Accessed Sep. 3, 2026 | High |
+| FAU had 32,248 fall 2025 students | FAU catalog | Accessed Sep. 3, 2026 | High |
+| Meith directs Student Success Management and uses data analytics | FAU Provost staff pages | Accessed Sep. 3, 2026 | High |
+| Navigate is FAU’s intervention and coordinated-support platform | FAU Success Network | Accessed Sep. 3, 2026 | High |
+| Faculty submit student alerts in Navigate | FAU Navigate guide | Published 2025 | High |
+| Navigate was integrated daily with Canvas and Banner | FAU OIT annual report | 2023 | Medium; possibly stale |
+| Canvas remains FAU’s Learning Management System | FAU Canvas/eSuccess pages | Accessed Sep. 3, 2026 | High |
+| Top Hat can capture attendance and integrate with Canvas | FAU Top Hat page | Accessed Sep. 3, 2026 | High |
+| Dempsey owns enterprise attendance data | No dated evidence | Unverified | Low |
+
+## 3. Internal context
+
+- HubSpot company record: **8674812621**
+- Lifecycle stage: **Opportunity**
+- One associated deal reported; status unavailable because of a HubSpot 403.
+- Prior outreach is unverified.
+- No internal correspondence or meeting history was available.
+
+## 4. Buying group
+
+- **Economic buyer:** John Pritchett, University Provost, surfaced through Apollo; official current verification not obtained.
+- **Operational owner:** Jessica Meith, Director, Student Success Management. 
+- **Technical owner:** Office of Information Technology. William Gallart, Associate Director, Enterprise Applications, was surfaced through Apollo, but current ownership of these integrations is unverified.
+- **Compliance stakeholder:** Marie Demassi, University Registrar, surfaced through Apollo; connection to this workflow is unverified.
+- **Likely blocker:** Existing Navigate adoption and whichever unit controls its program-owner permissions.
+- **Patrick’s role:** academic-support program leader and likely consumer/contributor of intervention information, not proven system owner.
+
+## 5. Discovery questions
+
+1. **Does Student Success Management own Navigate’s progress-report and alert process?**  
+   Confirms the business owner rather than inferring it from title and function.
+
+2. **Which attendance and participation fields flow from Canvas into Navigate today?**  
+   Reveals whether Navigate receives validated attendance or mainly grades and faculty alerts.
+
+3. **Are Top Hat, Qwickly, iClicker, or local spreadsheets also used for attendance?**  
+   Tests whether capture is fragmented.
+
+4. **Who can create and change Navigate progress-report campaigns?**  
+   Identifies the operational system owner and approval path.
+
+5. **How does CLASS receive students for tutoring, supplemental instruction, or eSuccess intervention?**  
+   Shows whether Patrick’s team works in Navigate or through referrals outside it.
+
+6. **How quickly does a missed-class pattern reach an advisor or academic-support team?**  
+   Exposes integration latency and manual handoffs.
+
+7. **What calendar event drives improvement work: progress-report windows, term start, or retention review?**  
+   Establishes timing.
+
+8. **Would incumbent ownership, faculty adoption, or integration governance stop a change?**  
+   Identifies the likely blocker.
+
+## 6. Recommended outreach format
+
+**Email.** Patrick is a credible operational contact who can confirm the handoff into CLASS or redirect Kib to the actual owner. Keep it referral-led rather than presenting him as the enterprise data owner.
+
+## 7. One draft
+
+**Subject:** How attendance reaches CLASS
+
+Patrick,
+
+I saw that your team spans supplemental instruction, the learning labs, and eSuccess, while FAU’s Success Network uses Navigate for progress reports and student interventions.
+
+I’m trying to understand one operational handoff: when attendance or participation starts to slip, does that information reach CLASS through Navigate, Canvas, or a separate referral process?
+
+I work with SEAtS on connecting attendance and engagement data to student-support action. If this sits elsewhere at FAU, who would be closest to the workflow?
+
+Kib
+
+## 8. Review notes
+
+- The likely answer is **Jessica Meith/Student Success Management owns the intervention function; Navigate holds the intervention workflow; Canvas and Banner provide underlying data**.
+- A single attendance system of record was not verified.
+- The integration architecture comes from 2023 and may have changed.
+- Patrick’s reporting line and precise system permissions remain unknown.
+- HubSpot deal status and prior engagement must be checked before outreach.
+
+**Ledger:** Draft written to `20260903T163045Z-prospect-briefing-florida-atlantic-university.json`; awaiting relay to Notion.

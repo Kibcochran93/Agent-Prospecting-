@@ -1,0 +1,19 @@
+{
+  "id": "20260910T153915Z-central-arkansas-copy",
+  "account": "University of Central Arkansas",
+  "account_key": "central arkansas",
+  "stage": "COPY",
+  "state": "done",
+  "queued_at": "2026-09-10T15:39:15+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "2026-09-14T15:00:28+00:00",
+  "finished_at": "2026-09-14T15:01:08+00:00",
+  "exit_code": 0,
+  "log": "C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260910T153915Z-central-arkansas-copy.log",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": "No copy from the work order is being reused. The supplied facts are evidence inputs only. |  | Please confirm this segment and the M3/M1 research direction before I proceed to trigger research."
+}

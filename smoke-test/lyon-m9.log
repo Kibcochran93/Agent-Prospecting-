@@ -1,0 +1,120 @@
+
+## Decision
+
+**Keep positioning limited to attendance and absence workflow. Do not position clinical placement or rotation management.**
+
+Lyon has verified clinical rotations, but that establishes a workflow context, not a verified placement-management need. The governing M9 guardrail remains in force pending Kib’s resolution of an internal playbook conflict.
+
+## 1. Contact and institution facts
+
+- **Kristi Price:** Chief of Staff, Office of the President.
+- **Relevance:** Strategic adviser to President Melissa Taverner. Coordinates priorities across Batesville, Little Rock, and Cabot. Previously supported accreditation, strategic planning, and integration for Lyon’s professional schools. This makes her a strategic coordinator, not the verified operational or technical owner. 
+- **Institution:** Private four-year college with undergraduate nursing and graduate professional dental and veterinary schools.
+- **Enrollment band:** Approximately 700 undergraduate students. 
+- **Health sciences:** Dental medicine opened in 2025. The veterinary school anticipated a Fall 2027 first class after an August 2026 accreditation visit; the visit outcome remains unverified. 
+- **Systems:** Canvas, Jenzabar, and in-house solutions are internal, dated April 3, 2025, and not publicly reverified.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Price is Chief of Staff and supports cross-campus planning | Lyon College news | July 29, 2026 | High |
+| Price helped guide professional-school accreditation and integration | Lyon College news | July 29, 2026 | High |
+| Dental medicine currently operates and veterinary medicine is being developed | Lyon professional catalog | 2026–27 edition | High |
+| Dental students must use an attendance/absence/sick-day website and notify multiple offices | Dental professionalism policy | Accessed September 3, 2026 | High |
+| Dental coursework includes supervised clinical instruction and rotations | Dental credit-hour and curriculum policies | Accessed September 3, 2026 | High |
+| Lyon needs placement-management software | No supporting evidence | September 3, 2026 | Unsupported |
+| Lyon has a documented attendance/absence process | Dental professionalism policy | Accessed September 3, 2026 | High |
+| That process has deficiencies | No supporting evidence | September 3, 2026 | Unsupported |
+| Kristi Price appears under her name in Apollo | Apollo returned no match | September 3, 2026 | Inconclusive |
+
+The dental policy’s separate notifications and attendance website suggest a discovery-worthy workflow, but they do **not** prove fragmentation or failure. 
+
+## 3. Internal context
+
+- HubSpot owner: **Cal O’Donovan**.
+- Opportunity lifecycle label, but no associated deals.
+- April 3, 2025 conversation recorded satisfaction with Canvas, Jenzabar, and in-house solutions.
+- Later readable activity consists only of account-level website-intent alerts.
+- No person-level intent is established.
+- This is account research, not cleared outreach.
+
+## 4. Buying group
+
+- **Economic buyer:** Unknown. President or academic leadership may hold budget, but this is unverified.
+- **Strategic coordinator:** **Kristi Price**, Chief of Staff.
+- **Operational owner:** Likely dental student services, course/clinic leadership, or program administration; named owner unknown.
+- **Technical owner:** Enterprise applications or Information Technology; current owner unknown.
+- **Compliance stakeholder:** Financial Aid and professional-school accreditation leadership; named current owner requires verification.
+- **Likely blocker:** Owner of the existing attendance website or in-house process; unknown.
+
+**Price’s role:** strategic coordinator and possible internal convener, not a verified operational, technical, compliance, or economic owner.
+
+## 5. Discovery questions
+
+1. **Is any Lyon health sciences program administered as a clock-hour program for Title IV purposes?**  
+   Determines whether M9 qualifies at all.
+
+2. **What system is the official attendance record for lectures, labs, clinics, and rotations?**  
+   Identifies the system of record and integration requirement.
+
+3. **What happens after a student submits the attendance/absence form?**  
+   Reveals routing, approvals, duplicate entry, and escalation.
+
+4. **Who owns the process day to day?**  
+   Identifies the operational owner rather than assuming Price owns it.
+
+5. **How does attendance evidence reach Financial Aid and accreditation reporting?**  
+   Tests whether the issue is workflow, evidence, or neither.
+
+6. **Is there a deadline tied to an audit, accreditation review, term start, or census date?**  
+   Establishes a verified buying timeline.
+
+7. **What would prevent Lyon from changing the current workflow?**  
+   Surfaces incumbent satisfaction, ownership, budget, and integration barriers.
+
+## 6. Recommended outreach format
+
+**No outreach yet.**
+
+The target is relevant at a strategic level, but M9 qualification is incomplete. Clock-hour status, operational ownership, system of record, and an actual workflow gap are all unverified. Cal O’Donovan’s review and Kib’s approval are required.
+
+## 7. One draft
+
+**Internal draft only. Not cleared to send.**
+
+Subject: Attendance workflows across Lyon’s professional schools
+
+Kristi,
+
+I saw that your role now includes coordinating priorities across Lyon’s Batesville, Little Rock, and Cabot campuses, building on your work with accreditation and integration for the professional schools.
+
+The dental catalog describes an attendance and absence process that involves the reporting site, Student Services, and course or clinic leadership. I’m trying to understand whether that process already gives Lyon the record it needs across each setting, or whether staff still have to reconcile information manually.
+
+Is that workflow something you coordinate, or does it sit directly with the professional schools?
+
+Kib
+
+## 8. Review notes
+
+- **Account owner: Cal O’Donovan. Draft is not cleared to send.**
+- The evidence supports an attendance/absence discovery angle, not a claim that Lyon has a problem.
+- Clinical rotations exist, including possible external rotations, but no placement-management requirement or incumbent gap is verified. 
+- **Playbook basis:** M9’s entry offer is a Clock-Hour Attendance Evidence Review. Its buying journey begins by confirming clock-hour status and identifying the attendance system of record. The US playbook says SEAtS is adjacent to placement systems and must not lead with placement.
+- A higher-ranking canonical narrative includes placement and rotation visibility, creating an unresolved conflict. The precedence document explicitly keeps the no-placement guardrail operative until Kib decides.
+- Therefore, **verified Lyon evidence does not justify overriding the active guardrail**.
+- Veterinary accreditation outcome and Fall 2027 cohort status need current confirmation.
+- Price’s role is verified, but Apollo identity confirmation was unavailable.
+
+**Ledger:** Draft written to `20260903T181848Z-prospect-briefing-lyon-college.json`; it is awaiting relay and has no Notion URL yet.
+
+--- run audit ---
+2026-09-03T18:18:01+00:00 handoff -> Prospect Briefing: {"target":"Kristi Price, Lyon College, Batesville, Arkansas","motion":"M9 US Health Sciences clock-hour attendance and Title IV evidence","constraints":["HubSpot owner Cal O’Donovan; owner review required; no outreach without Kib’s approval.","Opportunity lifecycle label but no associated deals; scope as account research, not cold outreach.","Prior conversation on 2025-04-03 indicated satisfaction with Canvas, Jenzabar, and in-house solutions; later readable activity is website-intent alerts only.","Contact identity, role, and relevance require reverification.","Operator-supplied dental-school, fall-2027 cohort, veterinary-accreditation, and absence-workflow claims are unverified."],"question":"Does verified evidence support positioning clinical placement and rotation management at Lyon under M9, or should positioning remain limited to attendance and absence workflow? State the playbook basis and evidence relied upon."}
+apollo reveal 1/25: 695df19a820b770001adcdb5 -> Thomas Tucker (Executive Director of Financial Aid)
+apollo reveal 2/25: 650dc2d6f84c4200013317fa -> Molly Mellor (Assistant Director of Enterprise Applications)
+apollo reveal 3/25: 5ab1f735a6da98f7e44993db -> Dustin Williams (Assistant Director of IT Infrastructure)
+apollo reveal 4/25: 60f15e7453144e000161219c -> Becky Le (Director Nursing Education)
+apollo reveal 5/25: 66fa365c954fa90001eb9642 -> Anthony Grafton (Provost and Dean of the Faculty)
+ledger outbox write -> 20260903T181848Z-prospect-briefing-lyon-college.json
+
+dispatched to: Prospect Briefing at 2026-09-03T18:18:01+00:00

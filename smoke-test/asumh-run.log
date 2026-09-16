@@ -1,0 +1,117 @@
+TRAIL: ['START Director', 'HANDOFF -> Prospect Briefing', 'START Prospect Briefing', 'TOOL list_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL create_ledger_record']
+AUDIT: ['2026-09-03T15:22:24+00:00 handoff -> Prospect Briefing: {"target":"Jessica Camp, Dean and Director of Nursing, Technology and Health Sciences, Arkansas State University Mountain Home","motion":"unclear","constraints":["No prior outreach","No active opportunity","Arkansas attendance-linked funding unconfirmed; attendance-as-revenue framing is off limits"],"question":"Are the CNA, Practical Nursing, or other allied health programs measured in clock hours, who owns attendance and clinical-hour evidence, what system holds it, and which Sales_Motions motion—if any—fits?"}', 'ledger outbox write -> 20260903T152316Z-prospect-briefing-arkansas-state-university-mountain-home.json']
+LAST AGENT: Prospect Briefing
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+- **Jessica Camp:** Dean/Director of Nursing, Technology and Health Sciences. She began as Dean of Technology and Health Sciences on May 1, 2026. Her directory title also identifies her as Director of Nursing. 
+- **Unit:** School of Technology and Health Sciences.
+- **Reporting line:** Not publicly verified.
+- **Institution:** Public, open-access, two-year community college in the Arkansas State University System. Fall 2025 headcount was 1,310, placing it in the 1,000–2,499 band. 
+- **Systems documented:** Ellucian Banner Student Information System and Canvas Learning Management System. Their role in health-sciences attendance or clinical evidence is unconfirmed. 
+
+### Program findings
+
+- Public materials express **Certified Nursing Assistant (CNA)** as seven credit hours, not as a clock-hour program. Its course includes clinical training. 
+- **Practical Nursing** is expressed as a 42–46 credit-hour, three-semester technical certificate. Public materials confirm clinical instruction but do not establish federal clock-hour status. 
+- Registered Nursing, Emergency Medical Technician, and Paramedic programs also include clinical experience but are publicly presented in credit hours. 
+- **Conclusion:** Clock-hour status is **not verified**. Credit-hour presentation does not conclusively answer whether any component or program is administered as clock hours for Title IV purposes.
+- General attendance is monitored by instructors. The current public material does not identify who owns consolidated nursing attendance and clinical-hour evidence or what system stores it. 
+
+### Motion assessment
+
+**Motion remains Unclear.**
+
+- **Closest:** M9 US Health Sciences: clock-hour attendance and Title IV evidence. It fits Jessica’s role and the health-sciences setting, but its first exit criterion, confirmed clock-hour status, has not been met.
+- **Second closest:** M2 Attendance & Evidence. It would fit if the discovered issue is inconsistent attendance capture across credit-hour programs rather than clock-hour Title IV evidence.
+- **M5 is premature:** No audit deadline or identified evidence gap has surfaced.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Camp began as dean on May 1, 2026 | ASUMH appointment announcement | May 26, 2026 | High |
+| Camp’s directory title includes Dean/DON | ASUMH staff directory | Accessed Sept. 3, 2026 | High |
+| ASUMH is a public two-year campus | 2026–27 catalog | Aug. 18, 2026 | High |
+| Fall 2025 enrollment was 1,310 | ASU System Fact Book | Feb. 2026 | High |
+| CNA and Practical Nursing are published in credit hours | ASUMH nursing page | Accessed Sept. 3, 2026 | High |
+| Nursing and allied-health programs contain clinical instruction | ASUMH nursing/EMS pages | Accessed Sept. 3, 2026 | High |
+| Clock-hour status is not established publicly | Current catalog and program-page review | Sept. 3, 2026 | Medium |
+| ASUMH uses Banner and Canvas | Official ASUMH system pages | Accessed Sept. 3, 2026 | High |
+| Clinical evidence system is unidentified | Current public-source review | Sept. 3, 2026 | Medium |
+
+## 3. Internal context
+
+**Internal only**
+
+- Work order states no prior outreach and no active opportunity.
+- Arkansas attendance-linked funding remains unconfirmed. Attendance-as-revenue framing is excluded.
+- No Teams, Outlook, SharePoint, Apollo, or existing account-note access was available. Prior contact history therefore remains unchecked.
+
+## 4. Buying group
+
+- **Economic buyer:** Unknown. Jessica may control a program budget, but budget authority is not verified.
+- **Operational owner:** Likely Jessica for nursing oversight, with clinical educators and instructors handling daily evidence. Exact ownership is unknown.
+- **Technical owner:** Unknown. Information Technology or enterprise applications would likely own Banner/Canvas integration, but no named current owner was verified.
+- **Compliance stakeholder:** Aly Bramblett, Director of Student Financial Aid. 
+- **Registrar:** Lacie Pharis. 
+- **Likely blocker:** Whoever owns the current clinical documentation process or incumbent platform; unknown.
+
+**Jessica’s role:** Operational and academic owner, not a verified economic buyer.
+
+## 5. Discovery questions
+
+1. **Are CNA, Practical Nursing, or any EMS programs administered as federal clock-hour programs?**  
+   Determines whether M9 is applicable.
+
+2. **Who certifies attendance separately for classroom, lab, simulation, and clinical activity?**  
+   Identifies the operational owner and whether responsibility is fragmented.
+
+3. **Where are clinical hours, missed time, make-up activity, and instructor attestations recorded?**  
+   Establishes the actual evidence system of record.
+
+4. **Does that record reconcile with Banner or Canvas automatically?**  
+   Reveals integration and manual reconciliation needs.
+
+5. **Does Financial Aid receive attendance evidence from the programs, and in what form?**  
+   Tests whether the issue reaches Title IV administration.
+
+6. **What event drives evidence review: board reporting, accreditation, an audit, or each term’s start and census dates?**  
+   Establishes urgency and supports M5 only if a deadline exists.
+
+7. **What would prevent changing the current process: clinical-site rules, faculty workflow, information security, or an incumbent platform?**  
+   Identifies likely blockers and pilot limits.
+
+## 6. Recommended outreach format
+
+**Email.** Jessica is new in the role, and the core facts needed to select a motion are still unknown. A short qualification note is more appropriate than a product pitch or meeting request.
+
+## 7. Draft
+
+**Subject:** Nursing attendance and clinical records
+
+Jessica,
+
+I saw that ASU-Mountain Home offers CNA through Registered Nursing pathways, including classroom, lab, simulation, and clinical work.
+
+I’m trying to understand how those records come together. Are any of the nursing or allied-health programs administered in clock hours, and does your team hold attendance and clinical-hour evidence in Canvas, Banner, or a separate system?
+
+I work with SEAtS on attendance evidence for education operations. I don’t want to assume the clock-hour model applies where it doesn’t.
+
+Would you be open to pointing me toward the person who owns that process day to day?
+
+Kib Cochran  
+Solutions Engineer  
+SEAtS Software
+
+## 8. Review notes
+
+- No public source confirms federal clock-hour status.
+- No clinical-hours platform or consolidated evidence owner was found.
+- Jessica’s reporting line and budget authority remain unverified.
+- If clock-hour status is confirmed, use **M9** and offer a Clock-Hour Attendance Evidence Review.
+- If clock-hour status is denied but evidence is fragmented, test **M2**.
+- If neither issue exists, recommend no further outreach under these motions.
+- The opening is based on ASUMH’s documented mix of classroom, lab, simulation, and clinical nursing instruction, not an inferred compliance problem.
+
+**Ledger:** Draft record written to `20260903T152316Z-prospect-briefing-arkansas-state-university-mountain-home.json`. It is awaiting relay and does not yet have a Notion URL.

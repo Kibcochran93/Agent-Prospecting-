@@ -1,0 +1,96 @@
+
+## Checkpoint 2: Trigger research
+
+### Strongest slice
+
+**Growth-stage regional public universities actively implementing measurable retention plans.**
+
+This slice has stronger dated evidence than institutions merely listing student success in an older strategic plan. The clearest accounts are:
+
+1. **University of Tennessee at Chattanooga**
+   - Fall 2025 headcount: **12,060**
+   - Retention rose to **73.4%**
+   - Launched implementation of its Strategic Enrollment Plan on **January 13, 2026**
+   - Target: **80% first-year retention by 2030**
+   - Known incumbent: **EAB Navigate**
+   - Play: not advising replacement. Lead with connected operational data, cross-campus action, and platform consolidation. 
+
+2. **Louisiana State University Shreveport**
+   - Fall 2025 headcount: **11,359**
+   - On **April 9, 2026**, reported second-year retention above 72%, following redesigned support systems
+   - Strategic plan calls for centralized advising, an alert system, streamlined communications, and a five-point retention increase
+   - Incumbent platform: **unverified**
+   - Play: scale and connect a successful redesign rather than sell foundational student-success software. 
+
+3. **University of Arkansas at Little Rock**
+   - Fall 2025 headcount: **8,026**
+   - On **September 5, 2025**, reported its largest undergraduate increase since 2001, with strong continuing-freshman and sophomore growth
+   - Strategic plan embeds student-success analytics and interventions into departmental reporting
+   - Incumbent platform: **unverified**
+   - Play: help preserve momentum by making progress checks and intervention coordination more consistent. 
+
+4. **Murray State University**
+   - Fall 2025 headcount: **9,932**
+   - On **October 29, 2025**, reported 78% first-to-second-year retention, its highest in five years
+   - Spring 2026 headcount later fell 4.3%, while year-over-year retention remained 78.1%
+   - Possible EAB use appears in older material, but current incumbent is **unverified**
+   - Play: maintaining gains while enrollment conditions shift. 
+
+**Conclusion:** UTC has the strongest active implementation trigger. LSU Shreveport has the strongest evidence of a successful redesign that may now need scaling.
+
+---
+
+## Checkpoint 3: List-build logic
+
+### Explicit conditions
+
+Include an institution only when all are true:
+
+1. Accredited within SACSCOC geography.
+2. Public, four-year university.
+3. Regional rather than flagship-led institutional profile.
+4. Fall 2025 total headcount between **5,000 and 15,000**, inclusive.
+5. Fits **M3 Student Success / Retention**.
+6. Has a dated trigger from **September 3, 2025 or later**, preferably:
+   - enrollment shift;
+   - new student-success leadership;
+   - new retention plan or implementation;
+   - measurable retention change;
+   - student-success technology review.
+7. Not Arkansas State University–Jonesboro.
+8. Not Arkansas State University–Mountain Home.
+9. CRM ownership cleared before activation.
+10. Incumbent student-success platform recorded as known or unverified.
+
+### Researched shortlist
+
+| Institution | Headcount | Trigger strength | Incumbent | Ownership |
+|---|---:|---|---|---|
+| University of Tennessee at Chattanooga | 12,060 | Very strong | EAB Navigate | Unverified |
+| Louisiana State University Shreveport | 11,359 | Very strong | Unverified | Unverified |
+| University of Arkansas at Little Rock | 8,026 | Strong | Unverified | Unverified |
+| Murray State University | 9,932 | Moderate–strong | Unverified; older EAB reference | Unverified |
+
+This is a **four-account trigger-led shortlist**, not a complete census. Apollo did not return usable institution-level counts, and CRM ownership cannot be checked with the available tools.
+
+### Tighter variant
+
+Require an active implementation launched within the last 12 months plus a published numerical retention target.
+
+- Surfaces **UTC first**
+- Likely produces fewer, higher-intent accounts
+- Best for an operational expansion or consolidation angle
+
+### Wider variant
+
+Accept any qualifying institution with a dated enrollment or retention change, even without a new implementation.
+
+- Adds institutions where retention is improving but no procurement signal is visible
+- Better for awareness campaigns
+- Higher risk of “interesting result, no active project”
+
+Draft ledger record created locally:
+
+`20260903T181242Z-campaign-builder-sacscoc-regional-public-universities-5-000-15-000-total-head.json`
+
+Confirm the tighter, recommended slice before checkpoint 4 buying-group mapping.

@@ -1,0 +1,29 @@
+# Secrets and credentials -- never committed
+.env
+*.env
+.apollo_token.json
+apollo_token.json
+*token*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Test scratch output, not source
+.pytest-tmp/
+.pytest-err.txt
+.pytest-out.txt
+.pytest_cache/
+
+# Runtime state and logs -- operational data, not code
+queue/logs/
+queue/PAUSED
+board.html
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+smoke-test/apollo-openapi.json

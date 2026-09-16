@@ -1,0 +1,17 @@
+Buying groups confirmed. Weber stays out until a dated source confirms her role, so Wiley is single threaded for now. Report that rather than papering over it.
+
+Proceed to checkpoint 5, copy. Five messages: Dewayne Dickens and Eunice Tarver at Tulsa Community College, Mary Ann Tietjen and W. Wayne Young Jr. at Creighton, Shaniqua Adams at Wiley.
+
+Requirements:
+- Head every message exactly like this, one per line, so the batch can be checked mechanically:
+  ### Institution name
+  **To: Name, Role**
+  **Subject:** the subject line
+- One role per message. Never two titles joined by a slash.
+- No named offer may repeat across the batch. If every executive gets the same session name and every operational owner gets the same pilot name, you have written two messages and sent them five times.
+- Each message rests on that institution's dated trigger from checkpoint 2, not on a category fact.
+- Vary openings, closings and length. Some get a question, some an observation, some no ask.
+- Write as Kib Cochran, Solutions Engineer at SEAtS Software. Contractions, no em dashes, no buzzwords, plain words.
+- Then run the batch differentiation check and report the result. Your answers are a claim, not evidence: the mechanical half is counted separately afterwards.
+
+Copy is for manual paste and for Apollo drafts. Nothing is sent.

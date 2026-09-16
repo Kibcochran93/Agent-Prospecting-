@@ -1,0 +1,12 @@
+{
+  "account": "Bellingham Technical College",
+  "account_key": "bellingham technical",
+  "kind": "kib_decision",
+  "decision": "Approved",
+  "decided_at": "2026-09-15T19:13:06+00:00",
+  "decided_by": "Kib Cochran",
+  "recorded_by": "Kib Cochran",
+  "source": "board button at 127.0.0.1",
+  "note": "No activity on account",
+  "ledger_url": ""
+}

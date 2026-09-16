@@ -1,0 +1,100 @@
+TRAIL: ['START Reviewer', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'MESSAGE Reviewer']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Reviewer
+=== OUTPUT ===
+# Verdict: **GETS REWRITTEN**
+
+I disagree with the producing agent’s all-pass differentiation check. The actual copy fails all five differentiation questions.
+
+## Differentiation failures
+
+### 1. Shared opening structure — **Fail**
+
+Multiple messages open with institutional recognition or news, followed immediately by an inferred operational or leadership consequence:
+
+- “**TCC’s April recognition highlights a demanding operating model: six coaches serving roughly 2,100 students each year.**”
+- “**National recognition gives TCC external validation for Academic Success Coaching.**”
+- “**Creighton’s FirstGen Forward recognition credited a campus-wide model rather than an isolated program.**”
+
+The subject lines expose the template further:
+
+- “**The work behind 2,100 coaching relationships**”
+- “**The decision behind scaling one-to-many**”
+- “**The workload behind Wiley’s retention growth**”
+
+Three subjects use the same “The [noun] behind…” construction.
+
+### 2. Shared closing move — **Fail**
+
+Eunice Tarver and Shaniqua Adams both receive an affirming summary instead of a meaningful next step:
+
+- “**That seems like the important next chapter of TCC’s coaching story.**”
+- “**Your team’s retention work is now carrying a larger share of Wiley’s enrollment momentum.**”
+
+Dewayne Dickens and Mary Ann Tietjen also receive closely related permission-based workflow offers:
+
+- “**Would a short workflow comparison be useful?**”
+- “**Could I send a one-page example of that operating flow?**”
+
+### 3. Category problems dressed as recipient-specific details — **Fail**
+
+The institutional announcements are specific, but the problems inferred from them are generic and unsupported by those announcements:
+
+- “**The practical issue is deciding which students need attention first without adding another manual review step.**”
+- “**For the Success Center, the work is turning mentorship and community-building into a repeatable rhythm across the full year.**”
+- “**The operational risk is that growth makes changes in a student’s pattern harder to spot consistently.**”
+- “**The decision would rest on whether Creighton can show stronger first-generation outcomes, close equity gaps and sustain personalized support without costs rising in step with program reach.**”
+
+Each could be attached to many institutions running coaching, mentoring, or retention programs. The copy moves from a verified institutional fact to an assumed category problem without showing that the recipient actually has that problem.
+
+### 4. A recipient would notice the template — **Fail**
+
+All five messages follow substantially the same architecture:
+
+1. Institutional announcement or recognition  
+2. Abstract implication framed as “the issue,” “the work,” “the risk,” or “the decision”  
+3. Generalized operating or measurement problem  
+4. Low-friction question or affirming summary  
+
+The repeated “behind” subjects and abstract-noun transitions make the common template especially visible.
+
+### 5. Sentence shapes are not sufficiently varied — **Fail**
+
+The recurring transition sentences have nearly identical shapes:
+
+- “**The practical issue is…**”
+- “**The leadership decision after that is…**”
+- “**For the Success Center, the work is…**”
+- “**That creates a different leadership question…**”
+- “**The operational risk is…**”
+
+The wording changes, but the sentence function and construction do not.
+
+## Institution and role checks
+
+- **Tulsa Community College:** The two messages use different problems—coach prioritization for Dewayne Dickens and investment/outcome evidence for Eunice Tarver. The operational-versus-executive distinction is credible.
+- **Creighton University:** Mary Ann Tietjen receives an operating-workflow angle, while Wayne Young receives a scaling and outcomes angle. These are sufficiently role-specific.
+- **Wiley University:** **Single-threaded.** Only Shaniqua Adams is included.
+
+The institution-level role differentiation passes, but it does not overcome the batch-wide templating.
+
+## Touch value
+
+No message merely notes that an earlier touch went unanswered. The Tulsa and Creighton threads introduce different role-level angles.
+
+However, the Eunice Tarver and Shaniqua Adams messages end without a conversational or evaluative next step. Their closing statements summarize or praise rather than advance the exchange.
+
+## Guardrails and register
+
+- No “Student CRM” usage.
+- No named institution is connected to a compliance shortfall.
+- No other never-say-list hit is present.
+- The Provost and Vice President messages use board-appropriate outcomes, investment, capacity, persistence, and cost language.
+- The operational messages use generally appropriate practitioner language.
+
+## Motion check
+
+No named motion is supplied with the batch, so motion compliance cannot pass review. The themes appear primarily aligned with **M3 Student Success / Retention**, with some operational language potentially crossing into **M4 Student Care / Coordinated Care**, but an inferred motion is not a declared motion assignment.
+
+**Rewrite because the batch is structurally interchangeable, relies on generic problems inferred from recipient-specific announcements, repeats subject and closing patterns, leaves Wiley single-threaded, and omits a named motion.**

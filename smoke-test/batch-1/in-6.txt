@@ -1,0 +1,24 @@
+Kib approved the copy and the four first touches are live in Apollo as drafts, enrolled and paused. Now write the rest of each sequence.
+
+Four emails per contact over two months. Touch 1 exists and is unchanged. Write touches 2, 3 and 4 at day 14, day 35 and day 56 after touch 1.
+
+Contacts, each their own sequence:
+1. Dewayne Dickens, Senior Director of the Center for Community and Learning, Tulsa Community College. Touch 1 was about six coaches serving 2,100 students and deciding who needs attention first.
+2. Eunice Tarver, Vice President of Student Success and Chief Student Affairs Officer, Tulsa Community College. Touch 1 was about what evidence would justify further investment in a nationally recognized coaching model.
+3. Mary Ann Tietjen, Senior Director of The Success Center, Creighton University. Touch 1 was about what the First-Flight pilot needs to teach Creighton across a full year.
+4. Shaniqua Adams, Executive Director of Student Success and Strategic Retention, Wiley University. Touch 1 was about the workload behind 117 of 144 additional students being returning students.
+
+Rules for this pass, and the third one is the one that usually gets broken:
+
+- Every touch carries new value. A touch whose content is that the last one went unanswered gets cut, not reworded. If you cannot find something new to say at touch 4 for someone, say so and recommend ending their sequence at three.
+- Each touch introduces a different angle, not the same argument at a lower volume. Across the four touches for one person, vary what the message is built on: their own evidence, a question about how the work is done, something SEAtS has seen elsewhere without naming a customer, a specific offer.
+- No touch may reuse an opening or closing construction from another touch to the same person, or from the same-numbered touch to anyone else. The four touch-2 emails must not read as one email sent four times.
+- Later touches are shorter than earlier ones, not longer.
+- Do not type a sign-off. Apollo appends Kib's signature.
+- No new factual claims. You have the dated triggers from checkpoint 2 and nothing else. If a touch needs a fact you do not have, write it without one.
+- Head every message exactly:
+  ### Institution name, Person name, touch N, day D
+  **To: Name, Role**
+  **Subject:** the subject line
+
+Write all twelve. Then run the batch differentiation check across the twelve and report it as a claim.

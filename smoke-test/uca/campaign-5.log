@@ -1,0 +1,83 @@
+TRAIL: ['START Campaign Builder', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL create_ledger_record', 'MESSAGE Campaign Builder']
+AUDIT: ['ledger outbox write -> 20260903T201343Z-campaign-builder-arkansas-public-universities-scheduling-platform-segment.json']
+REVEALS: 0
+LAST AGENT: Campaign Builder
+=== OUTPUT ===
+## Checkpoint 5: Manual-paste copy
+
+Cadence structure could not be fully extracted, so exact playbook spacing remains unverified. These are two independent role-specific touches per institution.
+
+### Arkansas Tech University
+
+**To Rachel Broussard, Coordinator of Events Management**  
+**Subject:** Ad Astra and event scheduling at Arkansas Tech
+
+Rachel,
+
+Arkansas Tech routes campus space requests through your centralized Office of Events, with Ad Astra carrying the reservation record.
+
+When that process spans requests, approvals, room fit, changes, and calendar publication, where does your team still have to step outside the platform?
+
+SEAtS works with universities reviewing that full scheduling workflow, rather than replacing one booking screen with another.
+
+Would comparing the current workflow with a consolidated model be useful?
+
+Kib
+
+---
+
+**To Alexis Scrimshire, Registrar**  
+**Subject:** Academic priority in shared campus space
+
+Alexis,
+
+Your office holds first priority over Arkansas Tech’s academic space, while the Office of Events manages non-class bookings. That boundary is often where room changes and competing requests become difficult to govern.
+
+SEAtS connects course scheduling, room allocation, and event use without asking the institution to change its Student Information System.
+
+I’d be interested in whether the current split gives the Registrar’s Office enough control once scheduling is underway.
+
+Kib
+
+### UA Little Rock
+
+**To Chelsea Ward, Scheduling/NCAA Coordinator**  
+**Subject:** Mazevo across classes and events
+
+Chelsea,
+
+UA Little Rock uses Mazevo across academic spaces, events, and resources, while college schedulers and Records still manage the class-scheduling process.
+
+That makes your role a useful place to ask: does the enterprise calendar reduce scheduler work, or mainly give everyone a shared view after the decisions are made?
+
+We help institutions map the steps from section demand through room assignment and later changes. Happy to share what that review usually uncovers.
+
+Kib
+
+---
+
+**To Malissa Mathis, Registrar**  
+**Subject:** One scheduling system, several owners
+
+Malissa,
+
+Mazevo gives UA Little Rock one enterprise-wide scheduling environment, but responsibility still crosses Records, college schedulers, and event teams.
+
+The strategic question may be less about whether the campus has a centralized platform and more about how much operational control sits with Records.
+
+SEAtS supports course and room scheduling as a connected academic-operations process. Is platform scope something you expect to revisit, or is the current model settled?
+
+Kib
+
+## Batch differentiation check
+
+1. Shared opening structure: **No**
+2. Shared closing move: **No**
+3. Details genuinely recipient-specific: **Yes**
+4. Template noticeable to one reader: **No**
+5. Sentence shapes and lengths varied: **Yes**
+
+Named offer repeated across the batch: **No**.  
+Stale source used as a current hook: **No**.
+
+No sequence was written. Draft ledger outbox file: `20260903T201343Z-campaign-builder-arkansas-public-universities-scheduling-platform-segment.json`.

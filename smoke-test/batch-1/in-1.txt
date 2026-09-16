@@ -1,0 +1,19 @@
+Live batch, operator Kib, 4 September 2026. Named contacts, not a discovered segment. The list below is hand built from Kib's saved LinkedIn prospects and every employer has been verified against a public source today.
+
+Six contacts, six institutions. None of these accounts has an open opportunity.
+
+1. Eunice Tarver, Vice President of Student Success and Chief Student Affairs Officer, Tulsa Community College. HubSpot 8675080676, owned by Kib.
+2. Mary Ann Tietjen, Senior Director of the Success Center, Creighton University. HubSpot 8674811366, owned by Kib.
+3. Jennifer Harpham, Director of Student Financial Aid, The University of Akron. HubSpot 239857499364, owned by Kib.
+4. Shaniqua Adams, Executive Director for Student Success and Student Transitions, Wiley University. No HubSpot record, net new.
+5. Odessa Mathis, Director of Financial Aid and Title IV and Veterans Affairs certifying official, California Career Institute. No HubSpot record, net new.
+6. Jonathan Summers, Director of International Student Services, Cedar Crest College. No HubSpot record, net new.
+
+constraints:
+- Copy is for manual paste and for Apollo drafts. Nothing is being sent.
+- These are different institution types and probably not one motion. Say so rather than forcing them into one.
+- If any of the six does not map to a named motion in the playbook, recommend dropping them from the batch and say why.
+
+question: which of these six is worth writing to, under which named motion, and what would each message have to be built on?
+
+Work checkpoint 1 only. State the segment or segments back, assign a named motion to each contact or say none fits, and stop.

@@ -1,0 +1,90 @@
+TRAIL: ['START Reviewer', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'MESSAGE Reviewer']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Reviewer
+=== OUTPUT ===
+# Verdict: **GETS REWRITTEN**
+
+## Findings
+
+### 1. The draft contains internal context
+
+This is an explicit briefing failure:
+
+> “Is the immediate priority improving student-success workflows, or is course scheduling still the more active issue?”
+
+The scheduling reference comes from the internal March 2025 discussion. The briefing itself identifies that discussion as stale and unverified. Internal context has therefore shaped prospect-facing copy.
+
+### 2. The draft presents an unverified integration premise
+
+> “I’m trying to understand where that work sits operationally as Banner and Brightspace come together.”
+
+The evidence establishes that UCA uses Banner and plans a Brightspace launch. It does not establish that the systems are currently being integrated or how they “come together.” The review notes themselves say Brightspace status and integration performance still require verification.
+
+### 3. The artifact contains directives
+
+These sentences read as instructions rather than briefing evidence:
+
+> “Hold for Cal’s review and send only to a verified current contact.”
+
+> “First verify Ronnie’s status, resolve the CRM date discrepancy, and ask Cal whether the March 2025 scheduling thread remains active.”
+
+Under the artifact-is-the-object rule, directive-like retrieved content is independently sufficient for rewrite.
+
+### 4. Source-and-date discipline is incomplete
+
+Several claims lack a source, a source date, or both:
+
+> “No current operational, advisory, or purchasing role was found.”
+
+The cited December 3, 2021 retirement announcement supports the historical retirement, not the current absence of every possible role.
+
+The internal-context claims—including account ownership, owner-review requirements, absence of deals, the CRM discrepancy, and unavailable systems—do not carry individual sources and source dates.
+
+The buying-group assertions also lack sources and dates.
+
+### 5. A source older than 12 months is not flagged as stale
+
+> “UCA uses Ellucian Banner on premises…”
+
+The evidence table dates the procurement source to July 2025. As of September 3, 2026, that is older than 12 months. The on-premises status is stated as current rather than flagged for re-verification.
+
+### 6. Ronnie’s status is treated inconsistently
+
+The assessment concludes:
+
+> “Ronnie Williams should not be contacted.”
+
+Later, the briefing says:
+
+> “First verify Ronnie’s status…”
+
+If his current status still needs verification, the absolute contact conclusion is stronger than the evidence permits. Retirement in 2021 is established; absence of any current formal affiliation is not.
+
+### 7. The buying group does not meet the required structure
+
+The briefing researched **Vicky Summers** and **Kevin Thomas**, but neither is placed explicitly into the buying group with a source and date.
+
+Other entries name possible offices rather than a person or an explicit unknown:
+
+> “Likely Vice President for Enrollment Services and Student Success or Provost…”
+
+> “University Registrar, Student Success leadership, or scheduling-process owner…”
+
+> “Chief Information Officer / Enterprise Applications”
+
+These are candidate functions, not a sourced buying group. Each role must name the person or clearly mark the person unknown, with dated evidence.
+
+### 8. The M1 hypothesis is not supported by current evidence
+
+**M1 Schedule Replacement** and **M3 Student Success / Retention** are valid motion names, and the `Unclear` format correctly names two candidates. However, M1 is based on a stale March 2025 internal conversation whose scope, owner, funding, and continued existence are all unresolved. It is not a current evidence-backed second motion.
+
+### 9. Verification gaps exist, but the treatment is not clean
+
+The review notes do provide non-empty verification gaps, which is directionally correct. However, some of those same unresolved matters are stated elsewhere as conclusions or used in the draft. A verification gap cannot simultaneously serve as a prospect-facing premise.
+
+### 10. Discovery questions and terminology are not the cause of rejection
+
+The discovery questions generally state what each answer would reveal and do not materially re-ask established public evidence. Registrar, Financial Aid, Institutional Research, Student Success, SIS, LMS, census date, and course scheduling are used correctly.
+
+Those strengths do not overcome the source, buying-group, motion-grounding, directive-content, and internal-context failures.

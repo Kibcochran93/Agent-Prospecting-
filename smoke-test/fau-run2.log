@@ -1,0 +1,113 @@
+=== TRAIL ===
+  START Director
+  HANDOFF Director -> Prospect Briefing
+  START Prospect Briefing
+  TOOL Prospect Briefing: create_ledger_record
+=== AUDIT ===
+  2026-09-02T18:48:01+00:00 handoff -> Prospect Briefing: {"target":"Patrick D. Dempsey, Florida Atlantic University","motion":"unclear","constraints":["relationship unknown","no prior outreach","no known active opportunity"],"question":"Who owns attendance and engagement data used for student success interventions at Florida Atlantic University, and what system holds it?"}
+  ledger outbox write -> 20260902T184833Z-prospect-briefing-florida-atlantic-university.json
+=== last agent: Prospect Briefing
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+- **Patrick D. Dempsey, MBA, M.Ed.**
+- **Title:** Executive Director, Academic Support & Student Learning
+- **Unit:** Center for Learning and Student Success (CLASS), within the Center for Teaching and Learning
+- **Responsibilities:** Oversees Supplemental Instruction, peer tutoring, the Science Learning Center, and eSuccess. His team supports more than 30,000 student visits per academic year. 
+- **Reporting line:** Not publicly verified.
+- **Institution:** Florida Atlantic University, a public research university.
+- **Enrollment band:** 30,000–39,999. Fall 2025 enrollment was 32,248. 
+
+### Answer to the work-order question
+
+**There is no publicly documented single owner or system. The data appears fragmented by use case:**
+
+- **Academic-support attendance:** Operationally owned within Patrick’s CLASS portfolio. CLASS uses **TracCloud** for tutoring appointments and attendance/no-show records. Supplemental Instruction decisions use session attendance and DFW rates. 
+- **Advising and intervention records:** Held in **EAB Navigate**, which integrates daily with **Canvas** and **Banner**. Navigate replaced Starfish and Civitas, including Civitas predictive analytics. 
+- **Co-curricular engagement:** Student Affairs uses **Owl Central**, with **Baseline** for assessment. Its Office of Assessment and Research coordinates divisional analysis. 
+- **Likely cross-institution owner:** **Jessica Meith, Director of Student Success Management**, is the strongest publicly identified functional owner to verify. Technical ownership likely involves **Jason Ball, Chief Information Officer**. 
+
+## 2. Evidence table
+
+| Claim | Source and source date | Confidence |
+|---|---|---|
+| Patrick leads Academic Support & Student Learning and oversees CLASS programs | FAU CLASS contact page, accessed September 2, 2026 | High |
+| CLASS supports over 30,000 visits annually | FAU CLASS contact page, accessed September 2, 2026 | High |
+| FAU enrolled 32,248 students in Fall 2025 | FAU 2025–26 catalog, accessed September 2, 2026 | High |
+| TracCloud supports CLASS tutoring appointments | FAU scheduling guide, circa March 2025 | High |
+| CLASS uses attendance and DFW rates in Supplemental Instruction decisions | FAU CLASS faculty page, accessed September 2, 2026 | High |
+| Navigate connects students with advisors, faculty, tutors, and staff | FAU Success Network page, accessed September 2, 2026 | High |
+| Navigate integrates with Canvas and Banner and replaced Starfish/Civitas | FAU OIT 2022–23 report, 2023 | Medium, possibly stale |
+| Student Affairs uses Owl Central and Baseline | FAU Assessment Cycle page, accessed September 2, 2026 | High |
+| Jessica Meith leads Student Success Management | FAU Provost staff page, accessed September 2, 2026 | High |
+| Jason Ball is FAU’s Chief Information Officer | FAU Provost staff page, accessed September 2, 2026 | High |
+
+## 3. Internal context
+
+**Internal only:** No Teams, Outlook, SharePoint, Apollo, or Notion context was available. Prior contact history, relationship status, and account notes remain unchecked.
+
+## 4. Buying group
+
+- **Economic buyer:** Unknown. Potentially the Provost or senior student-success leadership.
+- **Operational owner:** Patrick D. Dempsey for CLASS attendance; Jessica Meith, Director of Student Success Management, for broader intervention workflows. 
+- **Technical owner:** Jason Ball, Associate Vice President, Information Technology and Chief Information Officer. 
+- **Compliance stakeholder:** Unknown. No evidence links this use case to Title IV, Return to Title IV, or another compliance requirement.
+- **Likely blocker:** Owners of EAB Navigate, TracCloud, Canvas, and existing reporting integrations.
+
+**Patrick’s role:** Operational owner and subject-matter expert for academic-support attendance, not a verified economic buyer.
+
+## 5. Discovery questions
+
+1. **Where is attendance from tutoring and Supplemental Instruction recorded today?**  
+   Reveals whether TracCloud is the system of record or merely the scheduling interface.
+
+2. **Does CLASS attendance flow into Navigate or another intervention platform?**  
+   Establishes whether engagement signals are actionable outside Patrick’s unit.
+
+3. **Which team decides when an attendance pattern should trigger outreach?**  
+   Identifies the day-to-day intervention owner.
+
+4. **Can advisors see academic-support participation alongside Canvas and Banner data?**  
+   Tests whether staff have a unified student view.
+
+5. **Which attendance signals are currently unavailable or arrive too late?**  
+   Identifies the practical data gap rather than assuming one.
+
+6. **Who governs changes to Navigate integrations and intervention rules?**  
+   Maps technical and functional decision authority.
+
+7. **Is any timeline tied to a term start, census date, accreditation review, or student-success initiative?**  
+   Establishes urgency and the relevant buying motion.
+
+8. **What would prevent CLASS attendance data from being used institution-wide?**  
+   Surfaces privacy, ownership, integration, procurement, or workflow barriers.
+
+## 6. Recommended outreach format
+
+**Email.** Patrick is a credible operational discovery contact, but the evidence does not support treating him as the enterprise system owner. The note should ask how CLASS data enters broader intervention workflows.
+
+## 7. Draft
+
+**Subject:** CLASS attendance data and student interventions
+
+Patrick,
+
+I saw that CLASS uses session attendance and DFW rates when deciding where to continue Supplemental Instruction, while tutoring appointments run through TracCloud.
+
+I’m trying to understand what happens to those engagement signals beyond CLASS. Do advisors or student-success teams see them in Navigate alongside Canvas and Banner data, or does that information stay within the academic-support systems?
+
+I work with SEAtS Software on attendance and engagement data workflows. I’d value your view of where the handoff works well today and where it breaks down.
+
+Kib Cochran  
+Solutions Engineer  
+SEAtS Software
+
+## 8. Review notes
+
+- No public source identifies one owner for all attendance and engagement data.
+- Patrick’s reporting line and budget authority remain unverified.
+- Navigate’s documented Canvas/Banner integrations come from a 2023 report and may be stale.
+- The current relationship among TracCloud, Navigate, Owl Central, Baseline, and the institutional data warehouse needs direct confirmation.
+- Evidence supports exploratory outreach, not a claim that FAU lacks a system or needs replacement.
+
+**Ledger:** Draft written to local outbox as `20260902T184833Z-prospect-briefing-florida-atlantic-university.json`. It is not yet in Notion; the separate relay must create the page.

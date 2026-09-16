@@ -1,0 +1,18 @@
+TRAIL: ['START Campaign Builder', 'MESSAGE Campaign Builder']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Campaign Builder
+=== OUTPUT ===
+## Checkpoint 3: Filter logic
+
+Include institutions only when all conditions hold:
+
+1. Public university in Arkansas.
+2. Roughly 5,000–15,000 total headcount.
+3. Centralized event, room, or combined academic/event scheduling platform documented by a dated public institutional source.
+4. Platforms may include EMS, Virtual EMS, Ad Astra, or Mazevo.
+5. Motion: **M1 Schedule Replacement**.
+6. Exclude University of Central Arkansas from research, counts, targeting, and copy.
+7. Evidence older than September 3, 2025 is stale and cannot support a personalized hook.
+
+I’ll search using these conditions after you confirm the widened filter logic.

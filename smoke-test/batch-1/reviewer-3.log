@@ -1,0 +1,100 @@
+TRAIL: ['START Reviewer', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'MESSAGE Reviewer']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Reviewer
+=== OUTPUT ===
+# Verdict: **Gets rewritten**
+
+The producing agent’s differentiation check is a claim, not evidence. **I disagree with all five of its answers.** The batch reads as a repeated diagnostic-workshop template.
+
+## Differentiation check
+
+1. **Shared opening structures — fail**
+
+   These use the same first-person offer structure:
+
+   - “**I can prepare a one-page decision framework** covering reach, staff capacity, timeliness and persistence.”
+   - “**I can sketch a simple learning map** for First-Flight: student touchpoints, staff handoffs and the evidence to review at year’s end.”
+
+2. **Shared closing moves — fail**
+
+   Three messages close by offering to create a lightweight diagnostic artifact:
+
+   - “**I can outline that exercise** for TCC’s coaching workflow.”
+   - “**I can prepare a one-page decision framework**…”
+   - “**I can sketch a simple learning map**…”
+
+   Other messages repeat the same move with impersonal phrasing:
+
+   - “**A focused review could separate** capacity constraints from information gaps.”
+   - “**A simple workflow map can expose** those gaps.”
+
+3. **Recipient-specific details — fail**
+
+   First-Flight is a genuine named anchor. Much of the remaining personalization is a category observation or an institution name attached to a generic workflow:
+
+   - “**One pattern we see in coaching teams** is that the hard part isn’t caring for students.”
+   - “**When advising volume grows**, the weak point is often not effort.”
+   - “I can outline that exercise for **TCC’s coaching workflow**.”
+
+   “TCC’s” does not make the underlying exercise specific to TCC.
+
+4. **Would recipients notice a template? — fail**
+
+   Each recipient receives closely repeated versions of the same diagnostic.
+
+   Dewayne:
+
+   - Touch 3: “take **one coach’s weekly caseload**”
+   - Touch 4: “start with **one coach and one week**”
+
+   Mary Ann:
+
+   - Touch 3: “**That can be mapped** without changing the pilot itself.”
+   - Touch 4: “I can sketch a simple **learning map**…”
+
+   Shaniqua:
+
+   - Touch 3: “A simple **workflow map** can expose those gaps.”
+   - Touch 4: “reviewing one **advising caseload**: what staff check, where the information sits…”
+
+5. **Sentence lengths and shapes varied — fail**
+
+   Nearly every message follows the same construction: short generalized premise, abstract operational problem, then a diagnostic question, map, review, test, or framework. The vocabulary changes, but the sentence architecture does not.
+
+## Institution-level failures
+
+### Tulsa Community College repeats the same problem across roles
+
+Dewayne’s and Eunice’s messages are both built on coaches manually assembling information:
+
+- Dewayne: “mark where staff had to **assemble context by hand**.”
+- Eunice: “skilled coaches spend time **assembling context** instead of supporting students.”
+
+The role register is somewhat differentiated—Dewayne gets workflow language while Eunice gets investment and persistence language—but the underlying problem is almost identical. That is not sufficient account-level differentiation.
+
+### Single-threaded institutions
+
+- **Creighton University:** only Mary Ann Tietjen.
+- **Wiley University:** only Shaniqua Adams.
+
+Tulsa Community College is multi-threaded.
+
+## New-value check
+
+Several later touches repackage rather than add value:
+
+- Dewayne’s touch 4 repeats the one-coach/one-week exercise from touch 3.
+- Mary Ann’s touch 4 packages the mapping concept already presented in touch 3.
+- Shaniqua’s touch 4 repeats the workflow/caseload review from touch 3.
+- Eunice’s touch 2 promises a more defensible funding decision; touch 4 returns to whether “further investment is warranted.”
+
+None merely says the previous message was unanswered, but repeated diagnostics still fail the new-value requirement.
+
+## Guardrails, register, and motion
+
+- **Never-say list:** No visible hit. “Student CRM,” prohibited compliance framing, surveillance language, and British spelling are absent.
+- **Register:** No clear register violation. Eunice receives board-level investment and persistence language; the operational leaders receive workflow and caseload language.
+- **Motion:** No motion assignment appears in the artifact. The themes suggest **M3 Student Success / Retention**, but an inferred fit is not a stated, reviewable assignment. This check cannot pass. The remedy is metadata, not putting an internal motion name into customer-facing copy.
+
+**Gets rewritten because the batch is structurally interchangeable, repeats problems within institutions, repeats value across touches, and lacks a reviewable named motion assignment.**

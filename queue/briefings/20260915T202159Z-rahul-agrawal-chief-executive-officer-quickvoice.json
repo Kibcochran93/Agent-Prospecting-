@@ -1,0 +1,9 @@
+{
+  "target": "Rahul Agrawal, Chief Executive Officer, QuickVoice",
+  "requested_by": "Kib Cochran",
+  "started_at": "2026-09-15T20:21:59+00:00",
+  "state": "done",
+  "finished_at": "2026-09-15T20:22:19+00:00",
+  "exit_code": 0,
+  "output": "TRAIL: ['START Prospect Briefing', 'MESSAGE Prospect Briefing', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL apollo_find_org', 'TOOL apollo_find_roles', 'MESSAGE Director']\nAUDIT: []\nREVEALS: 0\nLAST AGENT: Director\nRECORDED: not recorded\n=== OUTPUT ===\nNo account context verdict was provided for Rahul Agrawal / QuickVoice, so I cannot plan or dispatch this target. Please rerun with the CRM verdict attached.\n"
+}

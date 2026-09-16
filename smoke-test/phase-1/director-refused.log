@@ -1,0 +1,9 @@
+TRAIL: ['START Director', 'MESSAGE Director']
+AUDIT: ['context verdict: conflict for Shaniqua Adams']
+REVEALS: 0
+LAST AGENT: Director
+RECORDED: not recorded
+=== OUTPUT ===
+I can’t plan or dispatch this run because no account context verdict was provided for Shaniqua Adams at Wiley University. The verdict must include status, owner, open deals, live sequences, searched lookups, and supporting evidence where applicable.
+
+Please rerun with that verdict attached. Open ledger items are also unknown in this run.

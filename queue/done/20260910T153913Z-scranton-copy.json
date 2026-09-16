@@ -1,0 +1,19 @@
+{
+  "id": "20260910T153913Z-scranton-copy",
+  "account": "University of Scranton",
+  "account_key": "scranton",
+  "stage": "COPY",
+  "state": "done",
+  "queued_at": "2026-09-10T15:39:13+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "2026-09-14T14:59:34+00:00",
+  "finished_at": "2026-09-14T15:00:28+00:00",
+  "exit_code": 0,
+  "log": "C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260910T153913Z-scranton-copy.log",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": "- **Constraints:** Research-only draft; colleague-owned account; no verified prior outreach or open deal   |  | Please confirm this segment before I proceed to **Checkpoint 2: trigger research**."
+}

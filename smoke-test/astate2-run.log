@@ -1,0 +1,94 @@
+TRAIL: ['START Director', 'HANDOFF -> Prospect Briefing', 'START Prospect Briefing', 'TOOL list_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL create_ledger_record']
+AUDIT: ['2026-09-02T20:00:02+00:00 handoff -> Prospect Briefing: {"target":"Tracy Finch, Registrar, Arkansas State University, Jonesboro","motion":"unclear","constraints":["No prior outreach","No active opportunity","Attendance-as-revenue frame off limits; Arkansas attendance funding is unconfirmed"],"question":"How is attendance and participation evidence captured today, who owns it, and which motion does the evidence support?"}', 'ledger outbox write -> 20260902T200042Z-prospect-briefing-arkansas-state-university.json']
+LAST AGENT: Prospect Briefing
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+- **Tracy Finch:** Registrar, Office of the Registrar. The office owns registration, grading, academic records, classroom scheduling, course evaluations, veterans benefits, and Family Educational Rights and Privacy Act compliance. 
+- **Reporting line:** Likely Vice Chancellor for Enrollment Management Amanda Nickerson, based on a 2019 reorganization. Current reporting line is not explicitly verified. 
+- **Institution:** Public doctoral university in Jonesboro, Arkansas.
+- **Enrollment band:** 10,000–19,999. Fall 2025 enrollment was 17,926. 
+- **Documented systems:** Banner Self Service for registration and grades; Canvas as the Learning Management System. 
+- **Current evidence flow:** Faculty determine non-attendance and assign a WN grade during the first 11 class days in fall and spring or first five in summer. For online courses, any Canvas login makes a student ineligible for WN. The evidence then affects Banner enrollment and grading records. The precise integration or reconciliation method is not public. 
+- **Ownership:** Faculty originate the evidence. The Registrar’s Office administers the WN, reinstatement, grading, and record process. Information Technology Services administers Canvas, but Tracy approves access to prior-term course shells. 
+- **Motion recommendation:** **M2 Attendance & Evidence.** Public evidence shows a distributed capture process and explicitly acknowledges that early attendance is difficult to track. M5 is secondary until an audit deadline and defensibility gap are confirmed.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Finch is Registrar | A-State Registrar page | Crawled Sept. 2, 2026 | High |
+| Registrar owns records, grading, scheduling, and FERPA compliance | A-State Registrar page | Crawled Sept. 2, 2026 | High |
+| Faculty assign WN based on early non-attendance | A-State registration/grading guidance | Crawled Aug. 30–Sept. 2, 2026 | High |
+| Online WN eligibility uses Canvas login | A-State registration/grading guidance | Crawled Aug. 30–Sept. 2, 2026 | High |
+| Early attendance is difficult to track | A-State grading guidance | Crawled Aug. 30, 2026 | High |
+| Banner Self Service holds registration and grade workflows | A-State registration/grading guidance | Crawled Aug. 30–Sept. 2, 2026 | High |
+| Fall/spring census occurs on day 11 | Institutional Data and Analytics | Crawled Aug. 30, 2026 | High |
+| Fall 2025 enrollment was 17,926 | A-State news release | Sept. 5, 2025 | High |
+| Finch approves prior-term Canvas-shell access | Canvas access procedure | Published March 2, 2026 | High |
+| Registrar reports through Enrollment Management | A-State reorganization announcement | Aug. 9, 2019 | Low, possibly stale |
+
+## 3. Internal context
+
+**Internal only:** Work order states no prior outreach and no active opportunity. No customer relationship management, Outlook, Teams, SharePoint, Apollo, or independent account-history access was available. Prior contact history remains unchecked.
+
+## 4. Buying group
+
+- **Economic buyer:** Amanda Nickerson, Vice Chancellor for Enrollment Management, likely but unconfirmed for this purchase. 
+- **Operational owner:** Tracy Finch, Registrar, for the resulting academic record and WN process; faculty own initial determination. 
+- **Technical owner:** Chris Boothman, Vice Chancellor for Distance Education and Technology and Chief Information Officer. 
+- **Compliance stakeholder:** Christina Kostick, Director of Financial Aid and Scholarships. Role listing is over 12 months old and needs verification. 
+- **Likely blocker:** Faculty or academic units that own current attendance practices; named person unknown.
+- **Finch’s role:** Operational owner and records/compliance stakeholder, not the presumed economic buyer.
+
+## 5. Discovery questions
+
+1. **How do instructors establish first attendance for in-person, hybrid, and online sections?**  
+   Reveals whether capture is standardized or determined course by course.
+
+2. **How does that determination reach Banner when a WN is assigned?**  
+   Exposes integrations, handoffs, and manual reconciliation.
+
+3. **Beyond login, which Canvas activities count as academic participation?**  
+   Distinguishes system access from meaningful participation evidence.
+
+4. **Who owns the WN timeline and follows up on missing faculty submissions?**  
+   Identifies the daily process owner and exception workflow.
+
+5. **What happens when Canvas, faculty records, and the enrollment record disagree?**  
+   Tests auditability and evidence defensibility.
+
+6. **Is the next improvement deadline tied to census, financial-aid disbursement, an audit, or a term start?**  
+   Determines urgency and whether M5 becomes relevant.
+
+7. **What would prevent standardizing capture across colleges?**  
+   Surfaces faculty governance, policy, integration, and adoption blockers.
+
+## 6. Recommended outreach format
+
+**Email.** Tracy’s published responsibilities and the specific WN/Canvas process support a concise operational question. No compliance claim or meeting request is warranted yet.
+
+## 7. One draft
+
+**Subject:** A-State’s first-attendance handoff
+
+Tracy,
+
+I saw that A-State asks faculty to identify students who never attended during the first 11 class days, while Canvas login determines eligibility for online sections.
+
+I’m trying to understand the handoff behind that. Does the evidence reach Banner through a consistent process, or does the Registrar’s Office reconcile submissions from faculty and Canvas?
+
+I work with SEAtS on attendance and participation evidence, but I don’t want to assume there’s a gap where there isn’t one.
+
+Kib
+
+## 8. Review notes
+
+- The public record supports **M2 Attendance & Evidence**, but not yet a qualified motion: no pilot scope or validated evidence gap.
+- M5 requires a named audit or reporting deadline and a defensibility problem.
+- Classroom capture methods, integration architecture, exception volume, and ownership across Financial Aid and Institutional Effectiveness remain unknown.
+- Arkansas attendance-based funding was not verified and is deliberately excluded.
+- Finch’s current reporting line needs confirmation.
+- No internal context systems were available.
+
+**Ledger:** Draft record written to `20260902T200042Z-prospect-briefing-arkansas-state-university.json`. It is awaiting relay and does not yet have a Notion URL.

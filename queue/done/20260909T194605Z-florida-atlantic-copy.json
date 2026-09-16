@@ -1,0 +1,19 @@
+{
+  "id": "20260909T194605Z-florida-atlantic-copy",
+  "account": "Florida Atlantic University",
+  "account_key": "florida atlantic",
+  "stage": "COPY",
+  "state": "done",
+  "queued_at": "2026-09-09T19:46:05+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "2026-09-14T14:58:41+00:00",
+  "finished_at": "2026-09-14T14:59:34+00:00",
+  "exit_code": 0,
+  "log": "C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260909T194605Z-florida-atlantic-copy.log",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": "I canâ€™t write outbound copy; that belongs to the Campaign Builder. |  | I also canâ€™t dispatch this run because it lacks the required account context verdict, including `status`, `owner`, `open_deals`, `live_sequences`, `searched`, and supporting `evidence`. The supplied CRM facts do not substitute for that verdict. Please rerun with it attached."
+}

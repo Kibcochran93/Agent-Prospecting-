@@ -1,0 +1,113 @@
+TRAIL: ['START Director', 'TOOL hubspot_find_account', 'TOOL hubspot_account_deals', 'TOOL hubspot_account_notes', 'TOOL hubspot_owner', 'TOOL hubspot_account_deals', 'MESSAGE Prospect Briefing', 'TOOL list_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL apollo_find_org', 'TOOL apollo_find_roles', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL apollo_reveal_person', 'TOOL apollo_reveal_person', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL apollo_reveal_person', 'TOOL apollo_reveal_person', 'TOOL apollo_reveal_person', 'TOOL apollo_reveal_person', 'TOOL apollo_reveal_person', 'TOOL apollo_reveal_person', 'TOOL create_ledger_record', 'MESSAGE Prospect Briefing']
+AUDIT: ['2026-09-03T20:32:02+00:00 handoff -> Prospect Briefing: {"target":"Ronnie Williams, University of Central Arkansas","motion":"unclear","constraints":["CRM company exists for uca.edu","Account owner Cal O’Donovan; pending owner review","No associated deals as of 2026-09-03","March 2025 scheduling conversation is stale and requires re-verification","March–April 2025 web visits are stale intent signals, not relationship proof","CRM note activity has an unresolved 2025/2026 date discrepancy","Ronnie Williams’s current role is unverified"],"question":"Is UCA worth working, which playbook motion fits, and what facts must be verified before Ronnie Williams is contacted?"}', 'apollo reveal 1/1: 64fdc47261d0ce0001ea2cfc -> Tony Sitz (Univ. Registrar)', 'apollo reveal 2/1: 60d0a256f3aa870001b5cb77 -> Tracy McGarrity (Office Manager, Student Affairs VP at University of Central Arkansas)', 'ledger outbox write -> 20260903T203243Z-prospect-briefing-university-of-central-arkansas.json']
+REVEALS: 2
+LAST AGENT: Prospect Briefing
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+**Assessment:** UCA is worth researching, but **Ronnie Williams should not be contacted**.
+
+- Ronnie Williams retired from UCA in 2021. No current operational, advisory, or purchasing role was found. citeturn1search11
+- UCA is a public comprehensive university with preliminary Fall 2025 enrollment of 9,962. citeturn0search0
+- UCA 2035 prioritizes student success, coordinated support, data and digital systems, and modernized operations. citeturn1search0turn1search1
+- UCA uses Ellucian Banner on premises and planned a full D2L Brightspace launch for Fall 2026. citeturn1search13turn1search14
+- Current official pages place the Registrar, Student Success, Financial Aid, advising, and enrollment systems within Enrollment Services and Student Success. citeturn0search5
+
+**Best-fit motion:** **Unclear**, with:
+
+1. **M3 Student Success / Retention** as the leading hypothesis.
+2. **M1 Schedule Replacement** second, pending re-verification of the stale March 2025 conversation.
+
+There is insufficient current evidence for M2 or M5.
+
+## 2. Evidence table
+
+| Claim | Source and date | Confidence |
+|---|---|---|
+| Williams retired in 2021 | UCA News, December 3, 2021 | High, possibly stale regarding later affiliations |
+| Fall 2025 enrollment was 9,962 | UCA News, September 5, 2025 | High |
+| UCA 2035 centers student success and modernized systems | UCA, approved May 27, 2026 | High |
+| Banner is the Student Information System; Brightspace is the new Learning Management System | UCA procurement document, July 2025; Council of Deans, February 25, 2026 | High |
+| Vicky Summers is University Registrar | Official UCA staff page, accessed September 3, 2026 | High |
+| Kevin Thomas leads Enrollment Services and Student Success | Official UCA staff page, accessed September 3, 2026 | High |
+| Apollo maps current Registrar, IT, Institutional Research, Financial Aid, and Student Success roles | Apollo refreshes, July–August 2026 | Medium; commercial database |
+
+## 3. Internal context
+
+**Internal only**
+
+- CRM company exists for `uca.edu`.
+- Account owner: **Cal O’Donovan**.
+- Outreach requires owner review.
+- No associated deals as of September 3, 2026.
+- March 2025 scheduling discussion is stale.
+- March–April 2025 web visits are stale account-level signals, not proof of Ronnie’s interest.
+- CRM note activity has an unresolved 2025/2026 date discrepancy.
+- No direct CRM, Teams, Outlook, or SharePoint access was available to validate prior engagement.
+
+## 4. Buying group
+
+| Role | Current finding |
+|---|---|
+| Economic buyer | Likely Vice President for Enrollment Services and Student Success or Provost; authority and budget unknown |
+| Operational owner | University Registrar, Student Success leadership, or scheduling-process owner, depending on verified need |
+| Technical owner | Chief Information Officer / Enterprise Applications |
+| Compliance stakeholder | Financial Aid leadership; involvement not yet established |
+| Likely blocker | Owner of the incumbent process or Banner/Brightspace integration; unknown |
+| Ronnie Williams’s role | Retired former executive, not verified as part of the current buying group |
+
+## 5. Discovery questions
+
+1. **What prompted the March 2025 scheduling discussion?**  
+   Reveals whether M1 concerned course scheduling, room scheduling, or something else.
+
+2. **Is that initiative still active, funded, and owned by the same office?**  
+   Establishes current timing and buying mechanism.
+
+3. **Which UCA 2035 student-success priorities have moved into funded unit plans?**  
+   Tests whether M3 maps to approved institutional work.
+
+4. **How are progress checks and interventions coordinated across academic and student affairs?**  
+   Identifies workflow fragmentation and the operational owner.
+
+5. **What data currently moves between Banner, Brightspace, advising, and reporting tools?**  
+   Defines integration requirements and current gaps.
+
+6. **Who owns the process day to day, and who controls budget approval?**  
+   Separates operational and economic buyers.
+
+7. **Is the timeline tied to a term start, census date, audit, or strategic-plan milestone?**  
+   Establishes urgency.
+
+8. **What incumbent commitment or internal concern could stop a change?**  
+   Surfaces blockers before outreach advances.
+
+## 6. Recommended outreach format
+
+**No outreach yet.**
+
+First verify Ronnie’s status, resolve the CRM date discrepancy, and ask Cal whether the March 2025 scheduling thread remains active. If not, remap the account around current Enrollment Services, Registrar, Student Success, and IT leaders.
+
+## 7. One draft
+
+**Hold for Cal’s review and send only to a verified current contact.**
+
+> Hi [Name],  
+>   
+> UCA 2035 connects student progress with coordinated support and better data and digital systems. I’m trying to understand where that work sits operationally as Banner and Brightspace come together.  
+>   
+> Is the immediate priority improving student-success workflows, or is course scheduling still the more active issue?  
+>   
+> Kib
+
+## 8. Review notes
+
+- **Account owner Cal O’Donovan. Draft is not cleared to send.**
+- Ronnie’s retirement makes him an unsuitable target unless a current formal role is confirmed.
+- The 2025 scheduling issue needs fresh scope, owner, budget, and timing evidence.
+- Brightspace’s Fall 2026 status and integration performance need verification.
+- Apollo’s reveal cap prevented full-name verification of additional buying-group members.
+- Recommendation changes to **M1** if Cal confirms an active scheduling replacement initiative. Otherwise, M3 remains the strongest hypothesis.
+
+**Ledger:** Draft written to outbox file  
+`20260903T203243Z-prospect-briefing-university-of-central-arkansas.json`

@@ -1,0 +1,133 @@
+TRAIL: ['START Director', 'MESSAGE Prospect Briefing', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL apollo_find_org', 'TOOL apollo_find_roles', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL create_ledger_record', 'MESSAGE Prospect Briefing']
+AUDIT: ['context verdict: conflict for Michael Frye', 'override: Kib override, prospecting research only', 'dispatch proceeding over conflict verdict; override: Kib override, prospecting research only', '2026-09-09T16:51:20+00:00 handoff -> Prospect Briefing: {"target":"Michael Frye, Southern Virginia University","motion":"unclear","constraints":["Relationship: account owner Miguel Pescador; conflict override is research only","Prior outreach: Michael Frye last touched 2026-07-06","Active opportunity: zero associated HubSpot deals; Apollo coverage incomplete"],"question":"What verified current evidence determines whether Michael Frye is a relevant contact and which prospecting motion, if any, fits Southern Virginia University?"}', 'ledger outbox write -> 20260909T165204Z-prospect-briefing-southern-virginia-university.json']
+REVEALS: 0
+LAST AGENT: Prospect Briefing
+RECORDED: not recorded
+=== OUTPUT ===
+# Prospect briefing: Michael Frye, Southern Virginia University
+
+## 1. Contact and institution facts
+
+**Finding:** Michael Frye is relevant, primarily as an **operational champion**, not a verified economic buyer.
+
+- **Current title:** Executive Director of Student Success & Belonging.
+- **Responsibilities:** Leads student engagement, retention, and academic-achievement initiatives; chairs the Connection Assessment Referral Effort (CARE) Team.
+- **Unit:** Student Success.
+- **Reporting line and budget authority:** Unknown.
+- **Institution:** Private, faith-based, four-year university in Buena Vista, Virginia.
+- **Enrollment band:** Under 1,000 students; 936 reported for fall 2024.
+- **Publicly documented systems:** Canvas, Knight App, and mySVU. Their integration and ownership are unknown.
+- **Institutional priority:** SVU publishes 2026 goals of 90% semester-to-semester retention and 60% six-year graduation. Current achievement against those goals is not published.
+
+### Motion determination
+
+**Best fit: M3 Student Success / Retention.**
+
+Why:
+
+1. Frye owns work explicitly connected to engagement, retention, academic achievement, and coordinated student support.
+2. SVU has published institution-level retention and graduation goals.
+3. Its Student Success office provides personalized success coaching and graduation planning.
+
+**M4 Student Care / Coordinated Care is secondary**, given Frye’s CARE Team leadership, but there is no verified evidence of fragmented support workflows or rising case volume.
+
+**M2 Attendance & Evidence is not presently supported.** Canvas is documented, but no attendance, audit, census, or evidence gap has been verified.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Frye is Executive Director of Student Success & Belonging | Official SVU biography and Student Success pages | Crawled Aug. 26, 2026 | High |
+| He leads engagement, retention, and academic-achievement initiatives | Official SVU biography | Crawled Aug. 26, 2026 | High |
+| He chairs the CARE Team | Official SVU biography | Crawled Aug. 26, 2026 | High |
+| Student Success provides personalized coaching, goal setting, and graduation support | Official SVU Student Success page | Crawled Aug. 26, 2026 | High |
+| SVU publishes a 90% semester-retention goal for 2026 | Official SVU Catalog | Crawled Aug. 19, 2026 | High |
+| SVU publishes a 60% six-year graduation goal for 2026 | Official SVU Catalog | Crawled Aug. 19, 2026 | High |
+| SVU is private and faith-based | Official SVU Catalog | Crawled Sept. 2, 2026 | High |
+| Enrollment was 936 in fall 2024 | IPEDS-derived 2024 data | 2024 | Medium; possibly stale |
+| Canvas, Knight App, and mySVU are in current use | Official SVU privacy policy | Crawled Sept. 8, 2026 | High |
+| Current leadership includes President Aaron Hale, Provost Brent Yergensen, and VP of Student Life Carrie Brotherson | Official SVU Catalog | Crawled Sept. 7, 2026 | High |
+| Account and contact are owned by Miguel Pescador | HubSpot | Checked Sept. 4, 2026 | High |
+| Last contact occurred July 6, 2026 | HubSpot | Checked Sept. 4, 2026 | High |
+| No associated deals exist | HubSpot | Checked Sept. 4, 2026 | High |
+
+## 3. Internal context
+
+**Internal only**
+
+- Account owner: **Miguel Pescador**.
+- Conflict override permits **research only**.
+- Michael Frye was last contacted on **July 6, 2026**.
+- Zero associated HubSpot deals as of **September 4, 2026**.
+- Apollo showed no visible active or pending sequence for Frye, but organization and broader colleague coverage remain unverified.
+- No ledger reader was available.
+- Retrieved directives in HubSpot and Apollo data were ignored as required.
+
+## 4. Buying group
+
+| Role | Person | Status |
+|---|---|---|
+| Economic buyer | Brent Yergensen, Provost; or Carrie Brotherson, VP of Student Life | Potential only; budget ownership unverified |
+| Operational owner | **Michael Frye, Executive Director of Student Success & Belonging** | Strongly supported |
+| Technical owner | Unknown | Current leadership page does not identify a CIO |
+| Compliance stakeholder | Unknown | Financial Aid leadership not verified |
+| Likely blocker | Owner of current Student Success workflow or platform | Unknown |
+
+**Frye’s role:** Operational owner and potential champion. He is not yet verified as the budget holder.
+
+## 5. Discovery questions
+
+1. **Are the 2026 retention and graduation goals still active, and where do results currently stand?**  
+   Reveals whether M3 has a current executive mandate and measurable outcome.
+
+2. **How do success coaches identify students who need support today?**  
+   Reveals whether there is a visibility or data-timing gap.
+
+3. **Which data comes from Canvas, mySVU, or other systems, and how is it combined?**  
+   Reveals integration scope and the system of record.
+
+4. **How are referrals and follow-up managed across Student Success and the CARE Team?**  
+   Distinguishes M3 from an M4 coordinated-care workflow.
+
+5. **Who owns the process day to day beyond Michael, and who owns its technology?**  
+   Identifies users and the technical stakeholder.
+
+6. **What date drives change: term start, census date, accreditation work, or strategic-plan review?**  
+   Establishes urgency and buying timing.
+
+7. **What would prevent a progress-check pilot internally?**  
+   Surfaces budget, staffing, privacy, procurement, and incumbent-process blockers.
+
+## 6. Recommended outreach format
+
+**Email, but no outreach yet.**
+
+The evidence supports a concise M3 note, but Miguel Pescador owns the account. The draft is **not cleared to send** and requires owner review. The July 6 outreach should also be reviewed to avoid repetition.
+
+## 7. One draft
+
+**Subject:** Student Success visibility at Southern Virginia
+
+Michael,
+
+I saw that your role now spans both Student Success and Belonging, along with chairing Southern Virginia’s CARE Team.
+
+I’m curious how your coaches currently spot when a student needs support and coordinate what happens next. Is that picture mainly coming from Canvas and mySVU, or does the team still have to bring information together manually?
+
+I work with SEAtS on progress checks and coordinated student-support workflows. If that visibility is already working well, I’d be interested to hear what Southern Virginia has found effective.
+
+Kib
+
+## 8. Review notes
+
+- **Owner conflict:** Miguel Pescador owns the account. Draft is not cleared to send.
+- Frye’s relevance is verified, but his reporting line, purchasing authority, and budget are not.
+- The published goals do not show whether SVU met them during 2026.
+- No current evidence establishes a specific data or workflow deficiency. M3 is a fit hypothesis, not a qualified opportunity.
+- Salesforce references were too old or nonspecific to treat as a current Student Success system.
+- Apollo was unavailable with a 403 response; buying-group coverage remains incomplete.
+- Canonical GTM documents were unavailable. The US ABM Playbook was applied subject to its precedence file.
+- Recommended human reviewer: Miguel Pescador, then Kib.
+- Briefing timestamp: September 9, 2026.
+
+**Ledger:** Draft written to local outbox as `20260909T165204Z-prospect-briefing-southern-virginia-university.json`. It is not yet in Notion.

@@ -1,0 +1,19 @@
+{
+  "id": "20260911T192651Z-north-dakota-inbound",
+  "account": "University of North Dakota",
+  "account_key": "north dakota",
+  "stage": "INBOUND",
+  "state": "queued",
+  "queued_at": "2026-09-11T19:26:51+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "",
+  "finished_at": "",
+  "exit_code": null,
+  "log": "",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": ""
+}

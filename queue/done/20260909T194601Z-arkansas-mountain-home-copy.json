@@ -1,0 +1,19 @@
+{
+  "id": "20260909T194601Z-arkansas-mountain-home-copy",
+  "account": "Arkansas State University-Mountain Home",
+  "account_key": "arkansas mountain home",
+  "stage": "COPY",
+  "state": "done",
+  "queued_at": "2026-09-09T19:46:01+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "2026-09-11T19:08:16+00:00",
+  "finished_at": "2026-09-11T19:08:35+00:00",
+  "exit_code": 0,
+  "log": "C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260909T194601Z-arkansas-mountain-home-copy.log",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": "**Motion remains Unclear:** M9 is the closest fit, but clock-hour status, system of record, and ownership are not verified. The M9 placement/rotation positioning conflict remains an open review item; this draft follows the active guardrail and does not position SEAtS for either. |  | **Status:** Draft only, not cleared to send. Step 1 awaits confirmation."
+}

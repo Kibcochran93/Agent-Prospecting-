@@ -1,0 +1,121 @@
+TRAIL: ["START Director", "hubspot_find_account", "hubspot_account_deals", "hubspot_account_notes", "hubspot_find_account", "HANDOFF -> Prospect Briefing", "START Prospect Briefing", "list_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "apollo_find_org", "apollo_find_roles", "search_knowledge", "search_knowledge", "search_knowledge", "apollo_find_roles", "apollo_find_roles", "search_knowledge", "search_knowledge", "search_knowledge", "apollo_reveal_person", "apollo_reveal_person", "apollo_reveal_person", "create_ledger_record"]
+
+AUDIT:
+  2026-09-03T16:56:23+00:00 handoff -> Prospect Briefing: {"target":"Patrick D. Dempsey, Florida Atlantic University","motion":"unclear","constraints":["Existing FAU HubSpot account 8674812621; lifecycle opportunity, not fresh","No open deals; closed-lost Title IX/HIPAA compliance deal closed 2025-11-05","2025 notes record compliance and case-management outreach, process pain, consolidation interest, and cost concerns","Other FAU contacts are logged; Patrick is absent from returned notes","HubSpot owner unresolved because account and deal lookups returned no owner ID","Last-note metadata says 2026-09-02, but returned notes end at 2025-08-06"],"question":"Given the real CRM history, is there a workable motion here, which one, and who owns the problem?"}
+  apollo reveal 1/25: 645d03513e1f18000103d013 -> Jason Ball (Associate VP and Chief Information Officer)
+  apollo reveal 2/25: 60c7454c647c2800010c5f60 -> Jennifer Bebergal (Associate Dean, Retention and Academic Support)
+  apollo reveal 3/25: 557048c6736964319ead5300 -> Daniel Meeroff (Professor and Dean of Undergraduate Studies)
+  ledger outbox write -> 20260903T165710Z-prospect-briefing-florida-atlantic-university.json
+
+REVEALS: 3
+LAST AGENT: Prospect Briefing
+
+=== OUTPUT ===
+## Bottom line
+
+**A workable motion exists: M3 Student Success / Retention.** Patrick is the likely **operational owner and discovery contact**, not the economic buyer.
+
+Do not revive the closed-lost compliance opportunity through him. M4 Coordinated Care is the secondary possibility, but only if discovery uncovers fragmented support workflows beyond CLASS.
+
+## 1. Contact and institution facts
+
+- **Patrick D. Dempsey, MBA, M.Ed.**
+- **Title:** Executive Director, Academic Support & Student Learning
+- **Unit:** Center for Learning and Student Success (CLASS), within Undergraduate Studies
+- **Scope:** Leads supplemental instruction, peer tutoring, and online student-success programs. His team includes over 70 undergraduate staff and supports over 30,000 visits annually.
+- **Likely reporting line:** Jennifer Bebergal, Associate Dean for Retention and Academic Support. Direct reporting is not confirmed.
+- **Institution:** Large public research university in Southeast Florida.
+- **Enrollment:** 30,895 degree-seeking students in 2025: 24,484 undergraduate and 6,411 graduate.
+- **Systems:** Canvas is publicly documented in FAU’s online-learning environment. The CLASS system of record and integrations remain unknown. 
+
+## 2. Evidence table
+
+| Claim | Source and date | Confidence |
+|---|---|---|
+| Patrick is Executive Director of Academic Support & Student Learning | FAU CLASS page, crawled July 5, 2026 | High |
+| He oversees CLASS programs, 70+ student staff, and 30,000+ annual visits | FAU CLASS page, crawled July 5, 2026 | High |
+| CLASS provides supplemental instruction, tutoring, and online academic support | FAU CLASS site, crawled August 29, 2026 | High |
+| Jennifer Bebergal is Associate Dean for Retention and Academic Support | FAU directory, crawled April 3, 2026; Apollo refreshed August 10, 2026 | High |
+| Daniel Meeroff is Dean of Undergraduate Studies | FAU directory, crawled April 3, 2026; Apollo refreshed July 28, 2026 | High |
+| FAU had 30,895 degree-seeking students in 2025 | FAU 2026 Accountability Plan, April 9, 2026 | High |
+| Canvas is used for online coursework | FAU course documentation, published December 2023 | Medium; possibly stale |
+| Patrick owns institution-wide retention workflows | Not established | Unknown |
+
+## 3. Internal context
+
+**Internal only**
+
+- HubSpot account **8674812621** is opportunity-stage, not fresh outbound.
+- No open deals.
+- A Title IX/HIPAA compliance deal closed-lost on **November 5, 2025**.
+- Notes describe compliance and case-workflow pain, consolidation interest, and cost concerns.
+- Patrick does not appear in the returned notes.
+- The CRM metadata says the last note was **September 2, 2026**, but returned notes stop on **August 6, 2025**.
+- Account ownership remains unresolved.
+
+**Interpretation:** The history proves account-level interest, not a Patrick-level problem. It should guide posture, but cannot justify compliance messaging to him.
+
+## 4. Buying group
+
+- **Economic buyer:** Likely Daniel Meeroff, Dean of Undergraduate Studies, or a higher Academic Affairs leader. Budget authority is unverified.
+- **Operational owner:** Patrick Dempsey for CLASS academic-support operations.
+- **Program sponsor:** Jennifer Bebergal, Associate Dean for Retention and Academic Support.
+- **Technical owner:** Jason Ball, Associate Vice President and Chief Information Officer.
+- **Compliance stakeholder:** Unknown for this M3 use case. Neil D’Arco owns university-wide compliance generally, but should not be inserted without an identified requirement.
+- **Likely blocker:** Owner of the existing advising, analytics, or CLASS workflow. Unknown.
+
+**Patrick’s role:** Operational owner and potential champion. Not the established economic buyer.
+
+## 5. Discovery questions
+
+1. **How does CLASS identify students who stop participating before outcomes decline?**  
+   Reveals whether there is an earlier-visibility gap.
+
+2. **Where are tutoring, supplemental instruction, and eSuccess interactions recorded today?**  
+   Identifies the operational system of record.
+
+3. **Does that information connect with Canvas, the Student Information System, advising, or institutional analytics?**  
+   Establishes the integration and data gap.
+
+4. **Who acts when CLASS participation changes, and how is that work coordinated?**  
+   Distinguishes M3 from M4.
+
+5. **Which persistence or academic-progress measure is CLASS accountable for improving?**  
+   Supplies the required M3 success measure.
+
+6. **Is there a term start, progress-check cycle, or planning deadline driving change?**  
+   Tests urgency and timing.
+
+7. **What would prevent a pilot: ownership, integration, faculty participation, privacy, or cost?**  
+   Surfaces the internal blocker and addresses known account sensitivity.
+
+## 6. Recommended outreach format
+
+**Email.**
+
+Use a short discovery note tied specifically to Patrick’s CLASS operating scope. Do not mention compliance, the closed-lost deal, consolidation, or prior CRM activity.
+
+## 7. Draft
+
+**Subject: Connecting CLASS participation to student support**
+
+Patrick,
+
+CLASS is supporting more than 30,000 student visits a year across tutoring, supplemental instruction, and eSuccess. I’m curious how your team brings those interactions together when a student’s participation starts to change.
+
+We work with universities on connecting attendance and engagement data with progress checks and coordinated intervention.
+
+Is that visibility already in place across CLASS, or does each program still have its own view?
+
+Kib
+
+## 8. Review notes
+
+- **M3 is provisional.** It qualifies only if Patrick confirms a data gap, named champion, and measurable outcome.
+- The previous compliance history does not establish an M5 opportunity with Patrick.
+- M4 becomes stronger if the main problem is handoffs, referrals, or fragmented ownership rather than visibility.
+- CLASS systems, integrations, budget ownership, Patrick’s direct reporting line, and current internal account owner remain unverified.
+- The CRM note-date discrepancy needs investigation before treating the history as complete.
+- No internal messaging, meeting, or email systems were available beyond the supplied CRM summary.
+
+**Ledger:** Draft written to `20260903T165710Z-prospect-briefing-florida-atlantic-university.json`; relay to Notion is pending.

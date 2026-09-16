@@ -1,0 +1,19 @@
+{
+  "id": "20260909T194612Z-lyon-copy",
+  "account": "Lyon College",
+  "account_key": "lyon",
+  "stage": "COPY",
+  "state": "refused",
+  "queued_at": "2026-09-09T19:46:12+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "",
+  "finished_at": "2026-09-10T15:47:31+00:00",
+  "exit_code": null,
+  "log": "",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": "Refused as a duplicate, on Kib's instruction of 10 September. Lyon College had two unrun COPY jobs, queued 9 Sep 19:46 and 10 Sep 15:39, from before the one-unrun-job-per-account rule existed. Today's job stands. Nothing ran for this job and nothing was spent."
+}

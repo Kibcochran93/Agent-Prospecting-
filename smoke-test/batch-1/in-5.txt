@@ -1,0 +1,18 @@
+The Reviewer returned rewrite. Its findings, to fix rather than argue with:
+
+1. Both Tulsa messages open from the same award and turn it into the same visibility problem. Both Creighton messages rest on the same first-generation initiative and the same participation and persistence problem. Staff becoming leadership is title swapping, not a different problem.
+2. Three messages close on the same discovery-question move.
+3. Every message uses the same product construction: SEAtS plus connect or link or view plus attendance and engagement plus earlier action. A recipient seeing two would spot it.
+4. The executive messages use the practitioner list "attendance, engagement and intervention". Wrong register for a Vice President and a Vice Provost.
+
+Rewrite the five messages. Rules for this pass:
+
+- At each institution, the two messages must rest on different problems, not the same evidence reworded. If you cannot find a second problem with dated evidence for that institution, cut the second message and say so.
+- The phrase "attendance, engagement and intervention" appears at most once in the batch, and not in an executive message.
+- At most one message closes with a discovery question. Give the others an observation, a single specific ask, or no ask.
+- At least one message does not describe what SEAtS does at all.
+- Executive messages are about outcomes, cost of the status quo and what a decision would rest on. Operational messages are about the work itself.
+- Keep the dated triggers from checkpoint 2. Do not introduce new claims you have not sourced.
+- Same header format as before: ### Institution, then **To: Name, Role**, then **Subject:**.
+
+Then run the batch differentiation check and report it as a claim.

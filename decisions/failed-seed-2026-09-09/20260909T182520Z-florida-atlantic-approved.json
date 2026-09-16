@@ -1,0 +1,10 @@
+{
+  "account": "Florida Atlantic University",
+  "account_key": "florida atlantic",
+  "decision": "Approved",
+  "decided_at": "2026-09-09T18:25:20+00:00",
+  "decided_by": "Kib Cochran",
+  "source": "Notion export 2026-09-09, ledger-export/rows-2026-09-09.jsonl",
+  "note": "Carried across from the Notion Outreach decision property. The date is the export date, not the date the decision was made; Notion recorded no decision date.",
+  "ledger_url": "https://app.notion.com/3d053f704a45812cadc3cec05d64f36b"
+}

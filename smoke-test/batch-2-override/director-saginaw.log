@@ -1,0 +1,120 @@
+TRAIL: ['START Director', 'MESSAGE Prospect Briefing', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL apollo_find_org', 'TOOL apollo_find_roles', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL create_ledger_record', 'MESSAGE Prospect Briefing']
+AUDIT: ['context verdict: conflict for Veronica D. Wilson, Ph.D.', 'override: Kib override, prospecting research only', 'dispatch proceeding over conflict verdict; override: Kib override, prospecting research only', '2026-09-09T16:46:32+00:00 handoff -> Prospect Briefing: {"target":"Veronica D. Wilson, Ph.D. — Saginaw Valley State University, University Center, Michigan","motion":"unclear","constraints":["Account conflict; recorded owner is Cal O\'Donovan, source date unavailable","Prior direct outreach not evidenced; ledger unavailable and Apollo sequence coverage unconfirmed","No associated open deals found; lookup source date unavailable","Kib override permits prospecting research only, not outreach"],"question":"What verified evidence, if any, supports Veronica D. Wilson as the right contact for a current SEAtS-relevant need at Saginaw Valley State University?"}', 'ledger outbox write -> 20260909T164723Z-prospect-briefing-saginaw-valley-state-university.json']
+REVEALS: 0
+LAST AGENT: Prospect Briefing
+RECORDED: not recorded
+=== OUTPUT ===
+## Bottom line
+
+**Veronica Wilson is a credible operational discovery contact for student-success work, but the evidence does not establish a current SEAtS-relevant need.** Her role supports **M3 Student Success / Retention** more than M2 or M5. No outreach is permitted under the work-order constraint.
+
+## 1. Contact and institution facts
+
+- **Contact:** Veronica Wilson  
+- **Current title:** Executive Director of Student Success  
+- **Unit/reporting line:** Academic and Student Affairs, reporting through the Provost/Vice President for Academic and Student Affairs  
+- **Relevant responsibility:** Member of SVSU’s Student Success Council; also publicly listed as the contact for MI GEAR UP  
+- **Institution:** Public regional university in Michigan  
+- **Enrollment:** 6,906 students in fall 2025  
+- **Documented systems:** Canvas Learning Management System; Workday Student implementation underway to replace Colleague  
+- **Unverified:** “D.” middle initial, Ph.D. credential, budget authority, system ownership, and responsibility for Cardinal Thrives  
+
+SVSU’s January 2026 organizational chart and current Student Success Council page substantiate Wilson’s role. 
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Wilson is Executive Director of Student Success | SVSU organizational chart | January 2026 | High |
+| She reports within Academic and Student Affairs under the provost | SVSU organizational chart | January 2026 | High |
+| She sits on the Student Success Council | SVSU council page | Accessed September 9, 2026 | High |
+| Her work includes MI GEAR UP success planning, mentoring and college-readiness programming | SVSU MI GEAR UP page | Accessed September 9, 2026 | High |
+| SVSU prioritizes retention, graduation gaps and student experience in its 2025–2030 plan | SVSU strategic plan | Accessed September 9, 2026 | High |
+| A 2024 assessment found fragmented data, inconsistent assessment and insufficient centralized student-success support | SVSU Student Success Plan | February 12, 2024 | Medium; possibly stale |
+| SVSU received $399,995 for Cardinal Thrives, addressing barriers affecting retention, persistence and completion | SVSU communications | February 2026 | High |
+| Fall 2025 enrollment was 6,906 and first-to-second-year retention was 78% | SVSU newsroom | September 22, 2025 | High |
+| Canvas is SVSU’s LMS | SVSU technology page | Accessed September 9, 2026 | High |
+| Workday Student is replacing Colleague | SVSU Workday page | Accessed September 9, 2026 | High |
+
+The strategic priority and older gap assessment support an institutional M3 hypothesis, not a confirmed buying project.  Cardinal Thrives provides a recent institutional signal, but no public source ties Wilson to it.  Systems modernization is active, although Wilson’s participation is unknown. 
+
+## 3. Internal context
+
+- HubSpot records **Cal O'Donovan** as owner, but the ownership lookup is undated.
+- No exact HubSpot contact record was found for Wilson.
+- No associated open deals were found; lookup date unavailable.
+- The August 7, 2026 website visit is account-level activity, not person intent or direct contact.
+- Apollo and ledger coverage remain unconfirmed.
+- Retrieved directive-like HubSpot text was ignored as an instruction.
+- **Kib override permits research only, not outreach.**
+
+## 4. Buying group
+
+- **Economic buyer:** Lisa Krissoff Boehm, Provost/Vice President for Academic and Student Affairs  
+- **Operational owner:** Veronica Wilson, Executive Director of Student Success  
+- **Technical owner:** Mary Aumann, Director of Enterprise Applications  
+- **Registrar stakeholder:** D. Strasz, Registrar  
+- **Compliance stakeholder:** M. Crowe, Director of Scholarships and Financial Aid  
+- **Likely blocker:** Current Workday/Colleague process owners or another incumbent student-success process owner; person unknown  
+
+These assignments are based on SVSU’s January 2026 organizational chart. 
+
+**Wilson occupies the operational-owner role, not the verified economic-buyer or technical-owner role.**
+
+## 5. Discovery questions
+
+1. **Which student-success priority does Wilson directly own?**  
+   Reveals whether her remit covers enrolled students, pre-college access, or both.
+
+2. **Are the fragmented-data and coordination findings from 2024 still unresolved?**  
+   Establishes whether the only documented gap remains current.
+
+3. **How are attendance and engagement incorporated into progress checks today?**  
+   Tests for an M3 use case without presuming an attendance problem.
+
+4. **Which system is the operational record for interventions and referrals?**  
+   Identifies the incumbent process and integration requirement.
+
+5. **How will Workday Student change student-success workflows and data access?**  
+   Determines whether modernization creates an opening or freezes adjacent projects.
+
+6. **Who owns Cardinal Thrives day to day?**  
+   Tests whether Wilson is connected to the strongest recent signal.
+
+7. **What deadline drives improvement: term start, strategic-plan reporting, grant milestones, or accreditation?**  
+   Establishes timing.
+
+8. **What would stop a cross-unit student-success project internally?**  
+   Surfaces budget, governance, faculty-adoption and technology constraints.
+
+## 6. Recommended outreach format
+
+**No outreach yet.** Wilson is role-relevant, but current need, project ownership and buying authority are unverified. Cal’s account ownership and Kib’s research-only override also prohibit outreach.
+
+## 7. Draft
+
+**Not for sending**
+
+**Subject:** Student-success coordination at SVSU
+
+Veronica,
+
+I saw that SVSU has placed closing retention and graduation gaps within its 2025–2030 priorities, while your role sits across the Student Success Council and MI GEAR UP work.
+
+I’m trying to understand whether coordinating student progress information across units is part of your remit, or whether another team owns that work at SVSU.
+
+Best,  
+Kib
+
+## 8. Review notes
+
+- **Account conflict:** Cal O'Donovan owns the account. The draft is not cleared to send.
+- The strongest support is role fit, not evidence of active demand.
+- No verified connection exists between Wilson and Cardinal Thrives, Workday Student, attendance data or procurement.
+- The 2024 gap assessment is over 12 months old and may be stale.
+- No validated evidence supports M2 Attendance & Evidence or M5 Compliance & Audit Evidence.
+- Apollo was unavailable with HTTP 403.
+- Internal direct-outreach, sequence and prior-briefing coverage remain unchecked.
+- Recommended human reviewer: Kib, with Cal’s account context considered.
+
+**Ledger:** Draft written to `20260909T164723Z-prospect-briefing-saginaw-valley-state-university.json`; Notion relay is pending.

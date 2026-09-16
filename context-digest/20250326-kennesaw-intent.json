@@ -1,0 +1,31 @@
+{
+  "written_at": "2026-09-10T17:00:00+00:00",
+  "written_by": "Teams digest pass, read-only, session-driven",
+  "record": {
+    "kind": "internal_intent_signal",
+    "institution": "Kennesaw State University",
+    "account_key": "kennesaw",
+    "signal": "Three page views in the week to 17 March 2025. Areas viewed: Space Utilisation twice, Timetabling System, Education Technology. Last engagement 25 November 2024, and the report marked the account as not contacted since.",
+    "interest_areas": [
+      "Space Utilisation",
+      "Timetabling System",
+      "Education Technology"
+    ],
+    "named_contacts": [
+      "Gloria Fuentes"
+    ],
+    "source": "Weekly website monitoring report, posted by Heather Broe Foster to the Bi-Weekly Call US Sales Team meeting chat in Microsoft Teams",
+    "source_date": "2025-03-26",
+    "source_url": "https://teams.microsoft.com/l/message/19%3ameeting_YjZiZDgxOWQtOTNmMC00MWQ2LTllZmItYTVmMzMwOWVhMjE2%40thread.v2/1742983416488",
+    "age_days": 533,
+    "stale": true,
+    "staleness_note": "533 days old as of 2026-09-10, against a 30 day re-verification rule. Usable to shape which questions get asked. Not usable as a statement of current interest, and not citable in copy.",
+    "confidentiality": "internal_only",
+    "confidentiality_note": "Internal analytics about a prospect's own browsing. Never quote it, never reference it to the prospect, and never imply their web activity was observed. It may inform which motion to pursue and nothing more.",
+    "email_addresses_withheld": true,
+    "email_note": "The source table carried each contact's email address. Names only are recorded here. Holding prospect addresses in this system was declined on 4 September and that decision stands.",
+    "imperatives_found": [],
+    "imperative_note": "No directive-like text in the source. Anything of that kind found in future digests is recorded here and not acted on, as with the HubSpot note directives."
+  },
+  "record_sha256": "c7b819f31b1334e768323e814634946adebde6a8d92819e51b85c36a3aec7fd0"
+}

@@ -1,0 +1,114 @@
+TRAIL: ['START Director', 'HANDOFF -> Prospect Briefing', 'START Prospect Briefing', 'TOOL list_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL create_ledger_record']
+AUDIT: ['2026-09-02T20:24:31+00:00 handoff -> Prospect Briefing: {"target":"Anthony K. Grafton, Lyon College","motion":"unclear","constraints":["Relationship unknown","No prior outreach","No active opportunity"],"question":"What, if any, Sales_Motions-aligned path is created by Lyon’s reported Dental and Veterinary Medicine schools, including the current owner and whether M9 scope applies?"}', 'ledger outbox write -> 20260902T202519Z-prospect-briefing-lyon-college.json']
+LAST AGENT: Prospect Briefing
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+- **Anthony K. Grafton:** Executive Vice President for Academic Affairs and Provost. His unit is Academic Affairs. A current public reporting line for the professional-school deans was not found. 
+- **Institution:** Lyon College, a private nonprofit college in Arkansas with professional schools in Little Rock and Cabot. Enrollment band remains unverified.
+- **Dental Medicine:** Operating since 2025 and led by founding dean Dr. Burke Soffe. Its curriculum expressly awards **credit hours**, including for simulation and clinical instruction. 
+- **Veterinary Medicine:** Led by Dean Dr. Carolyn Henry. The first cohort is planned for fall 2027, pending accreditation, with a final accreditation visit scheduled for August 2026. 
+- **Documented systems:** Jenzabar powers myLYON; Canvas is publicly linked as the Learning Management System. Use by the professional schools specifically is unverified. 
+
+### Motion conclusion
+
+**Motion remains Unclear. M9 does not presently qualify.**
+
+M9 requires confirmed clock-hour status, an identified attendance system of record, and a named owner. Dental Medicine is explicitly credit-hour based. Veterinary Medicine has not enrolled students, and its hour model and attendance owner are not public.
+
+The closest alternatives are:
+
+1. **M5 Compliance & Audit Evidence**, if Lyon identifies an accreditation deadline and evidence gap.
+2. **M2 Attendance & Evidence**, if either school identifies inconsistent attendance capture and a pilot scope.
+
+Grafton appears best used as an **executive routing contact**, not as the presumed operational owner.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Grafton is Executive Vice President for Academic Affairs and Provost | Lyon administration catalog | Accessed Sep. 2, 2026 | High |
+| Dental Medicine began operating in 2025 | Institute for Health Sciences catalog | Accessed Sep. 2, 2026 | High |
+| Burke Soffe leads Dental Medicine | Lyon College news | July 21, 2026 | High |
+| Dental instruction is assigned credit hours | Professional catalog | Accessed Sep. 2, 2026 | High |
+| Dental students use Title IV aid | Professional catalog | Accessed Sep. 2, 2026 | High |
+| Carolyn Henry leads Veterinary Medicine | Lyon College news | Jan. 30, 2026 | High |
+| Veterinary Medicine expects its first cohort in 2027, pending accreditation | Lyon College news | Jan. 30, 2026 | High |
+| Lyon exposes Jenzabar and Canvas publicly | myLYON and orientation pages | Accessed Sep. 2, 2026 | Medium |
+| Grafton owns professional-school attendance evidence | No dated evidence found | — | Unknown |
+
+## 3. Internal context
+
+**Internal only:** Relationship unknown; no prior outreach; no active opportunity.
+
+No Teams, Outlook, SharePoint, Apollo, or account-history access was available. Prior contact history therefore remains unchecked.
+
+## 4. Buying group
+
+- **Economic buyer:** Unknown.
+- **Operational owner, Dental Medicine:** Likely within Burke Soffe’s school leadership, but the named attendance owner is unknown. Soffe is founding dean. 
+- **Operational owner, Veterinary Medicine:** Unknown. Carolyn Henry is dean, but no attendance process yet is documented. 
+- **Technical owner:** Jeremiah Cherwien, Vice President of Information Services and Chief Information Officer. 
+- **Compliance stakeholder:** Financial Aid leadership is publicly identified, but ownership across the professional schools is unclear. 
+- **Likely blocker:** Unknown; potentially the owner of the future professional-school attendance workflow or incumbent system.
+
+**Grafton’s role:** Executive academic stakeholder and likely routing point, not a verified M9 operational owner.
+
+## 5. Discovery questions
+
+1. **Are any dental or future veterinary programs measured in clock hours for Title IV purposes?**  
+   Reveals whether M9 can qualify at all.
+
+2. **Who owns classroom, laboratory, simulation, and clinical attendance records for each school?**  
+   Identifies the operational owner and whether records are fragmented.
+
+3. **What system holds those records today?**  
+   Establishes the system of record and integration starting point.
+
+4. **Do those records flow into Jenzabar, Canvas, Financial Aid, or another professional-school platform?**  
+   Tests whether the public systems apply to these programs.
+
+5. **What evidence must be produced for professional accreditation reviews?**  
+   Determines whether M5 is a better fit than M9.
+
+6. **Is a deadline tied to the veterinary accreditation process or a term start?**  
+   Establishes urgency and timing.
+
+7. **What would prevent standardizing the process across Little Rock, Cabot, and Batesville?**  
+   Surfaces governance, ownership, budget, and integration barriers.
+
+## 6. Recommended outreach format
+
+**Short email.**
+
+Use Grafton only to verify ownership and routing. Do not pitch M9, clinical placement, or a compliance solution before clock-hour status is established.
+
+## 7. Draft
+
+**Subject:** Dental and veterinary attendance ownership
+
+Anthony,
+
+I saw that Lyon’s dental curriculum assigns credit hours across didactic, simulation, and clinical instruction, while the veterinary school is preparing for its first class.
+
+I’m trying to understand where attendance evidence for those programs sits operationally. Is that owned within each school, by the registrar, or by Financial Aid?
+
+I work with SEAtS on attendance and evidence workflows. I don’t want to assume this belongs with your office if someone else owns the record.
+
+Kib
+
+## 8. Review notes
+
+- M9 is **not qualified** from available evidence.
+- Dental Medicine’s credit-hour policy weighs against M9.
+- Veterinary Medicine could create a later path, but its hour model, systems, owner, and process are unknown.
+- Grafton’s direct authority over the professional-school deans was not verified.
+- Enrollment band was not verified.
+- Internal contact history remains unchecked.
+- Evidence of an accreditation deadline plus fragmented records would shift the recommendation toward **M5**. Confirmed clock-hour status would reopen **M9**.
+
+Ledger Draft written to:
+
+`20260902T202519Z-prospect-briefing-lyon-college.json`
+
+No Notion URL exists until the separate relay runs.

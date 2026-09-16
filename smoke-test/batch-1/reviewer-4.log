@@ -1,0 +1,139 @@
+TRAIL: ['START Reviewer', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'MESSAGE Reviewer']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Reviewer
+=== OUTPUT ===
+# Verdict: **GETS REWRITTEN**
+
+The producing agent’s all-pass differentiation claim is incorrect. It reports no shared structures, no shared closing moves, recipient-specific detail, no visible template, and varied sentence shapes. The text contradicts each of those conclusions.
+
+## Differentiation failures
+
+### 1. Shared opening structures
+
+Several messages use the same imperative audit structure: **verb + one unit of work + inspect/map/list where information breaks down.**
+
+- “**Take one coach’s weekly caseload and mark every point where staff assemble context by hand.**”
+- “**Choose one First-Flight student journey and record where information moves late, loses context or relies on memory.**”
+- “**Pick one advising caseload and list what staff check, where each item sits and which changes move a student forward in the queue.**”
+
+The subjects repeat the same shape as well: “A small workflow test,” “A handoff worth mapping,” and “A focused caseload review.”
+
+**Disagreement with producing agent:** Shared opening structures are present.
+
+### 2. Shared closing moves
+
+Multiple messages close by claiming that a small process review will expose the operational issue:
+
+- “**That would show where coaching time is being absorbed.**”
+- “**The handoffs may tell you as much as the outcomes.**”
+- “**That’s a practical place to test the current process.**”
+
+The executive messages also repeat a decision-justification close:
+
+- “**Those measures would strengthen the funding case.**”
+- “**Separating that cost from staffing constraints would clarify the next decision.**”
+
+The two review-asset moves are also structurally equivalent:
+
+- “**I can prepare a one-page framework covering reach, staff capacity, timeliness and persistence for TCC’s next investment review.**”
+- “**A concise First-Flight review could cover student touchpoints, staff handoffs and the evidence gathered at each stage.**”
+
+Only one says “I can prepare” explicitly, but the producing agent’s count misses the second version of the same move.
+
+**Disagreement with producing agent:** Shared closing moves are present.
+
+### 3. Category assumptions dressed as recipient detail
+
+Some anchors are specific—the six coaches and roughly 2,100 students, First-Flight, and Wiley’s 117 returning students. The messages then attach generic or unverified workflow assumptions to them:
+
+- “**mark every point where staff assemble context by hand**”
+- “**where information moves late, loses context or relies on memory**”
+- “**where a change in one returning student’s pattern could sit unnoticed across separate records**”
+
+Those are common fragmented-workflow hypotheses, not details demonstrated to be true of these recipients.
+
+“**TCC’s nationally recognized model has documented reach**” is also vague institutional praise: it does not name the model, recognition, or evidence.
+
+**Disagreement with producing agent:** Not every concrete-looking detail is recipient-specific.
+
+### 4. The template is visible to the same recipient
+
+Dewayne’s touches 3 and 4 are near duplicates:
+
+- “**Take one coach’s weekly caseload...**”
+- “**One coach and one week of decisions...**”
+
+Both propose examining one coach over one week to diagnose fragmented information. Touch 4 adds no material value.
+
+Shaniqua’s touches 3 and 4 likewise repeat the same scattered-information review:
+
+- “**Review where a change... could sit unnoticed across separate records.**”
+- “**Pick one advising caseload and list what staff check, where each item sits...**”
+
+Mary Ann’s touch 4 repackages the touchpoint, handoff, and evidence work already introduced in touches 2 and 3.
+
+**Disagreement with producing agent:** A recipient receiving the sequence would notice the repeated template.
+
+### 5. Sentence shapes are insufficiently varied
+
+Most messages use one of two constructions:
+
+1. Institutional fact or scale statement followed by a generalized implication.
+2. Imperative process-review instruction followed by a one-sentence payoff.
+
+Eleven of the twelve messages contain only one or two body sentences. The word counts vary, but the underlying sentence functions and rhythm do not.
+
+**Disagreement with producing agent:** The batch does not pass the sentence-shape variation check.
+
+## Institution and role checks
+
+### Tulsa Community College
+
+TCC is nominally multithreaded, but the messages are built on the same fragmented-context and coaching-capacity problem:
+
+- Dewayne: “**staff assemble context by hand**”
+- Dewayne: “**missing information or too many places to check**”
+- Eunice: “**time spent assembling context reduces the capacity available for direct student support**”
+
+There is some attempted role differentiation—Dewayne receives operational language while Eunice receives investment and funding language—but Eunice’s touch 3 drops back into practitioner-level process detail. For a Vice President of Student Success and Chief Student Affairs Officer, the applicable register is board-level outcomes and support language.
+
+### Single-threaded institutions
+
+- **Creighton University:** only Mary Ann Tietjen.
+- **Wiley University:** only Shaniqua Adams.
+
+Both must be flagged as single-threaded.
+
+## New-value check
+
+The following touches fail because they repeat an earlier diagnostic rather than contributing new value:
+
+- **Dewayne touch 4:** repeats touch 3’s one-coach, one-week workflow review.
+- **Mary Ann touch 4:** repackages the touchpoints, handoffs, and evidence already covered in touches 2 and 3.
+- **Shaniqua touch 4:** repeats touch 3’s scattered-records/caseload diagnosis.
+
+None of the messages merely says the prior touch went unanswered, but avoiding that failure does not make the repeated touches additive.
+
+## Motion check
+
+The artifact names no motion, so motion compliance cannot be established. The content also moves between:
+
+- **M3 Student Success / Retention:** persistence, prioritization, and earlier visibility.
+- **M4 Student Care / Coordinated Care:** fragmented records, handoffs, and staff workflow.
+
+The proposed “workflow test,” “one-page framework,” and “focused caseload review” are improvised offer descriptions rather than a clearly assigned, named M3 or M4 entry offer.
+
+## Never-say and leak check
+
+No direct hit appears for:
+
+- “Student CRM”
+- surveillance
+- prohibited British spelling
+- named-institution compliance shortfalls
+- prohibited board-facing Financial Aid terminology
+
+There is also no customer-facing operator directive or workflow-control leak in the copy itself.
+
+Those checks pass, but the batch still requires rewrite because of repeated structure, same-problem sequencing, weak multithreading, non-additive touches, and missing motion discipline.

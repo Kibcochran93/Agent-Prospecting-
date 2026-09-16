@@ -1,0 +1,9 @@
+{
+  "target": "Karen Hutchins, Executive Director, Arkbar",
+  "requested_by": "Kib Cochran",
+  "started_at": "2026-09-15T19:35:11+00:00",
+  "state": "done",
+  "finished_at": "2026-09-15T19:35:25+00:00",
+  "exit_code": 0,
+  "output": "TRAIL: ['START Prospect Briefing', 'MESSAGE Prospect Briefing', 'MESSAGE Director']\nAUDIT: []\nREVEALS: 0\nLAST AGENT: Director\nRECORDED: not recorded\n=== OUTPUT ===\nI can’t dispatch this run because no account context verdict was provided. Also, please confirm the institution meant by **“Arkbar”** and the desired motion. I won’t guess at the institution or CRM relationship.\n"
+}

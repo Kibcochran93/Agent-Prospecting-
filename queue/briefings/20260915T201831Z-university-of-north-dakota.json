@@ -1,0 +1,9 @@
+{
+  "target": "University of North Dakota",
+  "requested_by": "Kib Cochran",
+  "started_at": "2026-09-15T20:18:31+00:00",
+  "state": "done",
+  "finished_at": "2026-09-15T20:18:40+00:00",
+  "exit_code": 0,
+  "output": "TRAIL: ['START Prospect Briefing', 'MESSAGE Prospect Briefing']\nAUDIT: []\nREVEALS: 0\nLAST AGENT: Prospect Briefing\nRECORDED: not recorded\n=== OUTPUT ===\n**Target:** University of North Dakota  \n**Motion:** Not provided  \n**Constraints:** One-person briefing requires a named contact  \n**Question:** Not provided  \n\nA named contact is missing, so I can’t start the briefing or choose the target on your behalf.\n"
+}

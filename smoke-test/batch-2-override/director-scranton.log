@@ -1,0 +1,101 @@
+TRAIL: ['START Director', 'MESSAGE Prospect Briefing', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL apollo_find_org', 'TOOL apollo_find_roles', 'TOOL ResponseFunctionWebSearch', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL create_ledger_record', 'MESSAGE Prospect Briefing']
+AUDIT: ['context verdict: conflict for Jason Schwass', 'override: Kib override, prospecting research only', 'dispatch proceeding over conflict verdict; override: Kib override, prospecting research only', '2026-09-09T17:00:19+00:00 handoff -> Prospect Briefing: {"target":"Jason Schwass, University of Scranton","motion":"unclear","constraints":["Account owner: Cal O\'Donovan","No verified prior outreach to Jason","No open deals found","CRM conflict overridden for prospecting research only"],"question":"What current, verifiable evidence should inform a prospect briefing for Jason Schwass at the University of Scranton?"}', 'ledger outbox write -> 20260909T170124Z-prospect-briefing-the-university-of-scranton.json']
+REVEALS: 0
+LAST AGENT: Prospect Briefing
+RECORDED: not recorded
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+- **Jason Schwass, MBA** is currently listed as **Senior Director of Student Success** in the **Kania School of Management**, specifically its Center for Professional Development. His work includes internship support. His reporting line and budget authority are not public. 
+- The University of Scranton is a **private Catholic and Jesuit university** with **4,619 students in Fall 2025**, including **1,279 Kania students**. 
+- Strategic Plan 2030 makes **student success and retention** an institutional goal. It calls for data-informed strategies, proactive support, persistence, retention, career readiness, and better-integrated technology and data frameworks. 
+- Publicly documented systems include **Banner Student** and the **Brightspace Learning Management System**. Brightspace synchronizes with the master schedule twice daily. 
+- Fall 2025 reporting shows one-year retention of **87.2% for the Fall 2024 cohort**, but no current Kania-specific baseline was found. 
+- An older attendance and early-alert pilot is publicly documented, but its current status is unverified. 
+- **Recommended motion:** **M3 Student Success / Retention.** Jason appears to be an operational stakeholder rather than the economic buyer.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Jason’s current title and Kania unit | University staff pages | Read Sept. 9, 2026 | High |
+| Jason supports internship activity | Kania Internship Office | Read Sept. 9, 2026 | High |
+| Enrollment is 4,619; Kania enrollment 1,279 | University Facts About Us | Fall 2025 data; read Sept. 9, 2026 | High |
+| Student success and retention is a 2030 strategic priority | Strategic Plan 2030 | Feb. 13, 2026 | High |
+| Banner Student is documented | University IT | Read Sept. 9, 2026 | High |
+| Brightspace is the LMS | University LMS page | Read Sept. 9, 2026 | High |
+| Fall 2024 cohort one-year retention was 87.2% | Institutional Reporting | Fall 2025 | High |
+| Attendance/early-alert pilot existed | University pilot instructions | Circa 2022 | Low; possibly stale |
+
+## 3. Internal context
+
+- **Account owner:** Cal O’Donovan.
+- **No open deals** as of September 4, 2026.
+- No verified HubSpot or Apollo contact record for Jason.
+- No verified prior outreach to Jason.
+- Latest readable account note, dated August 14, 2025, reflects website activity rather than a verified conversation.
+- Ledger history was unavailable. Apollo organization and role mapping returned 403.
+- Kib’s override permits **research only**.
+
+## 4. Buying group
+
+- **Economic buyer:** WeiDong Zhu, Provost and Senior Vice President for Academic Affairs. 
+- **Operational owner:** Jason Schwass for Kania-level student success and professional-development activity. Institution-wide operational ownership is unknown.
+- **Technical owner:** Cynthia A. Greene, Chief Information Officer. 
+- **Institutional-data stakeholder:** Kathryn Yerkes, Assistant Vice Provost for Planning and Institutional Effectiveness. 
+- **Likely blocker:** Owner of the current student-success workflow or legacy attendance/alert system; unknown.
+- **Jason’s role:** Likely operational stakeholder and potential departmental champion, not currently evidenced as budget holder.
+
+## 5. Discovery questions
+
+1. **Which parts of student success does your Kania role directly own?**  
+   Reveals scope, authority, and whether the title covers retention or mainly career readiness.
+
+2. **What is driving the current priority: persistence, career readiness, strategic-plan targets, or another requirement?**  
+   Identifies the measurable business problem.
+
+3. **How do Banner, Brightspace, advising, and internship data come together today?**  
+   Exposes integration gaps and manual work.
+
+4. **Who reviews student progress day to day, and how are actions coordinated?**  
+   Identifies the operational owner and workflow.
+
+5. **What measures are used specifically for Kania student success?**  
+   Establishes a viable pilot outcome.
+
+6. **Is the timeline tied to a term start, annual planning cycle, accreditation review, or Strategic Plan 2030 reporting?**  
+   Tests urgency.
+
+7. **What would stop a departmental pilot internally?**  
+   Surfaces privacy, faculty adoption, IT, budget, and procurement barriers.
+
+## 6. Recommended outreach format
+
+**Email, pending Cal O’Donovan’s review.**
+
+The University’s new strategic plan provides a timely, concrete reason to write. Email allows a careful distinction between Jason’s Kania role and institution-wide retention ownership.
+
+## 7. One draft
+
+**Subject: Kania’s role in Scranton’s student success plan**
+
+Jason,
+
+Scranton’s new strategic plan connects student success with both data-informed support and career readiness. Your Kania role seems to sit where those two priorities meet, particularly around internships and professional development.
+
+I’m curious how your team currently brings together academic progress, Brightspace activity, advising, and career preparation when a student may need support.
+
+SEAtS works with universities on earlier progress visibility and coordinated follow-through. Is that part of your remit at Kania, or owned elsewhere?
+
+Kib
+
+## 8. Review notes
+
+- **Owner conflict:** Cal O’Donovan owns the account. The draft is **not cleared to send**.
+- Jason’s reporting line, budget authority, institution-wide remit, and current performance measures remain unverified.
+- No current student-success platform beyond Banner and Brightspace was found.
+- The legacy attendance/alert documentation is over 12 months old and must not be presented as current.
+- No internal prior-contact history could be fully confirmed because ledger access was unavailable.
+- Canonical GTM files were unavailable. M3 is supported by the lower-precedence US playbook and public evidence.
+
+**Ledger:** Draft written to `20260909T170124Z-prospect-briefing-the-university-of-scranton.json`; awaiting relay to Notion.

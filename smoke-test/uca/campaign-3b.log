@@ -1,0 +1,46 @@
+TRAIL: ['START Campaign Builder', 'TOOL ?', 'TOOL ?', 'MESSAGE Campaign Builder']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Campaign Builder
+=== OUTPUT ===
+## Checkpoint 3: List-build results
+
+### Confirmed matches: **2**
+
+1. **Arkansas Tech University**
+   - Public Arkansas university.
+   - Approximately 12,000 students.
+   - Ad Astra coordinates academic and event scheduling.
+   - Sources dated **Fall 2025**. ([atu.edu](https://www.atu.edu/registrar/docs/Ad%20Astra%20Academics.pdf?utm_source=openai))
+
+2. **University of Arkansas at Little Rock**
+   - Public Arkansas university.
+   - Fall 2025 enrollment: 8,026.
+   - Mazevo is its centralized, enterprise-wide academic, event, and resource scheduling system.
+   - Current institutional pages verified in **2026**. ([ualr.edu](https://ualr.edu/provost/classroom-scheduling/?utm_source=openai))
+
+### Reviewed but excluded
+
+- **University of Arkansas at Pine Bluff:** EMS is documented, but Fall 2025 enrollment was 1,926, below the band. ([uapb.edu](https://uapb.edu/wp-content/uploads/2026/04/A218-Bookstore-Operations-and-Management-Services.pdf?utm_source=openai))
+- **Southern Arkansas University:** Enrollment appears to meet the lower boundary, but no dated public source identified its centralized scheduling platform. Platform remains **unverified**, so it cannot enter the list. ([saumag.edu](https://www.saumag.edu/archives/next-century/?utm_source=openai))
+- **University of Central Arkansas:** Suppressed before list inclusion under the ownership constraint.
+
+### What I can count
+
+- **2 confirmed institutions**
+- **1 enrollment-fit institution blocked by unverified platform evidence**
+- **1 documented-platform institution excluded for enrollment**
+- **1 institution suppressed by constraint**
+
+### What I cannot count
+
+- I cannot claim this is an exhaustive statewide count without a complete authoritative inventory of every Arkansas public university’s current enrollment and scheduling platform.
+- I cannot count SAU as a prospect until its platform is documented in a dated institutional source.
+- I cannot report Apollo contact counts because enrichment and buying-group mapping have not begun.
+
+### Variants
+
+- **Tighter:** Require one current replacement trigger in addition to fit. This may reduce the list to zero but would produce stronger hooks.
+- **Wider:** Expand to Arkansas public two- and four-year institutions in the same enrollment band. This would surface community colleges and system campuses, but would create a structurally different segment.
+
+**Checkpoint 3 ends with a confirmed two-account list.**

@@ -1,0 +1,21 @@
+{
+  "source": "Apollo website visitor domain tracker, read 2026-09-10",
+  "tracker_id": "69d5222c79a35b0011fbd58e",
+  "referrer_id": "69d574e6f888b50019ebf85b",
+  "domain": "seatsone.com",
+  "note": "Levels are Apollo's configured buyer-intent levels, set 2026-09-10 from verified page-traffic data. A reveal is permitted only for a path listed here at level high. If the paths change in Apollo, this file is stale and reveal_gate refuses rather than guessing.",
+  "read_at": "2026-09-10T18:20:00+00:00",
+  "paths": [
+    {"path": "/demo", "label": "Demo request", "level": "high"},
+    {"path": "/contact-us", "label": "Contact us", "level": "high"},
+    {"path": "/pricing", "label": "Pricing", "level": "high"},
+    {"path": "/pilot", "label": "Pilot program", "level": "high"},
+    {"path": "/platform", "label": "Platform overview", "level": "medium"},
+    {"path": "/medical-school", "label": "Medical school", "level": "medium"},
+    {"path": "/schedule-academic-scheduling", "label": "Academic scheduling", "level": "medium"},
+    {"path": "/attend-student-attendance", "label": "Student attendance", "level": "medium"},
+    {"path": "/case-studies", "label": "Case studies", "level": "medium"},
+    {"path": "/student-operations-2026-report", "label": "Student Operations 2026 report", "level": "medium"},
+    {"path": "/2026-gartner-market-guide-academic-scheduling", "label": "Gartner market guide, scheduling", "level": "medium"}
+  ]
+}

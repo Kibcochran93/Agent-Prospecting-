@@ -1,0 +1,114 @@
+TRAIL: ['START Director', 'MESSAGE Prospect Briefing', 'TOOL list_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL apollo_find_org', 'TOOL apollo_find_roles', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL read_knowledge', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'TOOL ResponseFunctionWebSearch', 'MESSAGE Prospect Briefing']
+AUDIT: ['context verdict: conflict for Franklin Ard', 'override: Kib override, prospecting research only', 'dispatch proceeding over conflict verdict; override: Kib override, prospecting research only', '2026-09-09T16:55:58+00:00 handoff -> Prospect Briefing: {"target":"Franklin Ard, Kennesaw State University","motion":"unclear","constraints":["CRM owners: Miguel Pescador on primary; munir Choudhry on duplicate","Prior CRM contact recorded 2026-08-07","No open deals found; deal-query date absent","No live or pending Apollo sequence surfaced; coverage incomplete","Kib override permits prospecting research only"],"question":"Is Franklin Ard currently a relevant outreach contact for Kennesaw State University, and what verified evidence supports or rules out that determination?"}']
+REVEALS: 0
+LAST AGENT: Prospect Briefing
+RECORDED: not recorded
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+**Determination:** **Yes, Franklin Ard is currently relevant for exploratory outreach about academic coaching and student-success workflows.** He is not verified as the economic, technical, or compliance buyer.
+
+- **Current role:** Kennesaw State’s current staff page identifies him as Executive Director for Academic Coaching and Support. It says he leads academic-success initiatives and entered that executive-director role in May 2024. ([campus.kennesaw.edu](https://campus.kennesaw.edu/faculty-staff/academic-affairs/student-success/programs/about/meet-staff.php))
+- **Unit:** Academic Affairs, Academic Coaching and Support.
+- **Reporting line:** Not explicitly documented. Lori Lowder is Associate Vice Provost for Student Success, while Sheb True’s portfolio includes Student Success. Franklin’s direct supervisor remains unverified. ([kennesaw.edu](https://www.kennesaw.edu/academic-affairs/about/provosts-leadership-team/))
+- **Institution:** Public, four-year university with 51,375 students in fall 2025, including 15,648 part-time students. ([campus.kennesaw.edu](https://campus.kennesaw.edu/offices-services/data-strategy/institutional-research/publications/common-data-set/cds-2025-2026.php))
+- **Relevant institutional priority:** KSU’s strategic plan calls for stronger undergraduate retention, better outcomes in high-enrollment courses, and expanded student-success infrastructure. ([kennesaw.edu](https://www.kennesaw.edu/president/strategic-plan/create-learning-environment-where-students-thrive.php))
+- **Documented systems:** Navigate360 supports undergraduate advising; Banner is the Student Information System; D2L Brightspace is the Learning Management System. ([campus.kennesaw.edu](https://campus.kennesaw.edu/current-students/academics/academic-advising/get-academic-advising/schedule-advising-eab.php))
+
+**Motion assessment:** **M3 Student Success / Retention** is the best-supported hypothesis. M2 Attendance & Evidence is secondary but currently lacks a verified attendance-evidence problem.
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Franklin Ard is listed as Executive Director for Academic Coaching and Support | KSU staff page | Crawled Sept. 8, 2026 | High |
+| He leads academic-success initiatives | KSU staff page | Crawled Sept. 8, 2026 | High |
+| KSU’s current priorities include retention and student-success infrastructure | KSU strategic-plan page | Crawled Sept. 4, 2026; metrics refreshed May–Dec. 2025 | High |
+| KSU uses Navigate360 for undergraduate advising | KSU advising page | Crawled Sept. 6, 2026 | High |
+| KSU uses Banner and D2L Brightspace | KSU systems pages | Crawled Aug.–Sept. 2026 | High |
+| KSU enrolled 51,375 students in fall 2025 | 2025–26 Common Data Set | Fall 2025 reporting date | High |
+| Lori Lowder and Sheb True hold senior student-success oversight roles | KSU leadership page | Crawled June 2026 | High |
+| Franklin’s direct reporting line is known | No explicit source found | Sept. 9, 2026 review | Low / unverified |
+
+## 3. Internal context
+
+- Primary CRM record owner: **Miguel Pescador**.
+- Duplicate record owner: **munir Choudhry**.
+- Prior CRM contact recorded **August 7, 2026**.
+- A note questioning whether Franklin had been replaced was speculative. Current official pages contradict that concern.
+- No open deals were found, but the query date was absent.
+- No live or pending Apollo sequence surfaced; coverage was incomplete.
+- Apollo organization and role lookups returned 403 during this run.
+- Ledger history was unavailable.
+- Retrieved CRM content included directives. These were treated as data rather than instructions.
+
+## 4. Buying group
+
+| Role | Likely person/office | Evidence |
+|---|---|---|
+| Economic buyer | **Sheb True**, Vice Provost, or another Academic Affairs budget holder | His current portfolio includes Student Success. ([kennesaw.edu](https://www.kennesaw.edu/academic-affairs/about/provosts-leadership-team/)) |
+| Operational owner | **Franklin Ard**, Executive Director, Academic Coaching and Support | Leads academic coaching and related initiatives. ([campus.kennesaw.edu](https://campus.kennesaw.edu/faculty-staff/academic-affairs/student-success/programs/about/meet-staff.php)) |
+| Technical owner | **Aaron Streimish**, VP of IT and CIO | Current President’s Cabinet listing. ([kennesaw.edu](https://www.kennesaw.edu/president/cabinet.php)) |
+| Compliance stakeholder | Unknown | No evidence ties Franklin’s unit to Title IV or compliance ownership |
+| Likely blocker | Navigate360 owner or current coaching-workflow owner | Navigate360 is already embedded in advising; ownership was not verified. ([campus.kennesaw.edu](https://campus.kennesaw.edu/current-students/academics/academic-advising/get-academic-advising/schedule-advising-eab.php)) |
+
+**Franklin occupies the operational-owner/champion role, not the verified economic-buyer role.**
+
+## 5. Discovery questions
+
+1. **Which academic-coaching programs and student populations fall under your team today?**  
+   Reveals Franklin’s actual scope.
+
+2. **How do students get identified for coaching or peer support?**  
+   Reveals whether referrals are proactive, reactive, or program-specific.
+
+3. **What information do coaches have before the first conversation?**  
+   Tests whether current data arrives early enough to be useful.
+
+4. **How do Navigate360, Banner, and D2L Brightspace support the process?**  
+   Establishes the system of record and integration boundaries.
+
+5. **Who owns the workflow day to day across coaching, advising, and faculty?**  
+   Maps the operational buying group.
+
+6. **Which 2028 student-success targets most directly affect your team?**  
+   Connects the discussion to an approved institutional goal.
+
+7. **Is any change tied to a term start, census date, strategic-plan review, or budget cycle?**  
+   Establishes timing.
+
+8. **What would prevent a small progress-check pilot internally?**  
+   Surfaces budget, ownership, data, procurement, or adoption blockers.
+
+## 6. Recommended outreach format
+
+**Email, pending owner review.**
+
+Franklin has a verified current role and a specific operational remit. Email allows a restrained, evidence-based question without assuming budget authority. The draft is **not cleared to send** because two colleagues own conflicting CRM records.
+
+## 7. One draft
+
+**Subject: Academic coaching at KSU**
+
+Franklin,
+
+I saw that your team now includes academic coaching, focused-learning programs, and Foundation to Fly peer support.
+
+I’m curious how those programs get the information they need to decide which students would benefit from support, especially across Navigate360, Banner, and D2L Brightspace.
+
+That’s an area we work on at SEAtS: helping student-success teams bring attendance and engagement into progress checks without replacing the systems they already use.
+
+Is that workflow within your remit, or does another KSU team own it?
+
+Kib Cochran  
+Solutions Engineer  
+SEAtS Software
+
+## 8. Review notes
+
+- **Owner conflict:** Miguel Pescador owns the primary CRM record; munir Choudhry owns the duplicate. Outreach requires owner review.
+- The official current staff listing supports Franklin’s continued relevance and rules out the unverified replacement concern.
+- His budget authority, direct manager, procurement role, and ownership of Navigate360 or data integrations remain unverified.
+- No verified attendance-data gap or active buying initiative was found.
+- Apollo and ledger coverage were unavailable.
+- A reply that he owns cross-system progress checks would strengthen M3. A reply limiting him to direct coaching delivery would redirect research toward Lori Lowder, Sheb True, or the advising-systems owner.

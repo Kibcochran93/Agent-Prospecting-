@@ -1,0 +1,53 @@
+The Reviewer rejected this batch. Verdict: GETS REWRITTEN. Its findings, verbatim:
+
+1. Shared opening structures FAIL. All three Day 8 messages open with the same
+   product-led construction ("SEAtS connects...", "SEAtS can connect...", "SEAtS
+   links..."). All four Day 1 messages open with institution name plus a recent
+   result.
+2. Shared closing moves FAIL. All four Day 20 messages use the same polite
+   breakup. All four Day 13 messages use the same ownership-referral move.
+3. Details not recipient-specific FAIL. The LSUS "students balancing three jobs"
+   line is a category assumption. The UA Little Rock visibility question is not
+   supported by the evidence, which says analytics ARE embedded in departmental
+   reporting. The Murray State Day 20 line is the generic M3 problem.
+4. A recipient would notice the template YES, FAIL. Every institution follows the
+   same five-step arc.
+5. Sentence variety FAIL. Repeated functional structures dominate.
+
+Plus, and these matter as much:
+
+- Same problem repeated within each institution across Days 1, 4 and 8. That is
+  repetition, not cumulative value.
+- All four institutions single-threaded to "VP Student Success or equivalent",
+  which contradicts your own buying-group map and your own stated outreach order.
+  You mapped five roles and wrote to one.
+- Day 20 touches only restate earlier ones. Day 13 touches change the ask but add
+  no new value. Cadence-shaped rather than account-led.
+- Board register FAIL. "Workflow", data-routing detail and platform scope belong
+  in an operational conversation, not a board-register cadence to a VP.
+- Entry offers do not match the M3 row. M3's named offers are Engagement
+  Readiness and Progress Check Pilot. You used a scope comparison, a "short
+  readiness exercise", a pilot and a "brief comparison".
+- Research claims carry dates but no sources. A date inside a claim is not a
+  source. The headcounts, the retention figures, the EAB Navigate incumbent and
+  the strategic plan characterizations are all unsourced.
+- The UTC Day 1 line "With EAB Navigate already coordinating advising" risks
+  implying Navigate lacks attendance capability. Differentiate on depth and
+  connectedness, not absence.
+
+Rewrite. Specifics for this pass:
+
+- Add sources with dates to every research claim, or drop the claim.
+- Multi-thread. Write to at least two distinct roles per institution from your
+  own buying-group map, with genuinely different problems per role, not the same
+  message retitled.
+- Cut any touch whose only job is to chase or restate. Fewer, better touches beat
+  five for the sake of five.
+- Hold the board register for economic buyers. Operational language goes to
+  operational owners.
+- Use the M3 entry offers as named in the playbook.
+- Fix the EAB line so it differentiates without implying absence.
+- Vary opening and closing structures across the whole batch, not just wording.
+
+Then run the differentiation check again and report it honestly. If a check still
+fails, say so rather than passing yourself. Do not create a sequence on this run.

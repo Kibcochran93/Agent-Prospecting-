@@ -1,0 +1,9 @@
+{
+  "target": "Karen Hutchins, Executive Director, Arkansas Bar Association",
+  "requested_by": "Kib Cochran",
+  "started_at": "2026-09-15T19:40:27+00:00",
+  "state": "done",
+  "finished_at": "2026-09-15T19:40:42+00:00",
+  "exit_code": 0,
+  "output": "TRAIL: ['START Prospect Briefing', 'MESSAGE Prospect Briefing', 'MESSAGE Director']\nAUDIT: []\nREVEALS: 0\nLAST AGENT: Director\nRECORDED: not recorded\n=== OUTPUT ===\nI can’t dispatch this target:\n\n- **Scope:** The workflow requires a contact at a US higher-education institution; the Arkansas Bar Association does not fit that target type.\n- **CRM gate:** No account-context verdict was supplied, so dispatch is prohibited.\n\nPlease provide a higher-education target with an account-context verdict, or route Karen Hutchins through a non-higher-education workflow.\n"
+}

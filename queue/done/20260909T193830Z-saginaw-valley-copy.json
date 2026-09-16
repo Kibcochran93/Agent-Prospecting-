@@ -1,0 +1,20 @@
+{
+  "id": "20260909T193830Z-saginaw-valley-copy",
+  "account": "Saginaw Valley State University",
+  "account_key": "saginaw valley",
+  "stage": "COPY",
+  "state": "done",
+  "queued_at": "2026-09-09T19:38:30+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "2026-09-09T19:38:37+00:00",
+  "finished_at": "2026-09-09T19:38:38+00:00",
+  "exit_code": 0,
+  "log": "C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260909T193830Z-saginaw-valley-copy.log",
+  "command": [
+    "live_run.py",
+    "campaign"
+  ],
+  "reveal_cap": 1,
+  "note": "dry-run check of the queue runner",
+  "outcome": "dry run: C:\\Agent Prospecting Ops\\seats-prospecting\\.venv\\Scripts\\python.exe scripts/live_run.py campaign -f C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260909T193830Z-saginaw-valley-copy.input.txt -o C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260909T193830Z-saginaw-valley-copy.log"
+}

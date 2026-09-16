@@ -1,0 +1,4 @@
+Authorize this build in Apollo:
+  https://app.apollo.io/#/oauth/authorize?client_id=T_-7Fv5r08zbLMZi6ht3STqegnG2IniAeTEUd_imUM8&redirect_uri=http%3A%2F%2Flocalhost%3A8765%2Fcallback&response_type=code&scope=read_user_profile+emailer_campaigns_create+emailer_campaigns_update+emailer_campaigns_add_contact_ids+emailer_campaigns_search+contacts_search+email_accounts_list&state=UHzxcGZQg0M-kfuTW2kY8g
+Waiting for the callback...
+Stored the token at C:\Agent Prospecting Ops\seats-prospecting\.apollo_token.json. Scope: read_user_profile emailer_campaigns_create emailer_campaigns_update emailer_campaigns_add_contact_ids emailer_campaigns_search contacts_search email_accounts_list

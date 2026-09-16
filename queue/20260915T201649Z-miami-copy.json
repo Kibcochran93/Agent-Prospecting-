@@ -1,0 +1,19 @@
+{
+  "id": "20260915T201649Z-miami-copy",
+  "account": "Miami University",
+  "account_key": "miami",
+  "stage": "COPY",
+  "state": "queued",
+  "queued_at": "2026-09-15T20:16:49+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "",
+  "finished_at": "",
+  "exit_code": null,
+  "log": "",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": ""
+}

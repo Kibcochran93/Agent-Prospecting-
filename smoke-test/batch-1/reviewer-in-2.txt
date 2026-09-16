@@ -1,0 +1,95 @@
+Review the copy batch below. The final section is the producing agent's own answers about its batch. That is a claim, not evidence. Grade the copy, not the claim, and say so where the two disagree.
+
+--- ARTIFACT BEGINS ---
+
+## Copy batch
+
+### Tulsa Community College
+**To: Dewayne Dickens, Senior Director of the Center for Community & Learning**
+**Subject:** The work behind 2,100 coaching relationships
+
+Dewayne,
+
+TCC’s April recognition highlights a demanding operating model: six coaches serving roughly 2,100 students each year.
+
+The practical issue is deciding which students need attention first without adding another manual review step. SEAtS can bring attendance and engagement into coaches’ daily progress checks.
+
+Would a short workflow comparison be useful?
+
+Kib Cochran  
+Solutions Engineer  
+SEAtS Software
+
+### Tulsa Community College
+**To: Eunice Tarver, Vice President of Student Success and Chief Student Affairs Officer**
+**Subject:** Measuring the reach of a recognized program
+
+Eunice,
+
+National recognition gives TCC external validation for Academic Success Coaching. The leadership decision after that is what evidence should guide further investment.
+
+Reach alone won’t show whether the model improves persistence consistently across the students served. A decision to expand would need credible outcome measures alongside the program’s cost and capacity.
+
+That seems like the important next chapter of TCC’s coaching story.
+
+Kib Cochran  
+Solutions Engineer  
+SEAtS Software
+
+### Creighton University
+**To: Mary Ann Tietjen, Senior Director of The Success Center**
+**Subject:** What First-Flight needs to teach Creighton
+
+Mary Ann,
+
+Creighton launched First-Flight as a year-long pilot in spring 2026. For the Success Center, the work is turning mentorship and community-building into a repeatable rhythm across the full year.
+
+SEAtS helps teams see where participation changes, record the support that follows and review what happened without stitching together separate updates.
+
+Could I send a one-page example of that operating flow?
+
+Kib Cochran  
+Solutions Engineer  
+SEAtS Software
+
+### Creighton University
+**To: W. Wayne Young Jr., Vice Provost for Student Success**
+**Subject:** The decision behind scaling one-to-many
+
+Wayne,
+
+Creighton’s FirstGen Forward recognition credited a campus-wide model rather than an isolated program. That creates a different leadership question: what would justify scaling the model further?
+
+The decision would rest on whether Creighton can show stronger first-generation outcomes, close equity gaps and sustain personalized support without costs rising in step with program reach.
+
+I’d value fifteen minutes to compare the measures you’re using for that decision.
+
+Kib Cochran  
+Solutions Engineer  
+SEAtS Software
+
+### Wiley University
+**To: Shaniqua Adams, Executive Director of Student Success and Strategic Retention**
+**Subject:** The workload behind Wiley’s retention growth
+
+Shaniqua,
+
+Wiley reported that 117 of this fall’s 144 additional students were returning students. That’s a strong result, and it also means more continuing students moving through advising and progress monitoring.
+
+The operational risk is that growth makes changes in a student’s pattern harder to spot consistently. SEAtS can prioritize attendance, engagement and intervention information so staff know where a progress check may be needed.
+
+Your team’s retention work is now carrying a larger share of Wiley’s enrollment momentum.
+
+Kib Cochran  
+Solutions Engineer  
+SEAtS Software
+
+## The producing agent's differentiation check
+
+1. Shared opening structure: **No.**
+2. Shared closing move: **No.**
+3. Every detail is specific to its recipient: **Yes.**
+4. Would one recipient notice a common template: **No.**
+5. Sentence lengths and shapes are varied: **Yes.**
+
+--- ARTIFACT ENDS ---

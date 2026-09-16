@@ -1,0 +1,160 @@
+Review the briefing below.
+
+--- ARTIFACT BEGINS ---
+
+## 1. Contact and institution facts
+
+### Contact
+
+**Ronnie Williams is not currently verifiable as a UCA employee.** Current official UCA sources use the name for the **Ronnie Williams Student Center**, not for a staff contact. Apollo also returned no matching employee. The center appears to be named for a former UCA vice president, but those records are more than 12 years old and cannot establish a current role. citeturn0search0turn0search13
+
+**Likely intake ambiguity:** the target may be the building or operating unit rather than a living contact.
+
+### Institution and operating context
+
+- University of Central Arkansas is a public university in Conway, Arkansas.
+- Preliminary fall 2025 enrollment was **9,962**, placing it in the approximately 10,000-student band. citeturn0search1
+- The Student Center uses **Event Management System/Virtual EMS** for room and event reservations. This does not establish use for academic course scheduling. citeturn1search0turn1search2
+- Current official pages name:
+  - **Kendra Regehr**, Student Center Executive Director
+  - **Lisa Pfrenger**, Assistant Director of Scheduling Services and Client Relations
+  - **Robin Williamson**, Vice President for Student Affairs
+  - **Trevor Seifert**, Chief Information Officer
+  - **Jason Cole**, enterprise applications leader citeturn1search1turn1search8turn1search12
+- The Student Center sits within Student Affairs. citeturn0search16
+
+### Assessment
+
+**Worth qualifying, but not ready for outreach.**
+
+Closest motion: **M1 Schedule Replacement**, because EMS/VEMS and a centralized scheduling operation are documented. However, no replacement pain, academic scheduling scope, contract event, budget, or timeline is verified.
+
+Second closest: **M6 Smart Campus / Space Utilization**, but only if UCA has an active planned-versus-actual utilization initiative.
+
+Keep the motion **Unclear** until system scope and ownership are confirmed.
+
+---
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| “Ronnie Williams” currently identifies a UCA Student Center | Official UCA Student Center page | Accessed Sep. 3, 2026 | High |
+| No Ronnie Williams employee appeared in Apollo | Apollo role search | Sep. 3, 2026 | Medium; database absence only |
+| Fall 2025 enrollment was 9,962 | UCA News | Sep. 5, 2025 | High |
+| Student Center room reservations use EMS/VEMS | Official UCA scheduling pages | Accessed Sep. 3, 2026 | High |
+| Kendra Regehr leads the Student Center | Official UCA staff page | Accessed Sep. 3, 2026 | High |
+| Lisa Pfrenger owns Student Center scheduling services and client relations | Official UCA staff page | Accessed Sep. 3, 2026 | High |
+| Student Center reports through Student Affairs | UCA organizational chart | Updated Oct. 2025 | High |
+| Trevor Seifert leads Information Technology | UCA organizational chart | Updated Oct. 2025 | High |
+| Jason Cole leads enterprise applications | UCA chart; Apollo | Oct. 2025 / Aug. 18, 2026 | High |
+| EMS supports academic course scheduling | Not established | — | Unverified |
+| UCA wants to replace EMS | Not established | — | Unverified |
+
+---
+
+## 3. Internal context
+
+**Internal only**
+
+- HubSpot owner: **Cal O’Donovan**.
+- No associated deals as checked **September 3, 2026**.
+- March 31, 2025 outreach recorded EMS use, but the contacted person was outside the remit. This is stale.
+- Website-intent alerts are account signals only.
+- HubSpot’s last-note property says August 10, 2026, while the latest readable note is April 28, 2025. Recent activity remains unverified.
+- No access was available to the underlying CRM notes or internal communications.
+
+---
+
+## 4. Buying group
+
+| Role | Likely person | Basis |
+|---|---|---|
+| Economic buyer | **Robin Williamson**, VP for Student Affairs, if limited to Student Center operations | Official UCA page, accessed Sep. 3, 2026 |
+| Operational owner | **Lisa Pfrenger**, Assistant Director of Scheduling Services and Client Relations | Official UCA page, accessed Sep. 3, 2026 |
+| Unit leader | **Kendra Regehr**, Student Center Executive Director | Official UCA page, accessed Sep. 3, 2026 |
+| Technical owner | **Jason Cole**, enterprise applications leader | UCA chart, Oct. 2025; Apollo, Aug. 18, 2026 |
+| Executive technical stakeholder | **Trevor Seifert**, Chief Information Officer | UCA chart, Oct. 2025 |
+| Academic scheduling owner | **Unknown** | Must be established before M1 positioning |
+| Registrar stakeholder | **Unknown/conflicting** | Public and Apollo records disagree |
+| Compliance stakeholder | **Unknown** | No compliance requirement established |
+| Likely blocker | Current EMS administrator or process owner | Identity and remit unverified |
+
+**Ronnie’s buying-group role:** unknown. No current role is verified.
+
+---
+
+## 5. Discovery questions
+
+1. **Does EMS support only events and facilities, or academic course and section scheduling too?**  
+   Reveals whether this is M1, M6, or merely a Student Center workflow.
+
+2. **Who administers EMS and owns its contract?**  
+   Identifies the operational owner and incumbent gatekeeper.
+
+3. **What currently requires work outside EMS?**  
+   Tests for an actual replacement problem rather than assuming one.
+
+4. **How are room availability, event scheduling, and academic scheduling reconciled?**  
+   Reveals integrations, duplicate data, and ownership boundaries.
+
+5. **Is UCA measuring actual room use or only scheduled use?**  
+   Determines whether M6 has substance.
+
+6. **Is any review tied to renewal, procurement, a term start, or a facilities initiative?**  
+   Establishes timeline and buying mechanism.
+
+7. **Which offices must approve a scheduling-system change?**  
+   Maps Student Affairs, Registrar, Academic Affairs, IT, procurement, and accessibility.
+
+8. **What would prevent an evaluation internally?**  
+   Surfaces satisfaction with EMS, budget limits, ownership resistance, or competing priorities.
+
+---
+
+## 6. Recommended outreach format
+
+**No outreach yet.**
+
+First resolve whether “Ronnie Williams” is a mistaken building-level target. Then verify EMS scope and identify the correct operational owner. The draft below is for **Lisa Pfrenger only after Cal O’Donovan approves outreach**.
+
+---
+
+## 7. One draft
+
+**Subject:** Where EMS stops at UCA
+
+Lisa,
+
+I saw that your office uses Virtual EMS for reservations in the Ronnie Williams Student Center and Ida Waldran Auditorium.
+
+I’m trying to understand where that process stops at UCA. Does the same system connect with academic course scheduling and broader campus space planning, or is your remit limited to Student Center events?
+
+That distinction would tell me whether there’s a useful conversation here or whether I should leave it alone.
+
+Kib
+
+---
+
+## 8. Review notes
+
+**Account owner: Cal O’Donovan. This draft is not cleared to send.**
+
+Must verify before contact:
+
+- Whether Ronnie Williams is intended as a person or building.
+- Ronnie’s current role, if a living contact was intended.
+- Whether EMS is used beyond event reservations.
+- EMS version, integrations, renewal date, satisfaction, and contract owner.
+- Academic scheduling ownership.
+- Current registrar identity.
+- Whether space-utilization evidence is a stated priority.
+- Any account activity after April 28, 2025.
+- Full procurement, security, accessibility, and facilities buying group.
+
+**Recommendation:** qualify the account through role and system verification. Do not activate M1 or M6 solely from EMS presence.
+
+
+`20260903T195021Z-prospect-briefing-university-of-central-arkansas.json`
+
+--- ARTIFACT ENDS ---

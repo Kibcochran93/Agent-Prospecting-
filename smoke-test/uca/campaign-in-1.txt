@@ -1,0 +1,10 @@
+Live loop test, operator Kib, 3 September 2026. Segment work, not one institution.
+
+target: Arkansas public universities, roughly 5,000 to 15,000 total headcount, that run centralized event and room scheduling on EMS or Virtual EMS
+motion: M1 Schedule Replacement
+constraints:
+- University of Central Arkansas is owned by Cal O'Donovan and is pending owner review. Keep it out of the list and out of the copy.
+- No sequence write on this run. Copy is for manual paste.
+question: Is there a real segment here, and what does the copy look like for the roles that own scheduling?
+
+Work checkpoint 1 and stop there. State the segment back before you search.

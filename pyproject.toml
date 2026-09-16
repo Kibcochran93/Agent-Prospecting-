@@ -1,0 +1,39 @@
+[project]
+name = "seats-prospecting"
+version = "0.1.0"
+description = "SEAtS US Higher Education prospecting agent network (OpenAI Agents SDK)"
+requires-python = ">=3.11"
+dependencies = [
+    "openai-agents>=0.22.0",
+    "httpx>=0.27",
+    "pydantic>=2.7",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+seats-prospect = "seats_prospecting.cli:main"
+seats-review-input = "seats_prospecting.review_input:main"
+seats-check-batch = "seats_prospecting.differentiation:main"
+seats-apollo-login = "seats_prospecting.apollo_oauth:main"
+seats-drafts = "seats_prospecting.drafts:main"
+seats-status = "seats_prospecting.status:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+seats_prospecting = ["prompts/*.md"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+# Windows AppData\Local\Temp is not always writable for the pytest base temp,
+# so keep tmp_path inside the project.
+addopts = "--basetemp=.pytest-tmp"

@@ -1,0 +1,10 @@
+{
+  "account": "Wiley University",
+  "account_key": "wiley",
+  "decision": "Approved",
+  "decided_at": "2026-09-09T18:26:00+00:00",
+  "decided_by": "Kib Cochran",
+  "source": "Notion export 2026-09-09, ledger-export/rows-2026-09-09.jsonl",
+  "note": "Carried across from the Notion Outreach decision property. The date is the export date, not the date the decision was made; Notion recorded no decision date.",
+  "ledger_url": "https://app.notion.com/3d553f704a45812cbd64c34cb6291ee2"
+}

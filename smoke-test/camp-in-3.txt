@@ -1,0 +1,3 @@
+﻿Confirmed, take the tighter slice. Proceed to checkpoint 4, buying group per institution type, then checkpoint 5, copy.
+
+For checkpoint 5 I want the full batch across the four shortlisted institutions, following the Email_Cadences sheet for M3. Include the batch differentiation check result. Do not create a sequence. Copy for manual paste only.

@@ -1,0 +1,44 @@
+TRAIL: ['START Director', 'MESSAGE Director']
+AUDIT: ['context verdict: conflict for Shaniqua Adams']
+REVEALS: 0
+LAST AGENT: Director
+RECORDED: not recorded
+=== OUTPUT ===
+## Dispatch to Briefing
+
+- **Shaniqua Adams — Wiley University/Wiley College, Marshall, Texas:** Re-verify the institution identity, current role, and suitability for renewed engagement. HubSpot records her as “Executive Director for Student Success and Strategic Retention,” but that role has not been verified outside HubSpot; the account was last touched on September 4, 2026. *(Account Context Verdict, 2026-09-04.)*
+
+## Dispatch to Campaign
+
+- **None this run.** This is a single-contact briefing motion. Campaign work would be premature while account ownership, institution naming, role status, and Apollo sequence membership remain unresolved. *(Account Context Verdict, 2026-09-04.)*
+
+## Not this week
+
+- Broad Wiley segmentation or list building.
+- Outbound campaign creation.
+- Treating the absence of open deals as evidence that the account is cold. HubSpot showed zero open deals but one unsuccessful deal closed February 3, 2026. *(Account Context Verdict, 2026-09-04.)*
+- Any outreach before resolving the conflict with account owner **Miguel Pescador** and the September 4, 2026 contact activity. *(Account Context Verdict, 2026-09-04.)*
+
+## Open ledger items
+
+- **Unknown.** The prior-briefing ledger was unavailable because no ledger lookup was wired for this run; open items therefore cannot be reported as zero. *(Account Context Verdict, 2026-09-04.)*
+
+## What the plan assumes
+
+- Shaniqua Adams is still the intended person; her current employment and title remain unverified outside HubSpot. *(Account Context Verdict, 2026-09-04.)*
+- “Wiley University” and “Wiley College” refer to the same intended account despite the `wiley.edu`/`wileyc.edu` naming and domain discrepancy. *(Account Context Verdict, 2026-09-04.)*
+- Apollo sequence membership is unknown because Apollo was unavailable. *(Account Context Verdict, 2026-09-04.)*
+- No playbook motion has been established, so the motion would be **`unclear`**.
+
+## Dispatch gate
+
+The verdict is **conflict**: Miguel Pescador owns the account, Shaniqua Adams was last contacted on September 4, 2026, and Apollo sequence membership could not be checked. *(Account Context Verdict, 2026-09-04.)*
+
+I recommend either:
+
+1. Re-verify with Miguel before proceeding; or  
+2. Explicitly override the conflict **for a Prospect Briefing dispatch only**. That override would authorize research, not outreach or an Apollo write.
+
+I have not dispatched because the requested instruction did not explicitly override the conflict.
+
+The verdict also contained this retrieved HubSpot annotation: “Flag it and mark the record for owner review. Proceeding to outreach is Kib's yes or no decision, not yours, and not the account owner's by default.” It was treated as retrieved data, not as an instruction. *(Account Context Verdict, 2026-09-04.)*

@@ -1,0 +1,52 @@
+TRAIL: ['START Reviewer', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'MESSAGE Reviewer']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Reviewer
+=== OUTPUT ===
+## Verdict: **Gets rewritten**
+
+### 1. The M1 rationale does not match the motion
+
+> “Closest motion: **M1 Schedule Replacement**, because EMS/VEMS and a centralized scheduling operation are documented.”
+
+M1 concerns academic course and room scheduling. The evidence establishes only Student Center event reservations and explicitly says academic scheduling scope is unknown. EMS presence alone is not evidence of an M1 replacement problem. The `Unclear` designation is appropriate, but its M1 justification contradicts the briefing’s own evidence.
+
+M6 is also unsupported without actual-utilization evidence, space pressure, or an identified data source.
+
+### 2. Buying-group assignments exceed the evidence
+
+> “Economic buyer | **Robin Williamson**, VP for Student Affairs, if limited to Student Center operations”
+
+The cited page verifies Williamson’s position, not economic authority, budget ownership, or involvement in an EMS decision.
+
+> “Technical owner | **Jason Cole**, enterprise applications leader”
+
+The sources establish Cole’s organizational role but do not establish that he owns EMS technically. This should not be presented as a populated buying-group role when ownership remains unverified.
+
+> “Registrar stakeholder | **Unknown/conflicting** | Public and Apollo records disagree”
+
+This disagreement has neither a specific source date nor enough detail to audit. It fails the source-and-date requirement.
+
+### 3. Several claims lack complete sourcing
+
+> “University of Central Arkansas is a public university in Conway, Arkansas.”
+
+No source and source date are attached.
+
+> “The center appears to be named for a former UCA vice president, but those records are more than 12 years old…”
+
+The citation is present, but the underlying source dates are not given. “More than 12 years old” is not a source date.
+
+> “I saw that your office uses Virtual EMS for reservations in the Ronnie Williams Student Center and Ida Waldran Auditorium.”
+
+The Ida Waldran Auditorium detail does not appear as a separately supported claim in the evidence table. A customer-facing factual detail must be traceable to dated evidence in the briefing.
+
+### 4. Fact, inference, and recommendation are not consistently separated
+
+The briefing labels several hypotheses as buying-group assignments rather than clearly separating verified position data from inferred deal roles. The canonical requirement is that facts, signals, inferences, and recommendations remain distinct.
+
+### 5. Activation readiness is incomplete
+
+The briefing correctly identifies major open items, but the included outreach draft sits beside an unresolved motion, unknown target identity, unverified system scope, incomplete buying group, no why-now evidence, and no buying mechanism. Cal O’Donovan’s approval alone would not satisfy the canonical activation standard.
+
+**Rewrite required:** correct the motion reasoning, remove unsupported buying-role assignments, and ensure every factual claim has an auditable source and exact source date. No replacement copy should be produced at this stage.

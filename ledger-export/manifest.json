@@ -1,0 +1,10 @@
+{
+  "exported_at": "2026-09-09T18:05:00+00:00",
+  "source_database": "35542820-bf93-4267-b96e-17618d8d308b",
+  "source_data_source": "cfdbc5e6-89f4-454d-98ab-738cc74af81e",
+  "workspace": "SEAtS ONE",
+  "method": "read-only query of all rows and every property, transcribed by the relay session",
+  "row_count_expected": 23,
+  "bodies": "Page bodies are not in this file. For a row with a matching outbox record the body is a transcription of that record, which is on disk and hash-verified. Bodies for rows with no matching record are exported to bodies/ separately.",
+  "known_gap": "Ivy Tech Community College was relayed on 2 September and its notion_page_url is recorded in ledger-outbox/relayed/, but no such row came back in this query. Investigate before treating this export as complete."
+}

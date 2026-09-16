@@ -1,0 +1,84 @@
+TRAIL: ['START Reviewer', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'MESSAGE Reviewer']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Reviewer
+=== OUTPUT ===
+# Verdict: **GETS REWRITTEN**
+
+I explicitly disagree with the producing agent’s all-pass differentiation check.
+
+## Differentiation failures
+
+1. **Shared opening structure — fail**
+
+The two UA Little Rock messages open with the same construction: platform fact followed by distributed ownership.
+
+- “**UA Little Rock uses Mazevo across academic spaces, events, and resources, while college schedulers and Records still manage the class-scheduling process.**”
+- “**Mazevo gives UA Little Rock one enterprise-wide scheduling environment, but responsibility still crosses Records, college schedulers, and event teams.**”
+
+These are paraphrases of the same sentence.
+
+2. **Shared closing move — fail**
+
+Rachel and Malissa both close with a binary question about reconsidering the current model:
+
+- “**Would comparing the current workflow with a consolidated model be useful?**”
+- “**Is platform scope something you expect to revisit, or is the current model settled?**”
+
+Alexis’s closing also makes essentially the same current-model diagnostic move.
+
+3. **Recipient-specific detail — fail**
+
+Several details are institutional or category facts rather than details specific to the recipient.
+
+- “**When that process spans requests, approvals, room fit, changes, and calendar publication, where does your team still have to step outside the platform?**” is a generic scheduling-workflow list.
+- “**That makes your role a useful place to ask...**” does not establish anything specific about Chelsea’s responsibilities.
+- “**That boundary is often where room changes and competing requests become difficult to govern.**” is a category hypothesis presented immediately after an institutional fact.
+
+Chelsea’s **Scheduling/NCAA Coordinator** role is not meaningfully reflected. The message treats her as a generic scheduler; “NCAA” could be removed from the title without changing one word of the copy.
+
+4. **Template visibility — fail**
+
+A single reader would see the repeated architecture:
+
+> Institutional platform fact → split ownership problem → SEAtS consolidation statement → diagnostic question or offer.
+
+The product paragraphs make the pattern particularly visible:
+
+- “**SEAtS works with universities reviewing that full scheduling workflow...**”
+- “**SEAtS connects course scheduling, room allocation, and event use...**”
+- “**We help institutions map the steps from section demand through room assignment...**”
+- “**SEAtS supports course and room scheduling as a connected academic-operations process.**”
+
+5. **Sentence lengths and shapes — fail**
+
+Minor wording differences do not create structural variation. Each message uses a long institutional opening, a problem-development sentence, a short SEAtS capability paragraph, and a closing diagnostic. The producing agent’s “Yes” is not supported by the text.
+
+## Same-institution duplication
+
+- **Arkansas Tech:** Both messages are built on the boundary between academic scheduling and non-class/event space, including changes, competing requests, and governance.
+- **UA Little Rock:** Both messages are built on Mazevo providing a shared environment while operational ownership remains split across Records, college schedulers, and events.
+
+The role names change, but the account problem does not.
+
+## Multithreading and new value
+
+Neither institution is literally single-threaded; each has two contacts. However, both are narrowly threaded around the same problem rather than differentiated buying-group concerns.
+
+No message merely says a previous touch went unanswered. Nevertheless, the second message at each institution adds no new account evidence or value—it restates the first contact’s platform-and-ownership thesis.
+
+## Guardrails and register
+
+- No hard never-say term appears.
+- “Student Information System” is permissible; “Student CRM” does not appear.
+- No named institution is connected to a compliance shortfall.
+- US spelling is used.
+- The practitioner register is appropriate for these roles.
+
+These passes do not overcome the differentiation and role-specificity failures.
+
+## Motion control
+
+The apparent fit is **M1 Schedule Replacement**, but the artifact does not state a named motion. Phrases such as “full scheduling workflow,” “consolidated model,” and “connected academic-operations process” are positioning language, not a recorded motion assignment. The offers also do not use M1’s defined entry offer.
+
+**Rewrite required because the batch is structurally templated, duplicates the same problem within each institution, and fails to make the coordinator messages genuinely role-specific.**

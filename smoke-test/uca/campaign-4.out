@@ -1,0 +1,35 @@
+TRAIL: ['START Campaign Builder', 'TOOL apollo_find_org', 'TOOL apollo_find_org', 'TOOL search_knowledge', 'TOOL apollo_find_roles', 'TOOL apollo_find_roles', 'TOOL apollo_reveal_person', 'TOOL apollo_reveal_person', 'TOOL ?', 'TOOL ?', 'TOOL ?', 'MESSAGE Campaign Builder']
+AUDIT: ['apollo reveal 1/1: 602fb1350906a30001ada397 -> Drew Dickey (Director of Facilities Management)', 'apollo reveal 2/1: 626a07747f72be00016868c2 -> Tammy Weaver (University Registrar)']
+REVEALS: 2
+LAST AGENT: Campaign Builder
+=== OUTPUT ===
+## Checkpoint 4: Buying-group map
+
+### Arkansas Tech University
+
+- **Operational owner, event scheduling:** **Rachel Broussard**, Coordinator of Events Management. The Office of Events centrally manages event-space reservations. Source current as crawled August 2026. ([atu.edu](https://www.atu.edu/events/index.php?utm_source=openai))
+- **Operational owner, academic scheduling:** **Alexis Scrimshire**, Registrar. The current catalog assigns classroom activity and academic-space priority to the Registrar’s Office. ([catalog.atu.edu](https://catalog.atu.edu/undergraduate/administration-faculty/?utm_source=openai))
+- **Technical owner:** **Steve Milligan**, Director of the Office of Information Systems and Chief Information Officer. Source current as crawled September 2026. ([atu.edu](https://www.atu.edu/admin/index.php?utm_source=openai))
+- **Economic buyer:** **Suzanne McCall**, Vice President of Administration and Finance. Source current as crawled September 2026. ([atu.edu](https://www.atu.edu/admin/index.php?utm_source=openai))
+- **Facilities stakeholder:** **Drew Dickey**, Director of Facilities Management. Source current as crawled September 2026. ([atu.edu](https://www.atu.edu/admin/index.php?utm_source=openai))
+- **Likely blocker:** Existing process owner Rachel Broussard. This is a role-based inference, not evidence of opposition.
+
+**Suggested order:** Rachel Broussard first, Alexis Scrimshire second, Steve Milligan third, Suzanne McCall fourth. Start with daily workflow ownership, then establish academic scope, integration feasibility, and sponsorship.
+
+---
+
+### University of Arkansas at Little Rock
+
+- **Operational owner, course scheduling:** **Chelsea Ward**, Scheduling/NCAA Coordinator. The university directory names her, while Records and Registration owns course-scheduling support. Source current as crawled August 2026. ([ualr.edu](https://ualr.edu/records/contact/?utm_source=openai))
+- **Operational executive:** **Malissa Mathis**, Registrar and head of Records and Registration. Source current as crawled August 2026. ([ualr.edu](https://ualr.edu/records/contact/?utm_source=openai))
+- **Technical owner:** **Jim Carter**, Associate Vice Chancellor and Chief Information Officer. Source current as crawled August 2026. ([directory.ualr.edu](https://directory.ualr.edu/search?d=3&utm_source=openai))
+- **Economic buyer:** **Allen Stanley**, Vice Chancellor for Finance and Administration. Organizational chart updated **October 8, 2025**. ([ualr.edu](https://ualr.edu/administration/wp-content/uploads/sites/23/2025/12/UniversityAdminOrgCharts_12092025.pdf?utm_source=openai))
+- **Facilities stakeholder:** **Leslie Hutchins**, Associate Vice Chancellor for Facilities Management. Source current as crawled July 2026. ([ualr.edu](https://ualr.edu/facilities/about/contact/?utm_source=openai))
+- **Event-scheduling owner:** Current sources direct employees and students to Mazevo but name no individual accountable for enterprise event scheduling.
+- **Likely blocker:** The current Mazevo process owner is not named. No individual should be inferred.
+
+**Suggested order:** Chelsea Ward first, Malissa Mathis second, Jim Carter third, Allen Stanley fourth. Bring Leslie Hutchins in where space governance and utilization enter the discussion.
+
+### Threading assessment
+
+Neither institution is single-threaded. Both have identified operational, technical, facilities, and economic roles. UA Little Rock’s specific enterprise event-scheduling owner remains unverified.

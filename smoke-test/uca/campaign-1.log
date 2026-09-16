@@ -1,0 +1,21 @@
+TRAIL: ['START Campaign Builder', 'TOOL list_knowledge', 'TOOL read_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'TOOL search_knowledge', 'MESSAGE Campaign Builder']
+AUDIT: []
+REVEALS: 0
+LAST AGENT: Campaign Builder
+=== OUTPUT ===
+## Checkpoint 1: Segment definition
+
+**Target segment**
+- **Institution type:** Arkansas public universities
+- **Enrollment band:** Roughly 5,000–15,000 total headcount
+- **Region:** Arkansas
+- **Accreditor:** Higher Learning Commission, to be verified
+- **Systems in place:** Centralized event and room scheduling using EMS or Virtual EMS, to be verified
+- **Motion:** **M1 Schedule Replacement**
+- **Excluded:** University of Central Arkansas, including all research, lists, and copy
+- **Deliverable:** Determine whether a viable segment exists, then develop role-specific scheduling copy for manual paste
+- **No sequence write**
+
+I am not treating the named system, enrollment, accreditation, or segment viability as established facts yet. Those belong in trigger research and list building.
+
+Confirm this segment definition and I’ll proceed to checkpoint 2.

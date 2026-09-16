@@ -1,0 +1,10 @@
+{
+  "account": "University of Central Arkansas",
+  "account_key": "central arkansas",
+  "decision": "Approved",
+  "decided_at": "2026-09-09T18:25:20+00:00",
+  "decided_by": "Kib Cochran",
+  "source": "Notion export 2026-09-09, ledger-export/rows-2026-09-09.jsonl",
+  "note": "Carried across from the Notion Outreach decision property. The date is the export date, not the date the decision was made; Notion recorded no decision date.",
+  "ledger_url": "https://app.notion.com/3d553f704a4581719593fd9ce9218014"
+}

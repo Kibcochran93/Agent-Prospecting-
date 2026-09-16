@@ -1,0 +1,1074 @@
+<title>Prospecting Control Panel</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --ink:#171a21; --paper:#eef1f3; --surface:#ffffff; --surface-2:#f6f7f8;
+    --line:#dde1e5; --muted:#666f79; --faint:#8b929b;
+    --accent:#2f4fc4; --accent-ink:#1c2f80; --accent-soft:#e4e9fb;
+    --good:#1c8a4d; --good-soft:#e0f4e8;
+    --warn:#a5670d; --warn-soft:#faedd7;
+    --crit:#c23b30; --crit-soft:#fbe4e1;
+    --focus:#2f4fc4;
+    --shadow:0 1px 2px rgba(23,26,33,.06), 0 1px 1px rgba(23,26,33,.04);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#eef1f4; --paper:#14161b; --surface:#1c1f26; --surface-2:#20242c;
+      --line:#2c313a; --muted:#a3aab3; --faint:#7c828b;
+      --accent:#7c9bff; --accent-ink:#dbe4ff; --accent-soft:#26305c;
+      --good:#4fce8c; --good-soft:#173625;
+      --warn:#e3ab52; --warn-soft:#3a2c11;
+      --crit:#ff7b6e; --crit-soft:#3d1e1c;
+      --focus:#7c9bff;
+      --shadow:0 1px 2px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#eef1f4; --paper:#14161b; --surface:#1c1f26; --surface-2:#20242c;
+    --line:#2c313a; --muted:#a3aab3; --faint:#7c828b;
+    --accent:#7c9bff; --accent-ink:#dbe4ff; --accent-soft:#26305c;
+    --good:#4fce8c; --good-soft:#173625;
+    --warn:#e3ab52; --warn-soft:#3a2c11;
+    --crit:#ff7b6e; --crit-soft:#3d1e1c;
+    --focus:#7c9bff;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans", -apple-system, system-ui, sans-serif;
+    font-size:14px; line-height:1.45;
+    padding-inline:20px; padding-block:24px 56px;
+  }
+  h1,h2,h3{font-family:"Archivo","IBM Plex Sans",sans-serif; text-wrap:balance; margin:0;}
+  .num{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums;}
+  a{color:var(--accent);}
+  button, select, input{font:inherit; color:inherit;}
+  :focus-visible{outline:2px solid var(--focus); outline-offset:2px;}
+
+  .wrap{max-width:1180px; margin-inline:auto; display:flex; flex-direction:column; gap:28px;}
+
+  /* header */
+  .head{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 16px;}
+  .head h1{font-size:22px; font-weight:800; letter-spacing:-.01em;}
+  .badge{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:3px 10px; border-radius:999px; background:var(--good-soft); color:var(--good);
+    font-size:12px; font-weight:600; letter-spacing:.01em;
+  }
+  .badge .dot{width:6px; height:6px; border-radius:50%; background:currentColor;}
+  .head .sub{color:var(--muted); font-size:13px; margin-left:auto;}
+
+  /* stat tiles */
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px;}
+  .tile{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:14px 16px; box-shadow:var(--shadow);
+    display:flex; flex-direction:column; gap:4px;
+  }
+  .tile .label{font-size:12px; color:var(--muted); font-weight:500; letter-spacing:.02em; text-transform:uppercase;}
+  .tile .value{font-size:26px; font-weight:600; font-family:"IBM Plex Mono",monospace;}
+  .tile .hint{font-size:12px; color:var(--faint);}
+
+  /* generic panel (not a card — a labeled region) */
+  .panel{border:1px solid var(--line); border-radius:12px; background:var(--surface); overflow:hidden;}
+  .panel-head{
+    display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px;
+    padding:13px 16px; border-bottom:1px solid var(--line); background:var(--surface-2);
+  }
+  .panel-head h2{font-size:14.5px; font-weight:700;}
+  .panel-head .desc{font-size:12.5px; color:var(--muted); flex:1 1 260px;}
+  .panel-body{padding:16px;}
+  .panel-body.tight{padding:0;}
+
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:760px){ .row2{grid-template-columns:1fr;} }
+
+  /* bar chart (horizontal) */
+  .bars{display:flex; flex-direction:column; gap:10px;}
+  .bar-row{display:grid; grid-template-columns:minmax(120px,180px) 1fr auto; align-items:center; gap:10px;}
+  .bar-row .name{font-size:12.5px; color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .bar-track{position:relative; height:10px; border-radius:999px; background:var(--surface-2); border:1px solid var(--line);}
+  .bar-fill{position:absolute; inset-block:0; left:0; border-radius:999px; background:var(--accent); transition:width .5s ease;}
+  .bar-row .val{font-size:12.5px; color:var(--muted); min-width:34px; text-align:right;}
+  .empty-note{color:var(--faint); font-size:12.5px; padding:6px 2px;}
+
+  /* tables */
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th{
+    text-align:left; font-size:11px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--muted); padding:10px 14px; border-bottom:1px solid var(--line); background:var(--surface-2);
+  }
+  td{padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top;}
+  tr:last-child td{border-bottom:0;}
+  .tbl-wrap{overflow-x:auto;}
+  .muted{color:var(--muted);}
+  .mono-sm{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--faint);}
+
+  .chip{display:inline-flex; align-items:center; gap:5px; padding:2px 9px; border-radius:999px; font-size:11.5px; font-weight:600;}
+  .chip.pending{background:var(--warn-soft); color:var(--warn);}
+  .chip.clear{background:var(--good-soft); color:var(--good);}
+  .chip.flagged{background:var(--crit-soft); color:var(--crit);}
+  .chip.info{background:var(--accent-soft); color:var(--accent-ink);}
+
+  .actions{display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
+  .btn{
+    appearance:none; border:1px solid var(--line); background:var(--surface);
+    border-radius:8px; padding:6px 11px; font-size:12.5px; font-weight:600; cursor:pointer;
+  }
+  .btn:hover{background:var(--surface-2);}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .btn.primary:hover{filter:brightness(1.06);}
+  .btn.ghost{background:transparent; border-color:transparent; color:var(--accent);}
+  .btn:disabled{opacity:.5; cursor:not-allowed;}
+  .btn.sm{padding:4px 9px; font-size:11.5px;}
+
+  select, .txt{
+    border:1px solid var(--line); background:var(--surface); border-radius:8px;
+    padding:6px 9px; font-size:12.5px; min-height:30px;
+  }
+  textarea.txt{min-height:96px; resize:vertical; line-height:1.5; width:100%;}
+
+  .field{display:flex; flex-direction:column; gap:4px;}
+  .field label{font-size:11.5px; color:var(--muted); font-weight:500;}
+  .form-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px; align-items:end;}
+
+  .banner{padding:10px 14px; border-radius:8px; font-size:12.5px; display:flex; gap:8px; align-items:flex-start;}
+  .banner.warn{background:var(--warn-soft); color:var(--warn);}
+  .banner.crit{background:var(--crit-soft); color:var(--crit);}
+  .banner.good{background:var(--good-soft); color:var(--good);}
+  .banner.info{background:var(--accent-soft); color:var(--accent-ink);}
+
+  .check-result{margin-top:14px; display:flex; flex-direction:column; gap:10px;}
+  .contact-hit{border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:12.5px; background:var(--surface-2);}
+  .contact-hit .who{font-weight:600;}
+  .contact-hit .campaigns{margin-top:6px; display:flex; flex-direction:column; gap:3px;}
+
+  .log-list{display:flex; flex-direction:column;}
+  .log-item{display:flex; gap:10px; padding:9px 16px; border-bottom:1px solid var(--line); font-size:12.5px;}
+  .log-item:last-child{border-bottom:0;}
+  .log-item .ts{color:var(--faint); font-family:"IBM Plex Mono",monospace; font-size:11px; white-space:nowrap;}
+
+  footer.note{font-size:11.5px; color:var(--faint); line-height:1.6;}
+</style>
+
+<div class="wrap">
+
+  <div class="head">
+    <h1>Prospecting control panel</h1>
+    <span class="badge" id="live-badge"><span class="dot"></span>connecting…</span>
+    <span class="badge" id="bridge-badge"><span class="dot"></span>bridge: connecting…</span>
+    <span class="sub" id="refreshed-note">not yet loaded</span>
+  </div>
+
+  <div class="panel" id="panel-bridge-config">
+    <div class="panel-head">
+      <h2>Bridge connection</h2>
+      <span class="desc">This panel now runs through your own machine's board server instead of writing to Apollo directly — same daily caps, same decisions/ audit trail, same Reviewer gate as everything else in the system. Local only for now: this only works while you're on the same machine as the server and it's running at the URL below.</span>
+    </div>
+    <div class="panel-body">
+      <div class="form-grid">
+        <div class="field"><label for="bridge-url">Bridge URL</label><input class="txt" id="bridge-url" placeholder="http://127.0.0.1:8765"></div>
+        <div class="field"><label for="bridge-token">Bridge token</label><input class="txt" id="bridge-token" type="password" placeholder="from SEATS_BRIDGE_TOKEN in .env"></div>
+        <div class="field"><label>&nbsp;</label><button class="btn primary" id="btn-bridge-save">Save &amp; connect</button></div>
+      </div>
+      <div id="bridge-result" style="margin-top:10px"></div>
+    </div>
+  </div>
+
+  <div class="stats" id="stat-tiles">
+    <div class="tile"><div class="label">Pending review</div><div class="value">—</div><div class="hint">waiting on you or an owner ask</div></div>
+    <div class="tile"><div class="label">Approved, waiting on a run</div><div class="value">—</div><div class="hint">ready to queue</div></div>
+    <div class="tile"><div class="label">Drafts awaiting approval</div><div class="value">—</div><div class="hint">Apollo, paused for you</div></div>
+    <div class="tile"><div class="label">Active sequences</div><div class="value">—</div><div class="hint">Apollo</div></div>
+    <div class="tile"><div class="label">Briefings left today</div><div class="value">—</div><div class="hint">of the daily cap</div></div>
+    <div class="tile"><div class="label">Queue jobs left today</div><div class="value">—</div><div class="hint">of the daily cap</div></div>
+  </div>
+
+  <div class="row2">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Apollo engagement</h2>
+        <span class="desc">Contacts scheduled, active sequences (top 8)</span>
+      </div>
+      <div class="panel-body">
+        <div class="bars" id="chart-engagement"><div class="empty-note">Loading…</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Pending review, by motion</h2>
+        <span class="desc">Bridge rows awaiting your decision</span>
+      </div>
+      <div class="panel-body">
+        <div class="bars" id="chart-motion"><div class="empty-note">Loading…</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-visitors">
+    <div class="panel-head">
+      <h2>Overlooked leads</h2>
+      <span class="desc">North American site visits, demo requests, and contact-form fills with no existing Apollo outreach. Read-only, straight from Apollo/HubSpot — find one here, then use it below.</span>
+      <button class="btn ghost sm" id="btn-refresh-visitors">Refresh</button>
+    </div>
+    <div class="panel-body tight">
+      <div class="log-list" id="visitor-list"><div class="log-item muted">Loading…</div></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-check">
+    <div class="panel-head">
+      <h2>Run a check now</h2>
+      <span class="desc">Read-only conflict check against Apollo and HubSpot directly: is this contact, or anyone else at their institution, already in active outreach. Results are filtered to North America. Logging a decision here writes to the same decisions/ trail as everything else, through the bridge.</span>
+    </div>
+    <div class="panel-body">
+      <div class="form-grid">
+        <div class="field"><label for="chk-name">Contact name or email</label><input class="txt" id="chk-name" placeholder="e.g. Jordan Reyes"></div>
+        <div class="field"><label for="chk-inst">Institution</label><input class="txt" id="chk-inst" placeholder="e.g. Lyon College"></div>
+        <div class="field"><label for="chk-motion">Motion</label>
+          <select id="chk-motion">
+            <option>Unclear</option>
+            <option>M1 Schedule Replacement</option>
+            <option>M2 Attendance &amp; Evidence</option>
+            <option selected>M3 Student Success / Retention</option>
+            <option>M4 Student Care / Coordinated Care</option>
+            <option>M5 Compliance &amp; Audit Evidence</option>
+            <option>M6 Smart Campus / Space Utilization</option>
+            <option>M7 Education AI / Data Engine</option>
+            <option>M9 US Health Sciences clock-hour attendance and Title IV evidence</option>
+          </select>
+        </div>
+        <div class="field"><label>&nbsp;</label><button class="btn primary" id="btn-check">Check for active outreach</button></div>
+      </div>
+      <div class="check-result" id="check-result"></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-briefing">
+    <div class="panel-head">
+      <h2>Run a briefing</h2>
+      <span class="desc">Enter a contact, an institution, or both. This runs the real Prospect Briefing agent through the bridge — the same research-and-draft chain as everything else in the system, not a quick isolated AI note. It costs one of today's briefing runs (see the tile above) and takes a minute or two. The output is a draft only: nothing is sent, nothing is written to Apollo. Approve it in Pending review below to move it toward an actual send.</span>
+    </div>
+    <div class="panel-body">
+      <div class="form-grid">
+        <div class="field"><label for="br-inst">Institution</label><input class="txt" id="br-inst" placeholder="e.g. Lyon College"></div>
+        <div class="field"><label for="br-name">Contact name (optional)</label><input class="txt" id="br-name" placeholder="e.g. Jordan Reyes"></div>
+        <div class="field"><label for="br-title">Title (optional)</label><input class="txt" id="br-title" placeholder="e.g. VP Student Success"></div>
+        <div class="field"><label>&nbsp;</label><button class="btn primary" id="btn-run-briefing">Run briefing</button></div>
+      </div>
+      <div class="check-result" id="briefing-result"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Pending review</h2>
+      <span class="desc">Waiting on a decision — yours, or an account owner's. Approve or decline here writes straight to decisions/ through the bridge, the same trail the local board reads and writes.</span>
+      <button class="btn ghost sm" id="btn-refresh-state">Refresh</button>
+    </div>
+    <div class="panel-body tight">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Institution</th><th>Motion</th><th>Account owner</th><th>Waiting on</th><th>Decision</th></tr></thead>
+          <tbody id="tbl-pending"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Approved, waiting on a run</h2>
+      <span class="desc">Cleared for outreach and waiting on a COPY or SEQUENCE run. Queueing here goes through the same job_queue as the local board — the daily cap and the one-job-per-account guard both apply.</span>
+    </div>
+    <div class="panel-body tight">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Institution</th><th>Motion</th><th>Waiting on</th><th></th></tr></thead>
+          <tbody id="tbl-queueable"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Agent context checks</h2>
+      <span class="desc">Account Context notes from the agents, read-only. Since ADR 0004 (15 Sep 2026) ownership alone no longer blocks anything, so these are informational — activity (a live sequence, a recent touch) is what actually gates a run, and that's enforced upstream, not decided here.</span>
+    </div>
+    <div class="panel-body tight">
+      <div class="log-list" id="context-list"><div class="log-item muted">Nothing synced yet.</div></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Campaign drafts awaiting approval</h2>
+      <span class="desc">Apollo sequences paused for manual approval, filtered to campaigns created by this prospecting tool. Marking reviewed here does not activate them — activating, and every send, still happens in Apollo. Read-only, straight from Apollo.</span>
+      <button class="btn ghost sm" id="btn-refresh-campaigns">Refresh</button>
+    </div>
+    <div class="panel-body tight">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Sequence</th><th>Steps</th><th>Scheduled</th><th>Open rate</th><th>Reviewed here</th></tr></thead>
+          <tbody id="tbl-drafts"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Activity, this dashboard</h2>
+      <span class="desc">Local to this panel — a convenience log, not the audit trail. The real record of every decision lives in decisions/ on your machine, written through the bridge.</span>
+    </div>
+    <div class="panel-body tight">
+      <div class="log-list" id="log-list"><div class="log-item muted">Loading…</div></div>
+    </div>
+  </div>
+
+  <footer class="note">
+    Reconciled onto the bridge, 15 September 2026. Decisions and queued runs go through <code>board_serve.py</code> on your machine — same <code>decisions/</code> trail, same job-queue caps, same Reviewer gate the rest of the system uses. "Run a check now" and "Overlooked leads" still read Apollo/HubSpot directly (read-only, nothing to reconcile there). Local only: this panel only reaches the bridge while you're on the same machine it's running on and the URL/token above are current.
+  </footer>
+
+</div>
+<script>
+(() => {
+  const APOLLO = "Apollo.io";
+  const HUBSPOT = "HubSpot";
+
+  // No window.claude anywhere in this file. This runs as a plain local
+  // file, not inside a published Artifact or a Cowork session -- every
+  // Apollo/HubSpot read and every bit of local persistence goes through
+  // the bridge or localStorage, both of which work the same whether this
+  // file is opened directly or served from anywhere else.
+  let campaigns = [];       // apollo sequences
+  let reviewedDrafts = {};  // campaignId -> true (localStorage)
+  let connectorState = { apollo: "unknown" };
+
+  // ---------- bridge state, replaces the old Firestore ledgerItems sync ----------
+  let bridgeState = null;   // last successful /api/state payload
+  let bridgeOk = false;
+  let bridgePollTimer = null;
+
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const fmtPct = (n) => (Math.round((n||0)*1000)/10) + "%";
+  const timeAgo = (ts) => {
+    const s = Math.max(0, Math.floor((Date.now()-ts)/1000));
+    if (s<60) return s+"s ago";
+    if (s<3600) return Math.floor(s/60)+"m ago";
+    if (s<86400) return Math.floor(s/3600)+"h ago";
+    return Math.floor(s/86400)+"d ago";
+  };
+
+  function setBadge(id, state, text) {
+    const el = $(id);
+    if (!el) return;
+    el.className = "badge";
+    if (state === "err") { el.style.background = "var(--crit-soft)"; el.style.color = "var(--crit)"; }
+    else if (state === "warn") { el.style.background = "var(--warn-soft)"; el.style.color = "var(--warn)"; }
+    else { el.style.background = "var(--good-soft)"; el.style.color = "var(--good)"; }
+    el.innerHTML = '<span class="dot"></span>' + esc(text);
+  }
+
+  function noteRefreshed() {
+    $("refreshed-note").textContent = "last updated " + new Date().toLocaleTimeString();
+  }
+
+  // These now come back from board_serve.py (read_proxy.py), not an MCP
+  // connector, so the error shape is a plain {status, message} rather than
+  // a connector error code. err.status is set by bridgeFetch below.
+  function errCopy(server, err) {
+    const status = err && err.status;
+    if (status === 401) return "Bridge token rejected — check it against SEATS_BRIDGE_TOKEN in .env.";
+    if (status === 503) return server + " is unavailable: " + (err.message || "no usable credential on this machine.");
+    if (status === 502) return "The bridge could not reach " + server + ": " + (err.message || "unknown error");
+    if (!bridgeOk) return "Bridge not connected — connect it in the panel above.";
+    return "Could not reach " + server + ": " + ((err && err.message) || "unknown error");
+  }
+
+  async function callApollo(tool, input) {
+    return bridgeFetch("/api/apollo", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tool, input }),
+    });
+  }
+  async function callHubSpot(tool, input) {
+    return bridgeFetch("/api/hubspot", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tool, input }),
+    });
+  }
+
+  // ---------- bridge: config + fetch wrapper ----------
+  function bridgeUrl() { return ($("bridge-url").value || "").trim().replace(/\/+$/, ""); }
+  function bridgeToken() { return ($("bridge-token").value || "").trim(); }
+
+  async function bridgeFetch(path, opts) {
+    const url = bridgeUrl() + path;
+    const headers = Object.assign(
+      { "Authorization": "Bearer " + bridgeToken() },
+      (opts && opts.headers) || {}
+    );
+    const resp = await fetch(url, Object.assign({}, opts, { headers }));
+    let data = null;
+    try { data = await resp.json(); } catch (e) { /* no body */ }
+    if (!resp.ok) {
+      const msg = (data && data.error) ? data.error : ("bridge returned " + resp.status);
+      const err = new Error(msg);
+      err.status = resp.status;
+      throw err;
+    }
+    return data;
+  }
+
+  // Plain localStorage, unconditionally -- this file never runs inside a
+  // published Artifact or Cowork session anymore, so there is no window.claude
+  // db to prefer over it.
+  const LOCAL_KEY = "seats_bridge_config";
+
+  function readLocalConfig() {
+    try {
+      const raw = window.localStorage.getItem(LOCAL_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; } // private browsing, disabled storage, etc.
+  }
+
+  function writeLocalConfig(url, token) {
+    try { window.localStorage.setItem(LOCAL_KEY, JSON.stringify({ url, token })); }
+    catch (e) { /* best effort -- config just won't survive a reload */ }
+  }
+
+  function loadBridgeConfig() {
+    // The default has to be set unconditionally, even with nothing saved
+    // yet: a blank field fetches from "" (this page's own origin), which
+    // fails silently as "Failed to fetch" rather than a real attempt.
+    $("bridge-url").value = "http://127.0.0.1:8765";
+    const local = readLocalConfig();
+    if (local && local.url) $("bridge-url").value = local.url;
+    if (local && local.token) $("bridge-token").value = local.token;
+  }
+
+  async function saveBridgeConfig() {
+    const url = bridgeUrl();
+    const token = bridgeToken();
+    $("bridge-result").innerHTML = '<div class="muted">Connecting…</div>';
+    writeLocalConfig(url, token);
+    await pollState(true);
+  }
+
+  // The exact stopword set board.py's account_key() uses isn't duplicated
+  // here — this is a best-effort match for ad-hoc entries only (the "Run a
+  // check now" manual log). Every row that comes back from /api/state
+  // already carries the real account_key computed server-side, and every
+  // approve/decline/queue button built from those rows uses that value
+  // directly, never this guess.
+  function accountKeyGuess(name) {
+    let head = (name || "").split(",")[0].trim().replace(/^the\s+/i, "");
+    const words = (head.toLowerCase().match(/[a-z0-9]+/g)) || [];
+    const stop = new Set(["university","college","the","of","at","a","an","and","for"]);
+    const kept = words.filter(w => !stop.has(w));
+    return (kept.length ? kept : words).join(" ");
+  }
+
+  async function decideBridge({ accountKey, account, decision, kind, owner, note }) {
+    return bridgeFetch("/decide", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        account_key: accountKey, account, decision,
+        kind: kind || "kib_decision", owner: owner || "", note: note || "",
+      }),
+    });
+  }
+
+  async function queueBridge({ accountKey, account, stage, note }) {
+    return bridgeFetch("/queue", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ account_key: accountKey, account, stage, note: note || "" }),
+    });
+  }
+
+  async function briefingBridge(target) {
+    return bridgeFetch("/briefing", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ target }),
+    });
+  }
+
+  // ---------- polling /api/state, replaces the old onSnapshot sync ----------
+  async function pollState(showErrors) {
+    try {
+      bridgeState = await bridgeFetch("/api/state", { method: "GET" });
+      bridgeOk = true;
+      setBadge("bridge-badge", "ok", "bridge: connected");
+      $("bridge-result").innerHTML = '<div class="banner good">Connected. '
+        + bridgeState.pending.length + ' pending, ' + bridgeState.queueable.length + ' ready to queue.</div>';
+    } catch (err) {
+      bridgeOk = false;
+      setBadge("bridge-badge", "err", "bridge: " + (err.status === 401 ? "wrong token" : "unreachable"));
+      if (showErrors) {
+        $("bridge-result").innerHTML = '<div class="banner crit">'
+          + esc(err.message) + '. Check the URL and token, and that board_serve.py is running.</div>';
+      }
+      renderPendingTable(); renderQueueableTable(); renderContextList();
+      return;
+    }
+    renderPendingTable();
+    renderQueueableTable();
+    renderContextList();
+    renderMotionChart();
+    renderStats();
+    noteRefreshed();
+  }
+
+  // ---------- stats + charts ----------
+  function renderStats() {
+    const tiles = document.querySelectorAll("#stat-tiles .tile .value");
+    const activeCampaigns = campaigns.filter(c => c.active);
+    const scheduled = activeCampaigns.reduce((sum,c) => sum + (c.unique_scheduled||0), 0);
+    const awaiting = campaigns.filter(c => c.status_reason === "manual_approve");
+    const pendingN = bridgeState ? bridgeState.pending.length : "—";
+    const queueableN = bridgeState ? bridgeState.queueable.length : "—";
+    const briefLeft = bridgeState ? bridgeState.briefing_budget.left + " / " + bridgeState.briefing_budget.max : "—";
+    const queueLeft = bridgeState ? bridgeState.budget.left + " / " + bridgeState.budget.max : "—";
+    tiles[0].textContent = pendingN;
+    tiles[1].textContent = queueableN;
+    tiles[2].textContent = awaiting.length;
+    tiles[3].textContent = activeCampaigns.length;
+    tiles[4].textContent = briefLeft;
+    tiles[5].textContent = queueLeft;
+  }
+
+  function renderBars(containerId, items, valueKey, labelKey) {
+    const el = $(containerId);
+    if (!items.length) { el.innerHTML = '<div class="empty-note">Nothing to show yet.</div>'; return; }
+    const max = Math.max(...items.map(i => i[valueKey])) || 1;
+    el.innerHTML = items.map(i => `
+      <div class="bar-row">
+        <div class="name" title="${esc(i[labelKey])}">${esc(i[labelKey])}</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${Math.max(3, (i[valueKey]/max)*100)}%"></div></div>
+        <div class="val num">${i[valueKey]}</div>
+      </div>`).join("");
+  }
+
+  function renderEngagementChart() {
+    const items = campaigns.filter(c => c.active && (c.unique_scheduled||0) > 0)
+      .sort((a,b) => b.unique_scheduled - a.unique_scheduled)
+      .slice(0, 8)
+      .map(c => ({ name: c.name, unique_scheduled: c.unique_scheduled }));
+    renderBars("chart-engagement", items, "unique_scheduled", "name");
+  }
+
+  function renderMotionChart() {
+    const counts = {};
+    (bridgeState ? bridgeState.pending : []).forEach(r => {
+      const m = r.motion || "Unclear"; counts[m] = (counts[m]||0) + 1;
+    });
+    const items = Object.entries(counts).map(([motion,n]) => ({ motion, n })).sort((a,b) => b.n - a.n);
+    renderBars("chart-motion", items, "n", "motion");
+  }
+
+  // ---------- pending review table, backed by the bridge ----------
+  function renderPendingTable() {
+    const tb = $("tbl-pending");
+    if (!bridgeOk) { tb.innerHTML = '<tr><td colspan="5"><div class="banner warn">Bridge not connected — connect above to see pending review.</div></td></tr>'; return; }
+    const rows = bridgeState.pending;
+    if (!rows.length) { tb.innerHTML = '<tr><td colspan="5" class="muted">Nothing pending review.</td></tr>'; return; }
+    tb.innerHTML = rows.map((r) => `
+      <tr data-key="${esc(r.account_key)}">
+        <td><strong>${esc(r.institution || "—")}</strong></td>
+        <td>${esc(r.motion||"Unclear")}</td>
+        <td>${esc(r.account_owner||"—")}</td>
+        <td class="muted">${esc(r.waiting_on)} — ${esc(r.blocker)}</td>
+        <td>
+          <div class="actions">
+            <select class="reason-sel" data-key="${esc(r.account_key)}">
+              <option value="">Reason (optional)</option>
+              <option>No activity on account</option>
+              <option>Not in campaign</option>
+              <option>Permission granted</option>
+            </select>
+            <button class="btn primary sm act-approve" data-key="${esc(r.account_key)}">Approve</button>
+            <button class="btn sm act-decline" data-key="${esc(r.account_key)}">Decline</button>
+          </div>
+        </td>
+      </tr>`).join("");
+
+    tb.querySelectorAll(".act-approve").forEach(b => b.addEventListener("click", onDecideRow.bind(null, "Approved")));
+    tb.querySelectorAll(".act-decline").forEach(b => b.addEventListener("click", onDecideRow.bind(null, "Declined")));
+  }
+
+  async function onDecideRow(decision, ev) {
+    const key = ev.currentTarget.dataset.key;
+    const row = bridgeState.pending.find(r => r.account_key === key);
+    if (!row) return;
+    const reasonSel = document.querySelector('.reason-sel[data-key="' + CSS.escape(key) + '"]');
+    const reason = reasonSel ? reasonSel.value : "";
+    const scope = document.querySelector('tr[data-key="'+CSS.escape(key)+'"]');
+    const btns = scope ? scope.querySelectorAll("button") : [];
+    btns.forEach(b => b.disabled = true);
+    const kind = row.stage === "ASK_OWNER" ? "owner_review" : "kib_decision";
+    try {
+      const result = await decideBridge({
+        accountKey: key, account: row.institution, decision,
+        kind, owner: kind === "owner_review" ? row.account_owner : "", note: reason,
+      });
+      logActivity(decision === "Approved" ? "approve" : "decline", row.institution, result.file);
+      await pollState();
+    } catch (err) {
+      alert("Could not record that: " + err.message);
+      btns.forEach(b => b.disabled = false);
+    }
+  }
+
+  // ---------- approved, waiting on a run ----------
+  function renderQueueableTable() {
+    const tb = $("tbl-queueable");
+    if (!bridgeOk) { tb.innerHTML = '<tr><td colspan="4"><div class="banner warn">Bridge not connected.</div></td></tr>'; return; }
+    const rows = bridgeState.queueable;
+    if (!rows.length) { tb.innerHTML = '<tr><td colspan="4" class="muted">Nothing waiting on a run.</td></tr>'; return; }
+    tb.innerHTML = rows.map(r => `
+      <tr data-key="${esc(r.account_key)}">
+        <td><strong>${esc(r.institution)}</strong></td>
+        <td>${esc(r.motion||"Unclear")}</td>
+        <td class="muted">${esc(r.waiting_on)} — ${esc(r.blocker)}</td>
+        <td><button class="btn primary sm act-queue" data-key="${esc(r.account_key)}" data-stage="${esc(r.stage)}">Queue ${esc(r.stage)}</button></td>
+      </tr>`).join("");
+    tb.querySelectorAll(".act-queue").forEach(b => b.addEventListener("click", onQueueRow));
+  }
+
+  async function onQueueRow(ev) {
+    const key = ev.currentTarget.dataset.key;
+    const stage = ev.currentTarget.dataset.stage;
+    const row = bridgeState.queueable.find(r => r.account_key === key);
+    if (!row) return;
+    ev.currentTarget.disabled = true;
+    try {
+      const result = await queueBridge({ accountKey: key, account: row.institution, stage });
+      logActivity("queue", row.institution, stage + " → " + result.file);
+      await pollState();
+    } catch (err) {
+      alert("Could not queue that: " + err.message);
+      ev.currentTarget.disabled = false;
+    }
+  }
+
+  // ---------- agent context checks, read-only since ADR 0004 ----------
+  function renderContextList() {
+    const el = $("context-list");
+    if (!bridgeOk) { el.innerHTML = '<div class="log-item muted">Bridge not connected.</div>'; return; }
+    const rows = bridgeState.context_notes;
+    if (!rows.length) { el.innerHTML = '<div class="log-item muted">Nothing synced yet.</div>'; return; }
+    el.innerHTML = rows.map(r => `
+      <div class="log-item">
+        <span class="ts">${esc(timeAgo(new Date(r.written_at || Date.now()).getTime()))}</span>
+        <span><strong>${esc(r.institution)}</strong> <span class="mono-sm">${esc(r.file)}</span>${r.relayed ? ' <span class="chip clear">relayed</span>' : ' <span class="chip pending">not relayed</span>'}</span>
+      </div>`).join("");
+  }
+
+  // ---------- Apollo campaigns (unchanged: read-only) ----------
+  function renderDraftsTable() {
+    const awaiting = campaigns.filter(c => c.status_reason === "manual_approve");
+    const tb = $("tbl-drafts");
+    if (!awaiting.length) { tb.innerHTML = '<tr><td colspan="5" class="muted">Nothing waiting on your approval right now.</td></tr>'; return; }
+    tb.innerHTML = awaiting.map(c => `
+      <tr data-id="${c.id}">
+        <td><strong>${esc(c.name)}</strong></td>
+        <td>${c.num_steps}</td>
+        <td class="num">${c.unique_scheduled||0}</td>
+        <td class="num">${fmtPct(c.open_rate_unfiltered)}</td>
+        <td>
+          ${reviewedDrafts[c.id]
+            ? '<span class="chip clear">reviewed</span>'
+            : '<button class="btn sm act-mark" data-id="'+c.id+'">Mark reviewed</button>'}
+        </td>
+      </tr>`).join("");
+    tb.querySelectorAll(".act-mark").forEach(b => b.addEventListener("click", onMarkReviewed));
+  }
+
+  function readReviewedDrafts() {
+    try { return JSON.parse(window.localStorage.getItem("seats_draft_reviews") || "{}"); }
+    catch (e) { return {}; }
+  }
+  function writeReviewedDrafts(obj) {
+    try { window.localStorage.setItem("seats_draft_reviews", JSON.stringify(obj)); } catch (e) { /* best effort */ }
+  }
+
+  async function onMarkReviewed(ev) {
+    const id = ev.currentTarget.dataset.id;
+    ev.currentTarget.disabled = true;
+    const camp = campaigns.find(c => c.id === id);
+    reviewedDrafts[id] = true;
+    writeReviewedDrafts(reviewedDrafts);
+    logActivity("draft_reviewed", camp ? camp.name : id, "marked reviewed on dashboard");
+    renderDraftsTable();
+  }
+
+  const MY_APOLLO_USER_ID = "69d808314b6a820015875600"; // Kib Cochran, confirmed via apollo_users_api_profile
+  const isMyCampaign = (c) => c.object_owner_id === MY_APOLLO_USER_ID;
+
+  async function loadCampaigns() {
+    try {
+      const payload = await callApollo("apollo_emailer_campaigns_search", { page: "1", per_page: "100", _rationale: "populate prospecting dashboard engagement and approval-queue sections", _conversation_ref: "dash01" });
+      campaigns = ((payload && payload.emailer_campaigns) || []).filter(isMyCampaign);
+      connectorState.apollo = "ok";
+      renderEngagementChart(); renderDraftsTable(); renderStats();
+    } catch (err) {
+      connectorState.apollo = "err";
+      $("tbl-drafts").innerHTML = '<tr><td colspan="5"><div class="banner crit">'+esc(errCopy("Apollo.io", err))+'</div></td></tr>';
+      $("chart-engagement").innerHTML = '<div class="banner crit">'+esc(errCopy("Apollo.io", err))+'</div>';
+    }
+    updateBadge();
+  }
+
+  function updateBadge() {
+    if (connectorState.apollo === "err") setBadge("live-badge", "warn", "Apollo unavailable");
+    else setBadge("live-badge", "ok", "live");
+    noteRefreshed();
+  }
+
+  // ---------- run a check now (unchanged: read-only Apollo + HubSpot) ----------
+  let lastCheck = null;
+  const NA_COUNTRIES = new Set(["united states","usa","us","u.s.","u.s.a.","united states of america","canada"]);
+  const isNaCountry = (country) => !country || NA_COUNTRIES.has(String(country).trim().toLowerCase());
+  const NON_NA_EMAIL_RE = /\.(ac\.uk|edu\.au|ac\.nz|ac\.in|edu\.sg|ac\.ie|edu\.hk|rcsi\.com)$/i;
+  const isNaHubspotContact = (p) => isNaCountry(p.country) && !NON_NA_EMAIL_RE.test(p.email || "");
+
+  async function fetchHubspotContext(name, inst) {
+    const q = name || inst;
+    if (!q) return { html: "", contacts: [] };
+    try {
+      const hsPayload = await callHubSpot("search_crm_objects", {
+        objectType: "CONTACT", query: q,
+        properties: ["firstname","lastname","email","jobtitle","company","hubspot_owner_id","lastmodifieddate","country"],
+        limit: 5,
+        chatInsights: { userIntent: "Show HubSpot contact and recent email context alongside an Apollo outreach conflict check", satisfaction: "NEUTRAL" }
+      });
+      const allHsContacts = (hsPayload && hsPayload.results) || [];
+      const hsContacts = allHsContacts.filter(c => isNaHubspotContact(c.properties || {}));
+      if (!hsContacts.length) {
+        return { html: allHsContacts.length
+          ? '<div class="banner info">HubSpot matches exist but look non-North-American (filtered out).</div>'
+          : '<div class="banner info">No matching HubSpot contact found.</div>', contacts: [] };
+      }
+      const ownerIds = [...new Set(hsContacts.map(c => c.properties.hubspot_owner_id).filter(Boolean).map(Number))];
+      let owners = {};
+      if (ownerIds.length) {
+        try {
+          const ownerPayload = await callHubSpot("search_owners", { ownerIds });
+          (ownerPayload && ownerPayload.owners || []).forEach(o => { owners[o.ownerId] = o.name; });
+        } catch (e) { /* owner names are a nice-to-have; skip on failure */ }
+      }
+      const blocks = await Promise.all(hsContacts.slice(0, 2).map(async (c) => {
+        const p = c.properties;
+        const fullName = [p.firstname, p.lastname].filter(Boolean).join(" ") || p.email || "(unnamed)";
+        const ownerName = owners[p.hubspot_owner_id] || (p.hubspot_owner_id ? ("owner id " + p.hubspot_owner_id) : "unassigned");
+        let emailRows = ""; let emails = [];
+        try {
+          const emailPayload = await callHubSpot("search_crm_objects", {
+            objectType: "EMAIL",
+            properties: ["hs_email_subject","hs_email_direction","hs_email_status","hs_timestamp","hs_email_from_email","hs_email_to_email"],
+            filterGroups: [{ associatedWith: [{ objectType: "contacts", operator: "EQUAL", objectIdValues: [c.id] }] }],
+            sorts: [{ propertyName: "hs_timestamp", direction: "DESCENDING" }],
+            limit: 4,
+            chatInsights: { userIntent: "Show this HubSpot contact's recent email history for context before outreach", satisfaction: "NEUTRAL" }
+          });
+          emails = (emailPayload && emailPayload.results) || [];
+          emailRows = emails.map(e => {
+            const ep = e.properties;
+            const dir = ep.hs_email_direction === "INCOMING_EMAIL" ? "received" : "sent";
+            const when = ep.hs_timestamp ? new Date(ep.hs_timestamp).toLocaleDateString() : "";
+            return `<div class="mono-sm">${esc(when)} · ${esc(dir)} · ${esc(ep.hs_email_subject||"(no subject)")}</div>`;
+          }).join("");
+        } catch (e) { emailRows = '<div class="mono-sm">Email history unavailable right now.</div>'; }
+        return { fullName, p, ownerName, emailRows, emailList: emails };
+      }));
+      const contacts = blocks.map(b => ({
+        name: b.fullName, title: b.p.jobtitle || "", inst: b.p.company || "", email: b.p.email || "",
+        recentEmails: (b.emailList || []).slice(0, 3).map(e => ({
+          when: e.properties.hs_timestamp ? new Date(e.properties.hs_timestamp).toLocaleDateString() : "",
+          dir: e.properties.hs_email_direction === "INCOMING_EMAIL" ? "received" : "sent",
+          subject: e.properties.hs_email_subject || ""
+        }))
+      }));
+      const html = blocks.map((b, idx) => `<div class="contact-hit">
+          <div class="who">${esc(b.fullName)} <span class="chip info">HubSpot</span></div>
+          <div class="muted">${esc(b.p.jobtitle||"")}${b.p.jobtitle&&b.p.company?" · ":""}${esc(b.p.company||"")} · owner: ${esc(b.ownerName)}</div>
+          ${b.emailRows ? '<div class="campaigns">'+b.emailRows+'</div>' : '<div class="mono-sm">No logged email activity.</div>'}
+          <div class="actions" style="margin-top:6px"><button class="btn sm act-pick-hs" data-idx="${idx}">Use this contact →</button></div>
+        </div>`).join("");
+      return { html, contacts };
+    } catch (err) {
+      return { html: '<div class="banner warn">'+esc(errCopy("HubSpot", err))+'</div>', contacts: [] };
+    }
+  }
+
+  const HIGHER_ED_NAICS = new Set(["611310", "611210", "611110", "61131", "6113"]);
+  const isHigherEd = (org) => {
+    const codes = (org && org.naics_codes) || [];
+    return codes.some(c => HIGHER_ED_NAICS.has(c) || String(c).startsWith("6113"));
+  };
+  const NON_NA_EMAIL_RE2 = /\.(ac\.uk|edu\.au|ac\.nz|ac\.in|edu\.sg|ac\.ie|edu\.hk|rcsi\.com|co\.uk|org\.uk|ncirl\.ie)$/i;
+  const NON_NA_TLD_RE = /\.(uk|ie|au|nz|in|sg|hk|bh)$/i;
+  const looksNa = (country, email) => {
+    if (country) return isNaCountry(country);
+    if (!email) return true;
+    return !NON_NA_EMAIL_RE2.test(email) && !NON_NA_TLD_RE.test(email);
+  };
+  const isFreshFormLead = (p) => {
+    const name = (p.recent_conversion_event_name || "").toLowerCase();
+    const count = Number(p.num_conversion_events || 0);
+    if (name.includes("helpdesk") || name.includes("support")) return false;
+    return count > 0 && count <= 2;
+  };
+
+  async function loadSiteVisitors() {
+    const el = $("visitor-list");
+    el.innerHTML = '<div class="log-item muted">Checking site visits and form fills…</div>';
+    const items = [];
+    try {
+      const payload = await callApollo("apollo_contacts_search", {
+        website_visitors_people_from_domains: ["seatsone.com"],
+        website_visitors_people_from_past: 30, per_page: 25,
+        _rationale: "surface North American website visitors with no existing outreach as candidate leads",
+        _conversation_ref: "dash01"
+      });
+      const all = (payload && payload.contacts) || [];
+      all.filter(c => isNaCountry(c.country) && (c.contact_campaign_statuses || []).length === 0)
+        .forEach(c => {
+          const org = c.organization || c.account || {};
+          const wv = c.website_visitor || {};
+          items.push({
+            source: "Apollo visit", when: wv.website_last_visit || "",
+            name: c.name || "(unnamed)", institution: c.organization_name || org.name || "—",
+            detail: (c.title ? c.title + " · " : "") + (wv.website_total_visits||0) + " visits · intent: " + (wv.website_intent||"unknown"),
+            heChip: isHigherEd(org) ? '<span class="chip clear">higher ed</span>' : '<span class="chip info">org type unclear</span>'
+          });
+        });
+    } catch (err) {
+      items.push({ source: "Apollo visit", error: errCopy("Apollo.io", err) });
+    }
+    try {
+      const hsPayload = await callHubSpot("search_crm_objects", {
+        objectType: "CONTACT",
+        filterGroups: [{ filters: [{ propertyName: "recent_conversion_event_name", operator: "HAS_PROPERTY" }] }],
+        properties: ["firstname","lastname","email","company","country","recent_conversion_event_name","recent_conversion_date","num_conversion_events"],
+        sorts: [{ propertyName: "recent_conversion_date", direction: "DESCENDING" }],
+        limit: 25,
+        chatInsights: { userIntent: "Find North American contacts who recently requested a demo or filled out a form, as fresh unactioned leads", satisfaction: "NEUTRAL" }
+      });
+      const hsResults = (hsPayload && hsPayload.results) || [];
+      hsResults.map(r => r.properties).filter(p => isFreshFormLead(p) && looksNa(p.country, p.email))
+        .forEach(p => {
+          const fullName = [p.firstname, p.lastname].filter(Boolean).join(" ") || p.email;
+          items.push({
+            source: "HubSpot form", when: p.recent_conversion_date ? p.recent_conversion_date.slice(0,10) : "",
+            name: fullName, institution: p.company || "—",
+            detail: p.recent_conversion_event_name || "form submission", heChip: ""
+          });
+        });
+    } catch (err) {
+      items.push({ source: "HubSpot form", error: errCopy("HubSpot", err) });
+    }
+    const errors = items.filter(i => i.error);
+    const overlooked = items.filter(i => !i.error).sort((a,b) => (b.when||"").localeCompare(a.when||""));
+    if (!overlooked.length && !errors.length) {
+      el.innerHTML = '<div class="log-item muted">No overlooked North American leads right now.</div>';
+      return;
+    }
+    el.innerHTML = errors.map(i => '<div class="log-item"><div class="banner warn">'+esc(i.source)+': '+esc(i.error)+'</div></div>').join("")
+      + overlooked.map((it, idx) => `
+        <div class="log-item">
+          <span class="ts">${esc(it.when)}</span>
+          <span>${esc(it.name)} — <strong>${esc(it.institution)}</strong> <span class="chip info">${esc(it.source)}</span> ${it.heChip}
+            <span class="muted">${esc(it.detail)}</span></span>
+          <button class="btn sm act-visitor" data-idx="${idx}" style="margin-left:auto">Act on this</button>
+        </div>`).join("");
+    el.querySelectorAll(".act-visitor").forEach(b => b.addEventListener("click", (ev) => {
+      const idx = Number(ev.currentTarget.dataset.idx);
+      const it = overlooked[idx];
+      if (!it) return;
+      $("chk-name").value = it.name || "";
+      $("chk-inst").value = it.institution === "—" ? "" : it.institution;
+      $("br-name").value = it.name || "";
+      $("br-inst").value = it.institution === "—" ? "" : it.institution;
+      $("panel-check").scrollIntoView({ behavior: "smooth", block: "start" });
+      logActivity("visitor_actioned", it.institution || it.name, "sent to Run a check now (" + it.source + ")");
+    }));
+  }
+
+  async function onRunCheck() {
+    const name = $("chk-name").value.trim();
+    const inst = $("chk-inst").value.trim();
+    const resultEl = $("check-result");
+    if (!name && !inst) { resultEl.innerHTML = '<div class="banner warn">Enter a contact name/email or an institution to check.</div>'; return; }
+    $("btn-check").disabled = true;
+    resultEl.innerHTML = '<div class="muted">Checking Apollo and HubSpot…</div>';
+    try {
+      const searches = [];
+      if (name) searches.push(callApollo("apollo_contacts_search", { q_keywords: name, per_page: 5, _rationale: "conflict check for a specific contact before outreach", _conversation_ref: "dash01" }));
+      if (inst) searches.push(callApollo("apollo_contacts_search", { q_keywords: inst, per_page: 10, _rationale: "conflict check across an institution before outreach", _conversation_ref: "dash01" }));
+      const [results, hubspotBlock] = await Promise.all([Promise.all(searches), fetchHubspotContext(name, inst)]);
+      const allContacts = []; const seen = new Set();
+      results.forEach(r => (r && r.contacts || []).forEach(c => { if (!seen.has(c.id)) { seen.add(c.id); allContacts.push(c); } }));
+      const contacts = allContacts.filter(c => isNaCountry(c.country));
+      const hiddenNonNa = allContacts.length - contacts.length;
+      const flagged = contacts.filter(c => (c.contact_campaign_statuses||[]).length > 0);
+      lastCheck = { name, inst, contacts, flagged: flagged.length > 0 };
+      let html = "";
+      html += flagged.length
+        ? '<div class="banner crit"><strong>Flagged</strong> — '+flagged.length+' matching contact(s) already have Apollo outreach history.</div>'
+        : '<div class="banner good"><strong>Clear</strong> — no existing Apollo outreach found for this contact or institution.</div>';
+      if (hiddenNonNa > 0) html += '<div class="banner info">'+hiddenNonNa+' Apollo match(es) hidden as outside North America.</div>';
+      const apolloPicks = contacts.slice(0, 8).map(c => ({
+        name: c.name || "", title: c.title || "", inst: c.organization_name || "",
+        email: c.email || (c.contact_emails && c.contact_emails[0] && c.contact_emails[0].email) || "",
+        headline: c.headline || "", linkedinUrl: c.linkedin_url || "", location: c.present_raw_address || c.formatted_address || ""
+      }));
+      apolloPicks.forEach((pick, idx) => {
+        const c = contacts[idx];
+        const camps = (c.contact_campaign_statuses||[]).map(s => `<div class="mono-sm">campaign ${esc(s.emailer_campaign_id)} · ${esc(s.status)} · step ${esc(s.current_step_position)}</div>`).join("");
+        html += `<div class="contact-hit">
+          <div class="who">${esc(c.name||"(unnamed)")} <span class="chip info">Apollo</span> ${(c.contact_campaign_statuses||[]).length ? '<span class="chip flagged">in outreach</span>' : '<span class="chip clear">no history</span>'}</div>
+          <div class="muted">${esc(c.title||"")}${c.title&&c.organization_name?" · ":""}${esc(c.organization_name||"")}</div>
+          ${camps ? '<div class="campaigns">'+camps+'</div>' : ""}
+          <div class="actions" style="margin-top:6px"><button class="btn sm act-pick-ap" data-idx="${idx}">Use this contact →</button></div>
+        </div>`;
+      });
+      html += hubspotBlock.html;
+      html += `<div class="form-grid" style="margin-top:6px">
+        <div class="field"><label for="chk-decision">Decision</label>
+          <select id="chk-decision"><option value="Approved">Approve outreach</option><option value="Declined">Decline / hold</option></select>
+        </div>
+        <div class="field"><label for="chk-reason">Reason (optional)</label>
+          <select id="chk-reason"><option value="">—</option><option>No activity on account</option><option>Not in campaign</option><option>Permission granted</option></select>
+        </div>
+        <div class="field"><label>&nbsp;</label><button class="btn primary" id="btn-log-decision">Log decision</button></div>
+      </div>`;
+      resultEl.innerHTML = html;
+      $("btn-log-decision").addEventListener("click", onLogDecision);
+      resultEl.querySelectorAll(".act-pick-ap").forEach(b => b.addEventListener("click", () => pickContactForOutreach(apolloPicks[Number(b.dataset.idx)], "Apollo")));
+      resultEl.querySelectorAll(".act-pick-hs").forEach(b => b.addEventListener("click", () => pickContactForOutreach(hubspotBlock.contacts[Number(b.dataset.idx)], "HubSpot")));
+    } catch (err) {
+      resultEl.innerHTML = '<div class="banner crit">'+esc(errCopy("Apollo.io", err))+'</div>';
+    }
+    $("btn-check").disabled = false;
+  }
+
+  function pickContactForOutreach(c, source) {
+    if (!c) return;
+    $("br-name").value = c.name || "";
+    $("br-title").value = c.title || "";
+    if (c.inst) $("br-inst").value = c.inst;
+    $("panel-briefing").scrollIntoView({ behavior: "smooth", block: "start" });
+    logActivity("contact_picked", c.inst || c.name || "contact", (c.name || "contact") + " from " + source + " → Run a briefing");
+  }
+
+  async function onLogDecision() {
+    const name = $("chk-name").value.trim();
+    const inst = $("chk-inst").value.trim() || name;
+    if (!inst) { alert("Enter a name or institution first."); return; }
+    const decision = $("chk-decision").value;
+    const reason = $("chk-reason").value;
+    $("btn-log-decision").disabled = true;
+    try {
+      const result = await decideBridge({
+        accountKey: accountKeyGuess(inst), account: inst, decision, kind: "kib_decision", note: reason,
+      });
+      logActivity(decision === "Approved" ? "approve" : "decline", inst, "run-now check → " + result.file);
+      $("check-result").insertAdjacentHTML("beforeend", '<div class="banner good">Recorded to decisions/ through the bridge.</div>');
+      $("btn-log-decision").remove();
+      await pollState();
+    } catch (err) {
+      alert("Could not record that: " + err.message);
+      $("btn-log-decision").disabled = false;
+    }
+  }
+
+  // ---------- run a briefing (replaces the old direct-Apollo push panel) ----------
+  async function onRunBriefing() {
+    const inst = $("br-inst").value.trim();
+    const name = $("br-name").value.trim();
+    const title = $("br-title").value.trim();
+    const resultEl = $("briefing-result");
+    if (!inst && !name) { resultEl.innerHTML = '<div class="banner warn">Enter at least an institution or a contact name.</div>'; return; }
+    const target = [name, title, inst].filter(Boolean).join(", ");
+    $("btn-run-briefing").disabled = true;
+    resultEl.innerHTML = '<div class="muted">Running the briefing agent — this takes a minute or two…</div>';
+    try {
+      const result = await briefingBridge(target);
+      const failed = result.exit_code !== 0;
+      resultEl.innerHTML =
+        '<div class="banner ' + (failed ? "crit" : "good") + '">'
+        + (failed ? "Finished with an error (exit " + result.exit_code + ")." : "Done.")
+        + ' Recorded as ' + esc(result.file) + '. Draft only — review it in Pending review below before anything moves further.</div>'
+        + '<div style="white-space:pre-wrap; line-height:1.6; font-size:13px; margin-top:10px; padding:12px; background:var(--surface-2); border:1px solid var(--line); border-radius:8px; max-height:480px; overflow:auto;">'
+        + esc(result.output) + '</div>';
+      logActivity("briefing_run", inst || name, target + " → " + result.file);
+      await pollState();
+    } catch (err) {
+      resultEl.innerHTML = '<div class="banner crit">' + esc(err.message) + '</div>';
+    }
+    $("btn-run-briefing").disabled = false;
+  }
+
+  // ---------- activity log (dashboard-local, informational only, localStorage) ----------
+  function readLocalLog() {
+    try { return JSON.parse(window.localStorage.getItem("seats_runlog") || "[]"); }
+    catch (e) { return []; }
+  }
+  function writeLocalLog(items) {
+    try { window.localStorage.setItem("seats_runlog", JSON.stringify(items.slice(0, 20))); }
+    catch (e) { /* best effort */ }
+  }
+
+  function logActivity(type, subject, detail) {
+    const items = readLocalLog();
+    items.unshift({ type, subject, detail, ts: Date.now() });
+    writeLocalLog(items);
+    renderLog(items);
+  }
+
+  function renderLog(items) {
+    const el = $("log-list");
+    if (!items.length) { el.innerHTML = '<div class="log-item muted">Nothing logged yet.</div>'; return; }
+    const labels = { approve: "Approved", decline: "Declined", queue: "Queued a run", draft_reviewed: "Marked reviewed",
+      briefing_run: "Ran a briefing", visitor_actioned: "Overlooked lead actioned", contact_picked: "Contact sent to Run a briefing" };
+    el.innerHTML = items.map(v =>
+      `<div class="log-item"><span class="ts">${esc(timeAgo(v.ts))}</span><span>${esc(labels[v.type]||v.type)} — <strong>${esc(v.subject)}</strong>${v.detail ? " · "+esc(v.detail) : ""}</span></div>`
+    ).join("");
+  }
+
+  // ---------- boot ----------
+  async function boot() {
+    document.getElementById("btn-bridge-save").addEventListener("click", saveBridgeConfig);
+    document.getElementById("btn-check").addEventListener("click", onRunCheck);
+    document.getElementById("btn-run-briefing").addEventListener("click", onRunBriefing);
+    document.getElementById("btn-refresh-state").addEventListener("click", () => pollState(true));
+    document.getElementById("btn-refresh-campaigns").addEventListener("click", loadCampaigns);
+    document.getElementById("btn-refresh-visitors").addEventListener("click", loadSiteVisitors);
+
+    reviewedDrafts = readReviewedDrafts();
+    renderLog(readLocalLog());
+
+    await loadBridgeConfig();
+    await pollState(true);
+    bridgePollTimer = setInterval(() => pollState(false), 20000);
+
+    // Apollo/HubSpot now go through the same bridge as everything else --
+    // a failure here shows up as a normal banner in the panel that made
+    // the call (see errCopy), not a separate "connector unavailable" state.
+    await Promise.all([loadCampaigns(), loadSiteVisitors()]);
+    setInterval(loadCampaigns, 90000);
+  }
+
+  boot();
+})();
+</script>

@@ -1,0 +1,5 @@
+Segmentation confirmed. Mathis is out of this batch. Harpham and Summers stay conditional until you find a trigger.
+
+Proceed to checkpoint 2, trigger research, for the five remaining contacts and their institutions.
+
+Every trigger carries a source and a source date. Anything older than 12 months is flagged stale and is not used as a hook. If an institution has no qualifying trigger, say so and recommend dropping it rather than writing on a category assumption. Do not conflate two documents into one claim, and name any incumbent system only with a source and a date.

@@ -1,0 +1,124 @@
+
+# Verdict: **REWRITE**
+
+I disagree explicitly with the producing agent’s differentiation check. The batch does **not** pass items 1, 2, 4, or 5, and the upstream research and buying-group work is incomplete.
+
+## 1. The artifact contains directives
+
+These lines independently fail the artifact-object rule:
+
+- **“Confirm the tighter, recommended slice before checkpoint 4 buying-group mapping.”**
+- **“Names require manual personalization.”**
+
+The first is an explicit instruction embedded in the artifact. It also exposes a workflow problem: the output proceeded to copy even though buying-group mapping had not happened.
+
+## 2. Batch differentiation fails
+
+### Shared opening structure
+
+At least two messages use the same institution-plus-reported-result construction:
+
+- **“LSUS reported that its redesigned support model lifted second- and third-year persistence for the Fall 2023 cohort.”**
+- **“Murray State reported 78% first-to-second-year retention for Fall 2025, its highest in five years.”**
+
+The executive messages generally begin with an institutional metric or plan, interpret it as a strategic question, and then introduce the same offer.
+
+### Shared closing move
+
+All four executive messages close through **Engagement Readiness**:
+
+- **“Would an Engagement Readiness session help establish the measures, ownership and investment case for that goal?”**
+- **“An Engagement Readiness session could define what successful scaling should preserve. Useful conversation?”**
+- **“An Engagement Readiness session could examine whether capacity and ownership are keeping pace with that growth. Should I send the outline?”**
+- **“An Engagement Readiness session could help determine which persistence measures should guide the next investment decision.”**
+
+The four operational messages repeat the same **Progress Check Pilot** move:
+
+- **“A Progress Check Pilot could test…”**
+- **“We could use a Progress Check Pilot…”**
+- **“A Progress Check Pilot could test…”**
+- **“A Progress Check Pilot would test…”**
+
+This is a visible two-lane template: executive receives Engagement Readiness; practitioner receives Progress Check Pilot.
+
+### Category inferences dressed as recipient-specific detail
+
+These sentences are not demonstrated recipient facts:
+
+- **“That creates useful specialization, but students still experience one journey.”**
+- **“That is a welcome shift, but it also means more students advancing simultaneously through support services, advising and college-level processes.”**
+- **“The operational question is therefore not visibility, but what departments do next…”**
+
+They are generalized interpretations attached to institution-specific triggers.
+
+### Template visibility and sentence shape
+
+If one person received several messages, the pattern would be obvious. Nearly every message follows:
+
+1. Dated institutional result or plan.
+2. Seller interpretation of the resulting problem.
+3. Named entry offer.
+4. Short question.
+
+Sentence lengths vary modestly, but message architecture does not. The self-reported answers **“Obvious common template: No”** and **“Sentence forms and lengths varied: Yes”** are incorrect.
+
+## 3. Buying-group mapping was skipped
+
+The recipients remain generic or split placeholders:
+
+- **“Provost / Vice Chancellor for Academic Affairs”**
+- **“Retention workgroup lead / Student Success leader”**
+- **“Academic Affairs Retention leader”**
+- **“Student Affairs and Enrollment Management leader”**
+
+Those are not mapped contacts. They also prevent a reliable test of whether each message fits the actual role rather than a title category.
+
+This is particularly avoidable at UTC: the cited January 13, 2026 source identifies Artanya Wesley and names the leaders of the retention, technology, enrollment and aid workgroups. ([blog.utc.edu](https://blog.utc.edu/news/2026/01/mocs-flight-plan-takes-flight-utc-enrollment-strategy-moves-from-planning-to-action/)) UA Little Rock’s September 5, 2025 announcement likewise names its Vice Chancellor for Student Affairs and Chief Data Officer. ([ualr.edu](https://ualr.edu/news/2025/09/05/ua-little-rock-sees-largest-undergraduate-enrollment-increase-in-over-20-years-driven-by-affordability-retention-and-student-success-initiatives/)) LSUS’s April 9, 2026 report names the person leading its student-success redesign. ([lsus.edu](https://www.lsus.edu/lsus-dramatically-improving-retention-rates-thanks-to-redesigned-student-support-systems))
+
+No institution is nominally single-threaded—each has two role slots—but none is fully multithreaded for activation because the identities and CRM ownership remain unresolved.
+
+## 4. Research and freshness failures
+
+### UA Little Rock
+
+The artifact correctly acknowledges that the strategic-plan source is older than 12 months, but then uses it as a current fact:
+
+- **“UA Little Rock’s plan calls for student-success analytics to be embedded in departmental reporting.”**
+
+The plan was approved on June 6, 2024—more than two years before September 3, 2026. Flagging it in a note does not satisfy the rule that stale evidence must not be stated as current. ([ualr.edu](https://ualr.edu/news/2024/06/06/strategic-plan/?utm_source=openai))
+
+### LSUS
+
+**“LSUS 2030 Strategic Plan, February 17, 2025”** is also more than 12 months old and is not flagged. The April 9, 2026 report supports several redesign claims, but the artifact does not map each sentence to the current versus stale source. ([lsus.edu](https://www.lsus.edu/lsus-dramatically-improving-retention-rates-thanks-to-redesigned-student-support-systems?utm_source=openai))
+
+### UTC
+
+The basis **“UTC Strategic Plan, Fall 2025 edition”** is imprecise and appears to conflate the Strategic Enrollment Plan with the university’s 2025–2030 Strategic Plan. The official university announcement says the latter received board approval on March 2, 2026 and contains the 80% retention target. ([blog.utc.edu](https://blog.utc.edu/news/2026/03/university-of-tennessee-system-board-of-trustees-approves-utcs-2025-2030-strategic-plan/?utm_source=openai))
+
+### Murray State incumbent
+
+The artifact records the incumbent as **“Unverified; older EAB reference.”** That status is not adequately researched. Murray State’s official board material records approval of an **EdSights retention platform** contract. At minimum, that must be reconciled before the incumbent can remain “unverified.” ([murraystate.edu](https://www.murraystate.edu/about/administration/PresidentsOffice/communications.aspx))
+
+The Murray recapture basis also gives only an access date. The underlying figures were reported with Fall 2025 enrollment information tied to August 26, 2025; the artifact should carry the source/event date rather than substituting September 3, 2026 access. ([murraystate.edu](https://www.murraystate.edu/about/administration/PresidentsOffice/communications.aspx))
+
+## 5. Same-institution problem separation
+
+UTC, LSUS and Murray make a reasonable attempt to separate executive and operational problems.
+
+UA Little Rock is insufficiently separated. Both messages are built around how the institution operationalizes support as cohorts grow:
+
+- **“whether capacity and ownership are keeping pace with that growth”**
+- **“what departments do next and how intervention outcomes return to the institutional picture”**
+
+Those are adjacent versions of the same capacity-and-follow-through problem, not clearly distinct buying threads.
+
+## 6. Items that do not cause the rewrite
+
+- **Motion:** M3 Student Success / Retention is a valid named motion.
+- **Entry offers:** Engagement Readiness and Progress Check Pilot are valid M3 entry offers.
+- **Never-say list:** No “Student CRM,” prohibited board vocabulary, British spelling, named compliance shortfall, or other universal never-say hit appears.
+- **Touch value:** There are no unanswered-email chase touches; each nominal second touch introduces a different fact.
+- **Register:** The executive/practitioner distinction is broadly recognizable, although actual role specificity cannot be approved until contacts are mapped.
+- **Apollo:** No sequence was created, but that does not cure the unverified ownership risk for manual outreach.
+
+The batch must be rewritten because it advanced before buying-group mapping, contains directives, relies on stale or incorrectly classified evidence, misses a documented incumbent, and uses a visible executive/operator copy template.

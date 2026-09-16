@@ -1,0 +1,143 @@
+TRAIL: ["START Director", "hubspot_find_account", "hubspot_account_deals", "HANDOFF -> Prospect Briefing", "START Prospect Briefing", "list_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "search_knowledge", "read_knowledge", "read_knowledge", "search_knowledge", "apollo_find_org", "apollo_find_roles", "read_knowledge", "read_knowledge", "read_knowledge", "apollo_reveal_person", "apollo_reveal_person", "apollo_reveal_person", "apollo_find_roles", "search_knowledge", "search_knowledge", "apollo_reveal_person", "apollo_reveal_person", "create_ledger_record"]
+AUDIT:
+  2026-09-03T16:28:03+00:00 handoff -> Prospect Briefing: {"target":"Anthony K. Grafton, Lyon College","motion":"unclear","constraints":["HubSpot company exists: ID 8675146717; lifecycle opportunity","No associated deals or active opportunity on record","Last HubSpot note dated 2026-07-16","Prior outreach unverified; do not assume none"],"question":"Does Lyon College’s new Schools of Dental and Veterinary Medicine map to a workable Sales_Motions motion, and if so which motion and which institutional role owns the relevant problem?"}
+  apollo reveal 1/25: 63a685ed50e3aa00016f1c8c -> Randy Peterson (Director of Institutional Research and Effectiveness)
+  apollo reveal 2/25: 66fa365c954fa90001eb9642 -> Anthony Grafton (Provost and Dean of the Faculty)
+  apollo reveal 3/25: 695df19a820b770001adcdb5 -> Thomas Tucker (Executive Director of Financial Aid)
+  apollo reveal 4/25: 683e6bbd2adf1800011e8372 -> Tami Hall (Registrar)
+  apollo reveal 5/25: 66f74e77b8ee980001a85ea7 -> Jeremiah Cherwien (VP of Information Services and CIO)
+  ledger outbox write -> 20260903T162900Z-prospect-briefing-lyon-college.json
+REVEALS: 5
+LAST AGENT: Prospect Briefing
+
+=== OUTPUT ===
+## 1. Contact and institution facts
+
+**Anthony K. Grafton** is Lyon College’s Executive Vice President for Academic Affairs and Provost. His listed unit is Academic Services. His reporting line and formal authority over the professional-school deans are not publicly documented. 
+
+Lyon is a private college expanding into professional health sciences. Fall 2025 enrollment was 781, including 80 inaugural dental students. The dental school opened in 2025 and welcomed its second cohort in July 2026. The veterinary school anticipates its first class in fall 2027, pending accreditation. 
+
+Publicly visible systems include **Canvas** and a **Jenzabar-powered myLYON portal**. The dental school also uses an attendance/absence website, but its role as the authoritative attendance record is unverified. 
+
+### Motion finding
+
+**Best fit: M9 US Health Sciences: clock-hour attendance and Title IV evidence, but only as a qualification hypothesis.**
+
+Why:
+
+- Dental students must attend lectures, laboratories, and clinics and report absences through a school workflow. 
+- The dental program is a continuous 36-month curriculum combining didactic, simulation, and clinical instruction. 
+- However, Lyon publishes **credit-hour allocations**, not evidence that either professional program is federally administered as a clock-hour program. 
+- Under the playbook, M9 is not qualified until clock-hour status, the attendance system of record, and its owner are identified.
+
+**Closest fallback:** M5 Compliance & Audit Evidence, particularly for veterinary accreditation readiness. It also remains unqualified because no evidence gap or active deadline requiring a solution has been established.
+
+**Role ownership:** Grafton is an executive sponsor or routing contact, not the likely daily owner. The operational problem most likely belongs at the school level, such as the dental dean’s office, Student Services, or academic/clinical affairs. Financial Aid owns the Title IV consequence; the Registrar owns the institutional academic record; IT owns integration.
+
+---
+
+## 2. Evidence table
+
+| Claim | Source | Source date | Confidence |
+|---|---|---:|---|
+| Grafton is Executive Vice President for Academic Affairs and Provost | Lyon Academic Services | Accessed 2026-09-03 | High |
+| Fall 2025 enrollment was 781, including 80 dental students | Lyon news release | 2025-09-09 | High |
+| Dental school opened in 2025 and has welcomed two cohorts | Lyon news releases/catalog | 2026-07-21 | High |
+| Veterinary school plans a fall 2027 opening pending accreditation | Lyon professional catalog | Accessed 2026-09-03 | High |
+| Veterinary accreditation visit was scheduled for August 9–13, 2026 | Lyon news release | 2026-01-30 | High; outcome unknown |
+| Dental attendance covers lectures, laboratories, and clinics | Dental professional catalog | Accessed 2026-09-03 | High |
+| Absences are reported through a school attendance/absence website | Dental professional catalog | Accessed 2026-09-03 | High |
+| Dental curriculum is continuous, competency-based, and credit-hour based | Dental professional catalog | Accessed 2026-09-03 | High |
+| Canvas and Jenzabar are publicly visible | myLYON portal | Accessed 2026-09-03 | High |
+| Grafton’s formal authority over professional-school operations | Not documented | — | Unknown |
+| Either program is federally clock-hour based | Not documented | — | Unknown |
+
+---
+
+## 3. Internal context
+
+**Internal, not for outreach**
+
+- HubSpot company ID: **8675146717**
+- Lifecycle recorded as opportunity
+- No associated deal or active opportunity reported
+- Last note reported as **July 16, 2026**
+- Prior outreach remains unverified
+
+No direct HubSpot, Teams, Outlook, or SharePoint access was available, so previous conversations and stakeholder sentiment could not be checked.
+
+---
+
+## 4. Buying group
+
+- **Economic buyer:** Anthony K. Grafton may provide executive sponsorship, but budget authority for this use case is unverified.
+- **Operational owner:** Unknown. Likely within the relevant professional school’s Student Services, academic affairs, or clinical education operation.
+- **Technical owner:** Jeremiah Cherwien, Vice President of Information Services and Chief Information Officer. 
+- **Compliance stakeholder:** Thomas Tucker, Executive Director of Financial Aid, per Apollo refreshed August 4, 2026.
+- **Academic-record stakeholder:** Tami Hall, Registrar, per Apollo refreshed August 10, 2026.
+- **Institutional evidence stakeholder:** Randy Peterson, Director of Institutional Research and Effectiveness, per Apollo refreshed August 2, 2026.
+- **Likely blocker:** Owner of the existing attendance/absence workflow or an incumbent clinical-education system; unknown.
+
+**Grafton’s role:** Executive academic sponsor and routing contact, not the demonstrated operational owner.
+
+---
+
+## 5. Discovery questions
+
+1. **Are either dental or veterinary programs administered as clock-hour programs for federal aid purposes?**  
+   Determines whether M9 is applicable at all.
+
+2. **What is the authoritative attendance record for classroom, simulation, and clinical instruction?**  
+   Distinguishes the absence website from the actual system of record.
+
+3. **Which office reconciles missed sessions with academic and financial-aid records?**  
+   Identifies the daily operational owner.
+
+4. **How do Canvas, myLYON/Jenzabar, and professional-school systems exchange attendance data?**  
+   Reveals integration scope and manual handoffs.
+
+5. **Is the current requirement driven by financial aid, accreditation, progression, or all three?**  
+   Separates M9 from M5 or a general academic workflow.
+
+6. **What evidence was requested during the August veterinary accreditation visit?**  
+   Tests whether a concrete evidence gap and deadline exist.
+
+7. **What would prevent a pilot in one professional program?**  
+   Surfaces ownership, budget, privacy, and incumbent-system blockers.
+
+---
+
+## 6. Recommended outreach format
+
+**Short email to Grafton.**
+
+He is appropriately senior to route the question across the expanding professional-school structure. The note should qualify ownership, not imply a compliance deficiency or pitch clinical-placement management.
+
+---
+
+## 7. One draft
+
+**Subject: Attendance records across Lyon’s professional schools**
+
+Anthony,
+
+Lyon’s dental program now combines a continuous 36-month calendar with classroom, simulation, and clinical instruction, while the veterinary school prepares for its first cohort.
+
+I’m trying to understand who owns the attendance record across those settings, particularly where academic, accreditation, and financial-aid requirements meet. Is that managed within each school, or centrally through Academic Services?
+
+We work with institutions on attendance evidence and the connections between their academic systems. If someone else owns this at Lyon, I’d appreciate the steer.
+
+Kib
+
+---
+
+## 8. Review notes
+
+- **M9 is workable only as a qualification path.** Clock-hour status is not established.
+- Public evidence points to a real attendance workflow, but not to a documented gap.
+- The veterinary accreditation visit has already occurred; its outcome and findings need verification.
+- Grafton’s connection to the professional-school operating structure is thin.
+- Prior outreach must be checked before using the draft.
+- If neither program is clock-hour based, move away from M9 and test M5 only against a specific evidence requirement and deadline.
+
+**Ledger:** Draft written to `20260903T162900Z-prospect-briefing-lyon-college.json`; it awaits the Notion relay.

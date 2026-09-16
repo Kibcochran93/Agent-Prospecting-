@@ -1,0 +1,12 @@
+{
+  "account": "Arkbar",
+  "account_key": "arkbar",
+  "kind": "kib_decision",
+  "decision": "Approved",
+  "decided_at": "2026-09-15T19:41:13+00:00",
+  "decided_by": "Kib Cochran",
+  "recorded_by": "Kib Cochran",
+  "source": "board button at 127.0.0.1",
+  "note": "",
+  "ledger_url": ""
+}

@@ -1,0 +1,19 @@
+{
+  "id": "20260909T194558Z-arkansas-copy",
+  "account": "Arkansas State University",
+  "account_key": "arkansas",
+  "stage": "COPY",
+  "state": "done",
+  "queued_at": "2026-09-09T19:45:58+00:00",
+  "queued_by": "Kib Cochran",
+  "started_at": "2026-09-14T14:57:57+00:00",
+  "finished_at": "2026-09-14T14:58:41+00:00",
+  "exit_code": 0,
+  "log": "C:\\Agent Prospecting Ops\\seats-prospecting\\queue\\logs\\20260909T194558Z-arkansas-copy.log",
+  "command": [
+    "run_queue.py"
+  ],
+  "reveal_cap": 1,
+  "note": "",
+  "outcome": "Iâ€™ll use only the supplied facts. I wonâ€™t treat prior outreach, the reported incumbent contract, website intent, data flows, workflow gaps, or attendance ownership beyond the documented WN process as verified. |  | Confirm this segment and Iâ€™ll proceed to **Checkpoint 2: trigger research**."
+}

@@ -1,0 +1,3 @@
+Segment confirmed as stated. Proceed to checkpoint 2, trigger research.
+
+Every trigger carries a source and a source date. Anything over 12 months old is flagged and not used as a hook. If an institution's scheduling system is not documented in a dated public source, say so rather than inferring it from a vendor page.
