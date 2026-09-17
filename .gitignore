@@ -27,3 +27,6 @@ board.html
 Thumbs.db
 
 smoke-test/apollo-openapi.json
+
+board_serve.out.log
+board_serve.err.log
