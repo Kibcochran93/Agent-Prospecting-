@@ -46,6 +46,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import board  # noqa: E402
 import next as next_cli  # noqa: E402
+import run_queue  # noqa: E402
 from seats_prospecting import briefing_queue as briefings  # noqa: E402
 from seats_prospecting import decisions  # noqa: E402
 from seats_prospecting import job_queue as jobs  # noqa: E402
@@ -156,6 +157,20 @@ def _facts(accounts, standing, flags, copy_cache, owners=None):
     for key, acct in accounts.items():
         held = standing.get(key)
         review = owners.get(key)
+        copy_files = next_cli.copy_files_for(acct.display, key, copy_cache)
+        if not copy_files:
+            # lists/*.md is the original, hand-maintained copy store -- its
+            # newest file is dated 4 September. Every real COPY run since has
+            # gone through run_queue.py instead, which copy_files_for() never
+            # looked at, so an account could finish a real COPY job and still
+            # report "no copy exists" forever. ADR 0006. Existence only, same
+            # standard copy_files_for() already applied ("evidence copy
+            # exists, not proof the copy is any good"): a checkpoint-only log
+            # still refuses cleanly at SEQUENCE's own extraction step
+            # (ADR 0003), so nothing unsafe slips through by counting it here.
+            queued_copy = run_queue._newest_copy_job(key, jobs.queue_dir())
+            if queued_copy:
+                copy_files = [f"queue: {queued_copy.log}"]
         out[key] = ns.stage_for(
             ns.Facts(
                 account=acct.display,
@@ -166,7 +181,7 @@ def _facts(accounts, standing, flags, copy_cache, owners=None):
                 inbound_last_visit=acct.intent.last_visit if acct.intent else "",
                 inbound_visits=acct.intent.total_visits if acct.intent else 0,
                 has_records=bool(acct.briefing or acct.context or acct.review),
-                copy_files=next_cli.copy_files_for(acct.display, key, copy_cache),
+                copy_files=copy_files,
                 sequences=acct.sequences,
                 apollo_read=flags["sequences_read"],
                 tasks_read=flags["tasks_read"],
