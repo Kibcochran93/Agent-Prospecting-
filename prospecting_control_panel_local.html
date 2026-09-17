@@ -291,6 +291,11 @@
           <tbody id="tbl-queueable"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody>
         </table>
       </div>
+      <div style="display:flex; align-items:center; gap:10px; margin-top:12px; padding-top:12px; border-top:1px solid var(--line)">
+        <button class="btn primary sm" id="btn-run-queue">Run next queued job</button>
+        <span class="muted" style="font-size:12.5px">Queueing above only writes the job — this is the step that actually runs it. One job per click.</span>
+      </div>
+      <div class="check-result" id="run-queue-result"></div>
     </div>
   </div>
 
@@ -499,6 +504,14 @@
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ target }),
+    });
+  }
+
+  async function runQueueBridge() {
+    return bridgeFetch("/run-queue", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({}),
     });
   }
 
@@ -1083,6 +1096,27 @@
     $("btn-run-briefing").disabled = false;
   }
 
+  async function onRunQueueClick() {
+    const resultEl = $("run-queue-result");
+    $("btn-run-queue").disabled = true;
+    resultEl.innerHTML = '<div class="muted">Running the next queued job — this can take a couple of minutes…</div>';
+    try {
+      const result = await runQueueBridge();
+      const failed = result.exit_code !== 0;
+      resultEl.innerHTML =
+        '<div class="banner ' + (failed ? "crit" : "good") + '">'
+        + (failed ? "Finished with an error (exit " + result.exit_code + ")." : "Done.")
+        + '</div>'
+        + '<div style="white-space:pre-wrap; line-height:1.6; font-size:13px; margin-top:10px; padding:12px; background:var(--surface-2); border:1px solid var(--line); border-radius:8px; max-height:480px; overflow:auto;">'
+        + esc(result.output) + '</div>';
+      logActivity("queue_run", "run_queue.py", "ran the next queued job");
+      await pollState();
+    } catch (err) {
+      resultEl.innerHTML = '<div class="banner crit">' + esc(err.message) + '</div>';
+    }
+    $("btn-run-queue").disabled = false;
+  }
+
   // ---------- activity log (dashboard-local, informational only, localStorage) ----------
   function readLocalLog() {
     try { return JSON.parse(window.localStorage.getItem("seats_runlog") || "[]"); }
@@ -1105,7 +1139,7 @@
     if (!items.length) { el.innerHTML = '<div class="log-item muted">Nothing logged yet.</div>'; return; }
     const labels = { approve: "Approved", decline: "Declined", queue: "Queued a run", draft_reviewed: "Marked reviewed",
       briefing_run: "Ran a briefing", visitor_actioned: "Overlooked lead actioned", contact_picked: "Contact sent to Run a briefing",
-      visitor_dismissed: "Marked not ICP" };
+      visitor_dismissed: "Marked not ICP", queue_run: "Ran the job queue" };
     el.innerHTML = items.map(v =>
       `<div class="log-item"><span class="ts">${esc(timeAgo(v.ts))}</span><span>${esc(labels[v.type]||v.type)} — <strong>${esc(v.subject)}</strong>${v.detail ? " · "+esc(v.detail) : ""}</span></div>`
     ).join("");
@@ -1116,6 +1150,7 @@
     document.getElementById("btn-bridge-save").addEventListener("click", saveBridgeConfig);
     document.getElementById("btn-check").addEventListener("click", onRunCheck);
     document.getElementById("btn-run-briefing").addEventListener("click", onRunBriefing);
+    document.getElementById("btn-run-queue").addEventListener("click", onRunQueueClick);
     document.getElementById("btn-refresh-state").addEventListener("click", () => pollState(true));
     document.getElementById("btn-refresh-campaigns").addEventListener("click", loadCampaigns);
     document.getElementById("btn-refresh-visitors").addEventListener("click", loadSiteVisitors);

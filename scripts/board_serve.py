@@ -331,6 +331,13 @@ def _state_json() -> dict:
     today = datetime.now(timezone.utc).date().isoformat()
     all_jobs = jobs.all_jobs()
     jobs_today = {j.account_key: j for j in all_jobs if j.queued_at[:10] == today}
+
+    # Any job still queued or running for an account, from any day -- not just
+    # today. job_queue.enqueue()'s own "one unrun job per account" guard looks
+    # exactly this way; the dashboard has to agree with it, or an account
+    # queued days ago and never run keeps showing as "waiting on a run" with a
+    # Queue button that only fails. This is the read side of that same guard.
+    unrun_by_account = {j.account_key: j for j in all_jobs if j.state in (jobs.QUEUED, jobs.RUNNING)}
     spent_today = len([
         j for j in all_jobs
         if j.queued_at[:10] == today and j.state in (jobs.QUEUED, jobs.RUNNING, jobs.DONE)
@@ -342,7 +349,7 @@ def _state_json() -> dict:
     context_notes = []
     for key, acct in sorted(accounts.items(), key=lambda kv: kv[1].display.lower()):
         step = steps[key]
-        job = jobs_today.get(key)
+        job = unrun_by_account.get(key) or jobs_today.get(key)
         row = {
             "account_key": key,
             "institution": acct.display,
@@ -535,6 +542,45 @@ class Handler(BaseHTTPRequestHandler):
             "application/json", cors=True,
         )
 
+    def _run_queue(self, payload: dict) -> None:
+        """Run one queued job synchronously through run_queue.py, and hand back
+        what happened.
+
+        Same shape as /briefing: blocks for as long as the run takes (minutes),
+        which matters on ThreadingHTTPServer for the same reason it does there.
+        This exists because queueing a job (POST /queue) only ever writes a job
+        file -- nothing has ever automatically run the queue, which is exactly
+        what made an account look "waiting on a run" with a Queue button that
+        would only fail, days after it was actually queued. A click here is
+        exactly `run_queue.py`, run once, from the same launcher and cwd as
+        every other run in this system, so it leaves the same log and moves
+        the same job from queue/ to queue/done/. One job per click, matching
+        run_queue.py's own default (no --loop): the person watching decides
+        whether to click again, rather than the whole day's cap draining
+        unattended behind one button press.
+        """
+        cmd = [
+            str(ROOT / ".venv" / "Scripts" / "python.exe"),
+            "scripts/run_queue.py",
+        ]
+        try:
+            result = subprocess.run(
+                cmd, cwd=str(ROOT), capture_output=True, text=True,
+                encoding="utf-8", errors="replace", timeout=900,
+            )
+            exit_code = result.returncode
+            output = result.stdout
+            if exit_code != 0 and result.stderr:
+                output = output + "\n\nSTDERR:\n" + result.stderr
+        except subprocess.TimeoutExpired:
+            exit_code = -1
+            output = "Timed out after 15 minutes. Check queue/logs/ for a partial log."
+        self._send(
+            200,
+            json.dumps({"exit_code": exit_code, "output": output}).encode("utf-8"),
+            "application/json", cors=True,
+        )
+
     def _read_proxy(self, path: str, payload: dict) -> None:
         """Forward one named Apollo/HubSpot read call to the real API.
 
@@ -559,7 +605,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         path = urllib.parse.urlparse(self.path).path
-        if path in ("/queue", "/decide", "/briefing", "/api/apollo", "/api/hubspot") \
+        if path in ("/queue", "/decide", "/briefing", "/run-queue", "/api/apollo", "/api/hubspot") \
                 and not self._authorized():
             self._refuse_unauthorized()
             return
@@ -580,6 +626,15 @@ class Handler(BaseHTTPRequestHandler):
                 self._send(400, json.dumps({"error": str(exc)}).encode(), "application/json", cors=True)
                 return
             self._briefing(payload)
+            return
+        if path == "/run-queue":
+            try:
+                length = int(self.headers.get("Content-Length") or 0)
+                payload = json.loads(self.rfile.read(length) or b"{}")
+            except (ValueError, json.JSONDecodeError) as exc:
+                self._send(400, json.dumps({"error": str(exc)}).encode(), "application/json", cors=True)
+                return
+            self._run_queue(payload)
             return
         if path == "/queue":
             try:
