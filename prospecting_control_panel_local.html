@@ -303,8 +303,8 @@
     <div class="panel-body tight">
       <div class="tbl-wrap">
         <table>
-          <thead><tr><th>Institution</th><th>Motion</th><th>Waiting on</th><th></th></tr></thead>
-          <tbody id="tbl-queueable"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody>
+          <thead><tr><th>Institution</th><th>Motion</th><th>Waiting on</th><th>Run</th><th>Decision</th></tr></thead>
+          <tbody id="tbl-queueable"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody>
         </table>
       </div>
       <div style="display:flex; align-items:center; gap:10px; margin-top:12px; padding-top:12px; border-top:1px solid var(--line)">
@@ -649,7 +649,11 @@
 
   async function onDecideRow(decision, ev) {
     const key = ev.currentTarget.dataset.key;
-    const row = bridgeState.pending.find(r => r.account_key === key);
+    // Now called from both Pending review and Approved-waiting-on-a-run --
+    // an account_key belongs to at most one of the two, never both, since
+    // _state_json() puts each account in exactly one list.
+    const row = bridgeState.pending.find(r => r.account_key === key)
+      || bridgeState.queueable.find(r => r.account_key === key);
     if (!row) return;
     const reasonSel = document.querySelector('.reason-sel[data-key="' + CSS.escape(key) + '"]');
     const reason = reasonSel ? reasonSel.value : "";
@@ -734,17 +738,31 @@
 
   function renderQueueableTable() {
     const tb = $("tbl-queueable");
-    if (!bridgeOk) { tb.innerHTML = '<tr><td colspan="4"><div class="banner warn">Bridge not connected.</div></td></tr>'; return; }
+    if (!bridgeOk) { tb.innerHTML = '<tr><td colspan="5"><div class="banner warn">Bridge not connected.</div></td></tr>'; return; }
     const rows = bridgeState.queueable;
-    if (!rows.length) { tb.innerHTML = '<tr><td colspan="4" class="muted">Nothing waiting on a run.</td></tr>'; return; }
+    if (!rows.length) { tb.innerHTML = '<tr><td colspan="5" class="muted">Nothing waiting on a run.</td></tr>'; return; }
     tb.innerHTML = rows.map(r => `
       <tr data-key="${esc(r.account_key)}">
         <td><strong>${esc(r.institution)}</strong></td>
         <td>${esc(r.motion||"Unclear")}</td>
         <td class="muted">${esc(queueableBlockerText(r))}</td>
         <td><button class="btn primary sm act-queue" data-key="${esc(r.account_key)}" data-stage="${esc(r.stage)}">Queue ${esc(r.stage)}</button></td>
+        <td>
+          <div class="actions">
+            <button class="btn sm act-approve" data-key="${esc(r.account_key)}">Approve</button>
+            <button class="btn sm act-decline" data-key="${esc(r.account_key)}">Decline</button>
+          </div>
+        </td>
       </tr>`).join("");
     tb.querySelectorAll(".act-queue").forEach(b => b.addEventListener("click", onQueueRow));
+    // Recording a decision here -- not just queueing a run -- is what actually
+    // removes a row like a stale INBOUND signal: stage_for()'s INBOUND check
+    // only fires when nothing has been decided yet, so any decision (Approved
+    // or Declined) silences it. A Decline also stops COPY/SEQUENCE rows from
+    // reappearing, same /decide path as the Pending table, just without a
+    // reason dropdown here.
+    tb.querySelectorAll(".act-approve").forEach(b => b.addEventListener("click", onDecideRow.bind(null, "Approved")));
+    tb.querySelectorAll(".act-decline").forEach(b => b.addEventListener("click", onDecideRow.bind(null, "Declined")));
   }
 
   async function onQueueRow(ev) {
