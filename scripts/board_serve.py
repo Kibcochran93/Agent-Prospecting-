@@ -365,7 +365,14 @@ def _state_json() -> dict:
     new_contacts = []
     for key, acct in sorted(accounts.items(), key=lambda kv: kv[1].display.lower()):
         step = steps[key]
-        job = unrun_by_account.get(key) or jobs_today.get(key)
+        # A DONE job only ever blocks the stage it was actually queued for.
+        # jobs_today alone used to treat any job from today as still
+        # blocking, done or not -- so a finished COPY job kept hiding the
+        # very next stage's row (SEQUENCE) once the account correctly moved
+        # past COPY. Only a queued or running job is still in the way;
+        # jobs_today is display-only now, for job_state.
+        blocking_job = unrun_by_account.get(key)
+        display_job = blocking_job or jobs_today.get(key)
         row = {
             "account_key": key,
             "institution": acct.display,
@@ -375,11 +382,11 @@ def _state_json() -> dict:
             "waiting_on": step.waiting_on,
             "blocker": step.blocker,
             "automatable": step.automatable,
-            "job_state": job.state if job else None,
+            "job_state": display_job.state if display_job else None,
         }
         if step.stage in (ns.UNDECIDED, ns.ASK_OWNER):
             pending.append(row)
-        elif step.automatable and not job:
+        elif step.automatable and not blocking_job:
             # Approved, and waiting on a COPY or SEQUENCE run. Separate from
             # `pending` deliberately: these need a job queued, not a decision.
             queueable.append(row)

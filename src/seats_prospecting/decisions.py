@@ -231,10 +231,18 @@ def load_all(directory: Path | None = None) -> list[Decision]:
 def current(
     directory: Path | None = None, kind: str = KIB_DECISION
 ) -> dict[str, Decision]:
-    """The standing decision of one kind per account. History is kept."""
+    """The standing decision of one kind per account. History is kept.
+
+    Excludes decisions scoped to one contact's artifact (ADR 0005): those
+    answer "has this specific briefing been decided," not "is this account
+    approved," and must not silently become the account's own standing
+    decision just by being the most recent kib_decision on file. Bug fixed
+    the same day ADR 0005 shipped: approving one contact's research was
+    quietly flipping the whole account to Approved.
+    """
     latest: dict[str, Decision] = {}
     for entry in sorted(load_all(directory), key=lambda d: (d.decided_at, d.file)):
-        if entry.account_key and entry.kind == kind:
+        if entry.account_key and entry.kind == kind and not entry.artifact_sha256:
             latest[entry.account_key] = entry
     return latest
 

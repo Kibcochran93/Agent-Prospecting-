@@ -165,6 +165,44 @@ def test_records_written_before_kinds_existed_read_as_kib_decisions(tmp_path):
     assert entry.recorded_by == "Kib Cochran"
 
 
+# --- a per-contact decision must never become the account's own (ADR 0005) --
+# Bug found and fixed 17 September, same day ADR 0005 shipped: approving one
+# contact's briefing was silently flipping the whole account to Approved,
+# because current() took the latest kib_decision regardless of whether it
+# was scoped to one artifact.
+
+
+def test_a_hash_scoped_decision_does_not_become_the_standing_one(tmp_path):
+    decisions.record(
+        "Arkansas State University", "arkansas", "Approved", decided_by="Kib Cochran",
+        source="test", directory=tmp_path, artifact_sha256="hash-a",
+    )
+    assert decisions.current(tmp_path).get("arkansas") is None
+
+
+def test_a_hash_scoped_decision_does_not_override_an_earlier_account_decline(tmp_path):
+    decisions.record(
+        "Arkansas State University", "arkansas", "Declined", decided_by="Kib Cochran",
+        source="test", directory=tmp_path,
+        now=datetime(2026, 9, 9, 12, 0, tzinfo=timezone.utc),
+    )
+    decisions.record(
+        "Arkansas State University", "arkansas", "Approved", decided_by="Kib Cochran",
+        source="test", directory=tmp_path, artifact_sha256="hash-a",
+        now=datetime(2026, 9, 17, 20, 20, tzinfo=timezone.utc),
+    )
+    assert decisions.current(tmp_path)["arkansas"].decision == "Declined"
+
+
+def test_decided_artifact_hashes_still_sees_the_hash_scoped_decision(tmp_path):
+    """current() excludes it; decided_artifact_hashes() is where it belongs."""
+    decisions.record(
+        "Arkansas State University", "arkansas", "Approved", decided_by="Kib Cochran",
+        source="test", directory=tmp_path, artifact_sha256="hash-a",
+    )
+    assert "hash-a" in decisions.decided_artifact_hashes("arkansas", tmp_path)
+
+
 # --- precedence (ADR 0001) ------------------------------------------------
 
 

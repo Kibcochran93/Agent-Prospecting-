@@ -118,3 +118,24 @@ that is the whole point, not a side effect to work around.
   the whole account.
 - The dashboard gains a "New contacts awaiting review" panel, separate from
   the existing Pending-review table, with its own Approve/Decline per row.
+
+## Correction, same day
+
+`decisions.current()` took the latest `kib_decision` per account_key with no
+regard for whether it carried an `artifact_sha256`. A hash-scoped decision
+written from the new "New contacts awaiting review" panel was therefore
+becoming the account's own standing decision the moment it was the most
+recent one on file -- approving one contact's research was silently
+approving the whole account for COPY/SEQUENCE automation. Found live: Kib
+approved a single Arkansas State contact through the new panel, and the
+account's overall stage flipped to Approved as a side effect, with no
+intent behind it beyond that one contact.
+
+Fixed by excluding hash-scoped entries from `current()`'s per-account
+"latest" resolution -- they answer a different question and must never
+compete for that slot. `decided_artifact_hashes()` is unaffected; that is
+where a hash-scoped decision belongs and continues to be found. Three new
+tests in `tests/test_decisions.py` pin this: a hash-scoped Approve does not
+become the standing decision, does not override an earlier account-level
+Declined, and still shows up correctly in `decided_artifact_hashes()`.
+
