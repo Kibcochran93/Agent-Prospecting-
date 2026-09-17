@@ -21,6 +21,7 @@ from seats_prospecting.next_step import (
     Facts,
     delivered_count,
     stage_for,
+    undecided_briefings,
 )
 
 DELIVERED = {"id": "seq1", "delivered": 1, "num_steps": 4}
@@ -150,3 +151,62 @@ def test_an_account_kib_owns_does_not_wait_on_a_conversation():
     for owner in ("Kib Cochran", "unknown", ""):
         step = stage_for(Facts(account="X", account_owner=owner))
         assert step.stage == UNDECIDED, owner
+
+
+# --- a fresh contact still needs a decision, independent of stage_for (ADR 0005) --
+
+
+def briefing(person="", written_at="", artifact_sha256="hash-a", **kw):
+    entry = {"person": person, "written_at": written_at, "artifact_sha256": artifact_sha256}
+    entry.update(kw)
+    return entry
+
+
+def test_a_briefing_with_no_matching_decision_is_pending():
+    pending = undecided_briefings([briefing(person="Thilla Sivakumaran")], decided_hashes=frozenset())
+    assert len(pending) == 1
+    assert pending[0].person == "Thilla Sivakumaran"
+    assert pending[0].artifact_sha256 == "hash-a"
+
+
+def test_a_decided_hash_is_not_pending():
+    pending = undecided_briefings(
+        [briefing(person="Thilla Sivakumaran", artifact_sha256="hash-a")],
+        decided_hashes=frozenset({"hash-a"}),
+    )
+    assert pending == []
+
+
+def test_two_contacts_at_the_same_account_are_both_pending_independently():
+    """The actual gap this ADR closes: Thilla and Amanda, same account."""
+    pending = undecided_briefings(
+        [
+            briefing(person="Thilla Sivakumaran", artifact_sha256="hash-a"),
+            briefing(person="Amanda Nickerson", artifact_sha256="hash-b"),
+        ],
+        decided_hashes=frozenset({"hash-a"}),
+    )
+    assert len(pending) == 1
+    assert pending[0].person == "Amanda Nickerson"
+
+
+def test_a_briefing_with_no_hash_at_all_predates_the_scheme_and_is_skipped():
+    """Nothing to match a decision against, so it is neither decided nor pending."""
+    pending = undecided_briefings([briefing(person="Old Contact", artifact_sha256="")], decided_hashes=frozenset())
+    assert pending == []
+
+
+def test_an_unnamed_contact_still_surfaces():
+    pending = undecided_briefings([briefing(person="")], decided_hashes=frozenset())
+    assert pending[0].person == "(unnamed contact)"
+
+
+def test_pending_contacts_sort_newest_first():
+    pending = undecided_briefings(
+        [
+            briefing(person="Older", written_at="2026-09-01T00:00:00Z", artifact_sha256="hash-old"),
+            briefing(person="Newer", written_at="2026-09-17T00:00:00Z", artifact_sha256="hash-new"),
+        ],
+        decided_hashes=frozenset(),
+    )
+    assert [p.person for p in pending] == ["Newer", "Older"]

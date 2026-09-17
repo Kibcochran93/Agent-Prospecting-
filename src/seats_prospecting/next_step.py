@@ -243,3 +243,47 @@ def stage_for(facts: Facts) -> Step:
         f"Touch 1 delivered, {steps} steps, nothing overdue.",
         evidence=f"sequence {ids}, {delivered} delivered",
     )
+
+
+@dataclass(frozen=True)
+class PendingContact:
+    """One briefing whose own content has not itself been decided, ADR 0005.
+
+    Independent of the account's stage_for() stage: an Approved account
+    already mid-SEQUENCE can still owe a fresh decision on a brand-new
+    contact nobody has looked at yet. This is additive to stage_for(), not a
+    replacement for any branch of it.
+    """
+
+    person: str
+    title: str
+    artifact_sha256: str
+    file: str = ""
+    written_at: str = ""
+
+
+def undecided_briefings(
+    briefings: list[dict[str, Any]],
+    decided_hashes: frozenset[str],
+) -> list[PendingContact]:
+    """Which of this account's briefing records have no matching decision
+    yet, newest first.
+
+    A briefing with no artifact_sha256 at all predates ADR 0005 and is
+    skipped rather than treated as either decided or newly pending -- there
+    is nothing to match a decision against. See board.collect_records for
+    where the hash comes from.
+    """
+    out = [
+        PendingContact(
+            person=str(b.get("person") or "") or "(unnamed contact)",
+            title=str(b.get("title") or ""),
+            artifact_sha256=b["artifact_sha256"],
+            file=str(b.get("file") or ""),
+            written_at=str(b.get("written_at") or ""),
+        )
+        for b in briefings
+        if b.get("artifact_sha256") and b["artifact_sha256"] not in decided_hashes
+    ]
+    out.sort(key=lambda p: p.written_at, reverse=True)
+    return out

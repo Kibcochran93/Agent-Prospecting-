@@ -189,6 +189,20 @@ def collect_records(
                 "motion": record.get("motion") or "",
                 "decision": record.get("outreach_decision") or "",
                 "findings": len(record.get("findings") or []),
+                # ADR 0005: read straight off the envelope, not recomputed --
+                # every prospect_briefing envelope already carries this from
+                # write time (the same hash-of-record pattern digest.py uses
+                # for its own records). Blank for any other kind:
+                # review_verdict already has its own, differently-scoped
+                # artifact_sha256 under ADR 0003 -- hashing extracted COPY
+                # text, not a briefing's record dict -- and mixing the two
+                # would let two different things collide on one field name.
+                "artifact_sha256": (
+                    envelope.get("record_sha256", "") if kind == "prospect_briefing" else ""
+                ),
+                "what_this_suggests": (
+                    record.get("what_this_suggests", "") if kind == "prospect_briefing" else ""
+                ),
             }
             targets = named_institutions(name) if batch else [name]
             if not targets:

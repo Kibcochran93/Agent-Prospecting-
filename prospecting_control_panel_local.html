@@ -281,6 +281,22 @@
 
   <div class="panel">
     <div class="panel-head">
+      <h2>New contacts awaiting review</h2>
+      <span class="desc">A fresh briefing on someone new, even at an account already Approved or mid-run. Reviewed per contact, separate from the account's own decision above — ADR 0005.</span>
+      <button class="btn ghost sm" id="btn-refresh-contacts">Refresh</button>
+    </div>
+    <div class="panel-body tight">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Institution</th><th>What this suggests</th><th>Written</th><th>Decision</th></tr></thead>
+          <tbody id="tbl-new-contacts"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
       <h2>Approved, waiting on a run</h2>
       <span class="desc">Cleared for outreach and waiting on a COPY or SEQUENCE run. Queueing here goes through the same job_queue as the local board — the daily cap and the one-job-per-account guard both apply.</span>
     </div>
@@ -480,13 +496,14 @@
     return (kept.length ? kept : words).join(" ");
   }
 
-  async function decideBridge({ accountKey, account, decision, kind, owner, note }) {
+  async function decideBridge({ accountKey, account, decision, kind, owner, note, artifactSha256 }) {
     return bridgeFetch("/decide", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         account_key: accountKey, account, decision,
         kind: kind || "kib_decision", owner: owner || "", note: note || "",
+        artifact_sha256: artifactSha256 || "",
       }),
     });
   }
@@ -530,11 +547,12 @@
         $("bridge-result").innerHTML = '<div class="banner crit">'
           + esc(err.message) + '. Check the URL and token, and that board_serve.py is running.</div>';
       }
-      renderPendingTable(); renderQueueableTable(); renderContextList();
+      renderPendingTable(); renderQueueableTable(); renderNewContactsTable(); renderContextList();
       return;
     }
     renderPendingTable();
     renderQueueableTable();
+    renderNewContactsTable();
     renderContextList();
     renderMotionChart();
     renderStats();
@@ -643,6 +661,53 @@
       const result = await decideBridge({
         accountKey: key, account: row.institution, decision,
         kind, owner: kind === "owner_review" ? row.account_owner : "", note: reason,
+      });
+      logActivity(decision === "Approved" ? "approve" : "decline", row.institution, result.file);
+      await pollState();
+    } catch (err) {
+      alert("Could not record that: " + err.message);
+      btns.forEach(b => b.disabled = false);
+    }
+  }
+
+  // ---------- new contacts awaiting review (ADR 0005) ----------
+  // Keyed by artifact_sha256, not account_key: an account can have several
+  // rows here at once (Thilla and Amanda, both at Arkansas State), which is
+  // the entire point -- decisions.py's account-level decision above is a
+  // separate question from "has this specific briefing been looked at."
+  function renderNewContactsTable() {
+    const tb = $("tbl-new-contacts");
+    if (!bridgeOk) { tb.innerHTML = '<tr><td colspan="4"><div class="banner warn">Bridge not connected.</div></td></tr>'; return; }
+    const rows = bridgeState.new_contacts || [];
+    if (!rows.length) { tb.innerHTML = '<tr><td colspan="4" class="muted">No new contacts waiting on a decision.</td></tr>'; return; }
+    tb.innerHTML = rows.map((r) => `
+      <tr data-hash="${esc(r.artifact_sha256)}">
+        <td><strong>${esc(r.institution || "—")}</strong></td>
+        <td class="muted">${esc(r.what_this_suggests || "(see the briefing in ledger-outbox for details)")}</td>
+        <td class="muted">${esc((r.written_at || "").slice(0, 10))}</td>
+        <td>
+          <div class="actions">
+            <button class="btn primary sm act-contact-approve" data-hash="${esc(r.artifact_sha256)}">Approve</button>
+            <button class="btn sm act-contact-decline" data-hash="${esc(r.artifact_sha256)}">Decline</button>
+          </div>
+        </td>
+      </tr>`).join("");
+    tb.querySelectorAll(".act-contact-approve").forEach(b => b.addEventListener("click", onDecideContact.bind(null, "Approved")));
+    tb.querySelectorAll(".act-contact-decline").forEach(b => b.addEventListener("click", onDecideContact.bind(null, "Declined")));
+  }
+
+  async function onDecideContact(decision, ev) {
+    const hash = ev.currentTarget.dataset.hash;
+    const row = (bridgeState.new_contacts || []).find(r => r.artifact_sha256 === hash);
+    if (!row) return;
+    const scope = document.querySelector('tr[data-hash="' + CSS.escape(hash) + '"]');
+    const btns = scope ? scope.querySelectorAll("button") : [];
+    btns.forEach(b => b.disabled = true);
+    try {
+      const result = await decideBridge({
+        accountKey: row.account_key, account: row.institution, decision,
+        kind: "kib_decision", artifactSha256: hash,
+        note: "Per-contact decision (ADR 0005)",
       });
       logActivity(decision === "Approved" ? "approve" : "decline", row.institution, result.file);
       await pollState();
@@ -1152,6 +1217,7 @@
     document.getElementById("btn-run-briefing").addEventListener("click", onRunBriefing);
     document.getElementById("btn-run-queue").addEventListener("click", onRunQueueClick);
     document.getElementById("btn-refresh-state").addEventListener("click", () => pollState(true));
+    document.getElementById("btn-refresh-contacts").addEventListener("click", () => pollState(true));
     document.getElementById("btn-refresh-campaigns").addEventListener("click", loadCampaigns);
     document.getElementById("btn-refresh-visitors").addEventListener("click", loadSiteVisitors);
 

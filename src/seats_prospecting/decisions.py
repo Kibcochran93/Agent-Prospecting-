@@ -59,6 +59,13 @@ class Decision:
     recorded_by: str = ""
     note: str = ""
     ledger_url: str = ""
+    #: Hash of a specific prospect_briefing record's content (ADR 0005). Blank
+    #: means this decision is the account-level Approved/Declined that governs
+    #: COPY/SEQUENCE, same as before this field existed. Non-blank scopes the
+    #: decision to one contact's research, independent of the account's own
+    #: stage -- an Approved, already-sequenced account can still owe a fresh
+    #: decision on a brand-new contact.
+    artifact_sha256: str = ""
     file: str = ""
 
     def as_dict(self) -> dict[str, Any]:
@@ -73,6 +80,7 @@ class Decision:
             "source": self.source,
             "note": self.note,
             "ledger_url": self.ledger_url,
+            "artifact_sha256": self.artifact_sha256,
         }
 
     @property
@@ -123,6 +131,7 @@ def record(
     recorded_by: str = "",
     note: str = "",
     ledger_url: str = "",
+    artifact_sha256: str = "",
     directory: Path | None = None,
     now: datetime | None = None,
 ) -> Path:
@@ -163,6 +172,7 @@ def record(
         source=source,
         note=note,
         ledger_url=ledger_url,
+        artifact_sha256=artifact_sha256,
     )
     suffix = "owner" if kind == OWNER_REVIEW else "kib"
     name = (
@@ -206,6 +216,12 @@ def load_all(directory: Path | None = None) -> list[Decision]:
                 source=raw.get("source", ""),
                 note=raw.get("note", ""),
                 ledger_url=raw.get("ledger_url", ""),
+                # Records written before ADR 0005 carry no artifact_sha256.
+                # Same handling as kind before it (ADR 0002) and account_key
+                # before that (ADR 0003): it reads as "not yet decided"
+                # rather than retroactively gaining a field that never
+                # existed to record against.
+                artifact_sha256=raw.get("artifact_sha256", ""),
                 file=path.name,
             )
         )
@@ -225,6 +241,24 @@ def current(
 
 def owner_reviews(directory: Path | None = None) -> dict[str, Decision]:
     return current(directory, kind=OWNER_REVIEW)
+
+
+def decided_artifact_hashes(
+    account_key: str, directory: Path | None = None, kind: str = KIB_DECISION
+) -> frozenset[str]:
+    """Every artifact_sha256 ever decided for this account, ADR 0005.
+
+    Unlike ``current()`` there is no "latest wins": a hash either has a
+    decision against it or it doesn't. Deciding the same hash twice (a
+    correction) just means it's in this set either way -- the account-level
+    Approved/Declined that ``current()`` answers is a separate question from
+    "has this specific piece of research been looked at."
+    """
+    return frozenset(
+        d.artifact_sha256
+        for d in load_all(directory)
+        if d.account_key == account_key and d.kind == kind and d.artifact_sha256
+    )
 
 
 def resolve(

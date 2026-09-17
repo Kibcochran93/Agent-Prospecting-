@@ -347,6 +347,7 @@ def _state_json() -> dict:
     pending = []
     queueable = []
     context_notes = []
+    new_contacts = []
     for key, acct in sorted(accounts.items(), key=lambda kv: kv[1].display.lower()):
         step = steps[key]
         job = unrun_by_account.get(key) or jobs_today.get(key)
@@ -376,7 +377,28 @@ def _state_json() -> dict:
                 "relayed": e.get("relayed", False),
             })
 
+        # A fresh contact's briefing has no relation to this account's own
+        # stage (above) -- an Approved, already-sequenced account can still
+        # owe a decision on someone new. ADR 0005.
+        decided_hashes = decisions.decided_artifact_hashes(key)
+        for contact in ns.undecided_briefings(acct.briefing, decided_hashes):
+            new_contacts.append({
+                "account_key": key,
+                "institution": acct.display,
+                "motion": acct.motion or "",
+                "person": contact.person,
+                "what_this_suggests": next(
+                    (b.get("what_this_suggests", "") for b in acct.briefing
+                     if b.get("artifact_sha256") == contact.artifact_sha256),
+                    "",
+                ),
+                "artifact_sha256": contact.artifact_sha256,
+                "file": contact.file,
+                "written_at": contact.written_at,
+            })
+
     context_notes.sort(key=lambda r: r["written_at"], reverse=True)
+    new_contacts.sort(key=lambda r: r["written_at"], reverse=True)
 
     briefings_used = briefings.today_count()
     briefings_left = max(0, briefings.MAX_PER_DAY - briefings_used)
@@ -386,6 +408,7 @@ def _state_json() -> dict:
         "pending": pending,
         "queueable": queueable,
         "declined_keys": declined_keys,
+        "new_contacts": new_contacts,
         "context_notes": context_notes[:30],
         "budget": {
             "used": spent_today, "max": jobs.MAX_PER_DAY, "left": budget_left,
@@ -674,6 +697,10 @@ class Handler(BaseHTTPRequestHandler):
                     else "board button at 127.0.0.1"
                 ),
                 note=str(payload.get("note", "")),
+                # ADR 0005: blank means this decision is the account-level
+                # Approved/Declined as before. Non-blank scopes it to one
+                # contact's briefing, independent of the account's own stage.
+                artifact_sha256=str(payload.get("artifact_sha256", "")),
             )
         except decisions.DecisionRefused as exc:
             self._send(409, json.dumps({"error": str(exc)}).encode(), "application/json", cors=True)
