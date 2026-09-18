@@ -121,7 +121,19 @@ def stage_for(facts: Facts) -> Step:
     # Inbound comes first, before the decision checks, because an institution
     # that came to us has no decision to have made yet and would otherwise fall
     # through to UNDECIDED and look like something Kib had failed to action.
-    if facts.inbound_person and not facts.has_records and facts.decision is None:
+    # An active Apollo sequence is the strongest evidence an account has
+    # already been handled, regardless of whether the local research record
+    # for it still exists -- found live 18 September: North Dakota's INBOUND
+    # signal kept firing for a contact who already had a running sequence,
+    # because the local briefing record for her had been deleted separately
+    # and this check never looked at facts.sequences at all, even though it
+    # was already available at this point. Same category of gap as ADR 0006.
+    if (
+        facts.inbound_person
+        and not facts.has_records
+        and facts.decision is None
+        and not facts.sequences
+    ):
         visits = f"{facts.inbound_visits} visits" if facts.inbound_visits else "visits"
         return Step(
             INBOUND,

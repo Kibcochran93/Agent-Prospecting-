@@ -488,10 +488,19 @@
   // already carries the real account_key computed server-side, and every
   // approve/decline/queue button built from those rows uses that value
   // directly, never this guess.
+  // Mirrors board.py's account_key() exactly (same stopword set, same
+  // the-strip, same head-before-comma) -- this diverging is what produced a
+  // real orphaned decision 17 September ("arkansas state" here vs the
+  // canonical "arkansas" there, since Python's STOPWORDS strips "State" and
+  // "Community" and this list used to not). Used wherever a decision is
+  // written for an institution the server hasn't already handed a key for
+  // (Overlooked-leads dismiss, the New-contacts panel, Run a check now's
+  // log-decision button) -- if this ever drifts from board.py's STOPWORDS
+  // again, the same class of orphaned decision comes back.
   function accountKeyGuess(name) {
     let head = (name || "").split(",")[0].trim().replace(/^the\s+/i, "");
     const words = (head.toLowerCase().match(/[a-z0-9]+/g)) || [];
-    const stop = new Set(["university","college","the","of","at","a","an","and","for"]);
+    const stop = new Set(["the","of","university","college","state","community","at"]);
     const kept = words.filter(w => !stop.has(w));
     return (kept.length ? kept : words).join(" ");
   }

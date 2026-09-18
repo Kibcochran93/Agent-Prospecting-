@@ -13,6 +13,7 @@ from seats_prospecting.next_step import (
     COPY,
     DECLINED,
     ENROL,
+    INBOUND,
     SEND,
     SEQUENCE,
     UNDECIDED,
@@ -210,3 +211,29 @@ def test_pending_contacts_sort_newest_first():
         decided_hashes=frozenset(),
     )
     assert [p.person for p in pending] == ["Newer", "Older"]
+
+
+# --- an active sequence outweighs a stale inbound signal ------------------
+# Found live 18 September: North Dakota's INBOUND kept firing for a contact
+# who already had a running Apollo sequence, because her local briefing
+# record had been deleted separately and this check never looked at
+# facts.sequences at all, even though stage_for() already had it in hand.
+
+
+def test_inbound_fires_with_no_other_evidence():
+    step = stage_for(Facts(account="X", inbound_person="Zauna Synnott", has_records=False))
+    assert step.stage == INBOUND
+
+
+def test_inbound_does_not_fire_when_a_sequence_already_exists():
+    step = stage_for(Facts(
+        account="X", inbound_person="Zauna Synnott", has_records=False,
+        sequences=[{"id": "seq1", "delivered": 1, "num_steps": 4}],
+    ))
+    assert step.stage != INBOUND
+
+
+def test_inbound_still_yields_to_records_or_a_decision():
+    """The other two guards on this check are untouched by the fix."""
+    assert stage_for(Facts(account="X", inbound_person="X", has_records=True)).stage != INBOUND
+    assert stage_for(Facts(account="X", inbound_person="X", decision="Approved")).stage != INBOUND
