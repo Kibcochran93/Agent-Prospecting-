@@ -1,11 +1,232 @@
-# Handoff — state as of 15 September 2026
+# Handoff — state as of 18 September 2026
 
 Written for a fresh session picking this up with no prior context. Read
 `README.md` for the architecture and `knowledge/00-canonical-precedence.md` for
 document authority and open conflicts. This file is only the current state.
-Everything below the 15 September section is prior history, kept because most
+Everything below the 18 September section is prior history, kept because most
 of it is still true; nothing in it has been re-verified today except what this
 section explicitly touches.
+
+## 16–18 September: git is real now, per-contact review, and the pipeline finally reaches SEQUENCE
+
+**555 tests passing** (`.venv\Scripts\python.exe -m pytest -q`), up from 554 on
+15 September. 8 pre-existing failures in `test_briefing_queue.py` and
+`test_enrollment_queue.py` (concurrency-cap assertions) are unrelated to
+anything below — confirmed via `git stash` against the clean 15 September
+baseline before touching anything, and left alone across every session since.
+
+**Git is the real thing now, not aspirational.** Repo at
+`https://github.com/Kibcochran93/Agent-Prospecting-.git`, remote `origin`,
+default branch `master` (GitHub auto-initialized `main` with a stub README when
+the repo was created; default was switched to `master` in GitHub's own
+Settings, since that's where the actual project lives). Initial commit was
+amended once — old hash `9d1eb85` → `11ea64a` — to drop
+`smoke-test/apollo-openapi.json`, whose example Twilio SID tripped GitHub's
+secret scanner (a real false positive: sample data baked into Apollo's own
+published OpenAPI doc, not a credential either of us generated); that file is
+gitignored now. **All code changes go through this repo from here on** —
+commit and push, not left uncommitted on disk. Git Credential Manager caches
+the token after the first manual push; nothing needs it typed in again unless
+it's revoked.
+
+### ADR 0005: per-contact review, content-addressed
+
+The gap: every decision in this system was keyed by `account_key` alone. Kib
+ran fresh briefings on two named contacts (Thilla Sivakumaran, Amanda
+Nickerson) at an already-Approved, already-COPY'd Arkansas State University,
+and neither showed up anywhere to review — the account's stage had moved past
+`UNDECIDED`, so a brand-new contact's research had nowhere to attach. Not a bug
+in one function; the review model itself only ever had one decision slot per
+institution. Same shape of gap ADR 0003 closed for SEQUENCE, so the same fix.
+
+- `decisions.py`: `Decision` gained an optional `artifact_sha256` (blank by
+  default, every existing caller unaffected). New
+  `decided_artifact_hashes(account_key)` — every hash ever decided for an
+  account, no "latest wins."
+- `next_step.py`: new `PendingContact` + `undecided_briefings()`, purely
+  additive alongside `stage_for()` — the account-level stage logic is
+  untouched.
+- `board.py`: `prospect_briefing` entries now carry `artifact_sha256`, read
+  straight off the envelope's existing `record_sha256` (same hash-of-record
+  pattern `digest.py` already used for its own records — no new hashing
+  needed) and `what_this_suggests`. Found along the way: the agent's own
+  schema has **no structured contact-name field at all** — a person's name
+  only ever lives in prose. Rows identify a contact by institution + that
+  one-sentence summary + date, not a name, because there's no honest way to
+  extract one without guessing.
+- `board_serve.py` / dashboard: `/api/state` gained `new_contacts`; `/decide`
+  accepts an optional `artifact_sha256`. New "New contacts awaiting review"
+  panel, separate from the existing Pending table since this is one row per
+  (account, artifact), not one per account.
+- Full ADR at `docs/adr/0005-per-contact-review.md`.
+
+**Same-day correction, found live.** `decisions.current()` took the latest
+`kib_decision` per account regardless of whether it carried an
+`artifact_sha256` — so approving *one contact's* briefing through the new
+panel was silently becoming the *account's own* standing Approved decision the
+moment it was the most recent one on file. Caught when approving a single
+Arkansas State contact flipped the account's overall stage as an unintended
+side effect. Fixed by excluding hash-scoped entries from `current()`'s
+per-account resolution; `decided_artifact_hashes()` is unaffected, that's
+where they belong. Three regression tests in `test_decisions.py` pin this.
+Documented as a correction appended to ADR 0005, not a new ADR — it's a bug in
+that ADR's own build.
+
+### ADR 0006: the copy-existence check never saw job-queue COPY runs
+
+Kib: "No email sequences are being pushed to Apollo." Five real COPY jobs had
+run through `run_queue.py` that day; `/api/state` showed zero accounts at
+SEQUENCE. Not one SEQUENCE job has ever appeared in `queue/done/`, ever.
+
+Cause: `next_step.stage_for()` only leaves `COPY` once `Facts.copy_files` is
+non-empty, and that field came from exactly one source —
+`next.copy_files_for()`, which checks `lists/*.md`. That's the *original*,
+hand-maintained copy store; its newest file is dated 4 September. Every real
+COPY run since has gone through the job queue instead, which
+`copy_files_for()` never looked at. This was never an Apollo problem — the
+pipeline could not get far enough to try.
+
+Fixed by falling through to `run_queue._newest_copy_job()` (already built for
+`run_sequence()`'s own use under ADR 0003, never connected to this second
+place that needed the same answer) when `copy_files_for()` finds nothing.
+Existence only, same standard `copy_files_for()` already applied — a
+checkpoint-only log still refuses cleanly at SEQUENCE's own extraction step,
+so nothing about what's *allowed* to reach Apollo changed, only what's
+*visible* as ready to try. Full ADR at
+`docs/adr/0006-copy-existence-check-job-queue.md`.
+
+**A second bug found chasing this one live.** The queueable-row gating —
+`job = unrun_by_account.get(key) or jobs_today.get(key)` — treated *any* job
+from today as still blocking, including ones already `done`. So a finished
+COPY job kept hiding the account's *next* stage (SEQUENCE) from ever appearing
+as queueable, even after the fix above correctly computed the stage. Split
+into `blocking_job` (queued or running only — gates the row) and `display_job`
+(adds the done-today fallback back in, display-only, feeds `job_state`). Both
+fixes together are what actually closed the loop — verified live,
+`/api/state` moved 6 accounts to SEQUENCE (Arkansas State, Arkansas State-
+Mountain Home, Lyon, Saginaw Valley, Central Arkansas, Scranton).
+
+### The pipeline still hasn't pushed anything real to Apollo — here's exactly why
+
+Of those 6 SEQUENCE-ready accounts, only **Saginaw Valley State University**
+has real, extractable copy (addressed to Veronica Wilson, Executive Director
+of Student Success) — checked every one of them by hand via
+`review_input.build_from_path()`. The rest:
+
+- **Arkansas State, Central Arkansas, Scranton**: checkpoint stubs — Campaign
+  Builder stalled at "Segment confirmation/definition," never produced actual
+  copy. Scranton's stub also flags Cal O'Donovan's review is required.
+- **Arkansas State-Mountain Home**: outright refusal, "single-account request
+  ... requires individual handling," motion still Unclear.
+- **Lyon College**: hard block — "no required account context verdict is
+  present." Needs an Account Context run before Campaign Builder will engage
+  at all.
+
+No account has ever reached a Reviewer `ships` verdict in this system's
+history. **Getting one real `ships` verdict and one real SEQUENCE push to
+Apollo, end to end, has still never happened — that's the actual next
+milestone**, and Saginaw Valley is the one account currently positioned to get
+there without more upstream work first.
+
+### A new, real gap found 18 September, not yet built
+
+Approving a per-contact briefing (ADR 0005) records the decision. It does not
+connect to anything that writes campaign copy for that contact — Campaign
+Builder still only runs at the account level, with no awareness of which
+contact triggered a fresh look. Concrete case: Daniel Strasz (Registrar,
+Saginaw Valley) was briefed and approved 18 September; there is no dashboard
+action that turns that approval into copy addressed to him. Saginaw Valley's
+existing real copy is addressed to Veronica Wilson, from an unrelated,
+earlier account-level run. Open question for whoever picks this up: does an
+approved per-contact briefing need its own path into Campaign Builder, or is
+folding it into the next account-level COPY run enough?
+
+### Dashboard and bridge, several rounds of fixes
+
+- **Overlooked leads**: "Not ICP" dismiss button, writing a real `Declined`
+  decision through `/decide` (same path as everything else). `declined_keys`
+  exposed via `/api/state` so a dismissed lead stays dismissed across reloads
+  instead of resurfacing every load — the account_key mismatch between this
+  button's JS-side `accountKeyGuess()` (stopwords: university/college/the/
+  of/at/a/an/and/for) and Python's `board.account_key()` (STOPWORDS also
+  includes *state* and *community*) caused exactly one real orphaned decision
+  (`arkansas state` vs `arkansas`) — narrow, not systemic, checked all 53
+  decisions on file and found only the one.
+- **"Run next queued job"** button + `POST /run-queue`: queueing a job never
+  auto-ran it — nothing did, ever, until someone manually ran
+  `run_queue.py` from a terminal. One job per click, matching
+  `run_queue.py`'s own default (no `--loop`).
+- **Job-visibility bug**: `/api/state` only checked jobs queued *today* for
+  the one-job-per-account guard, so a job queued days earlier and never run
+  stayed invisible while still blocking a fresh Queue click. Fixed to check
+  any unrun (queued/running) job regardless of day.
+- **Approve/Decline added to the "Approved, waiting on a run" table**
+  (previously Pending-only). Real trigger: North Dakota's INBOUND row stayed
+  stuck on a stale August visit signal for a contact (Zauna Synnott) who
+  already has a live Apollo sequence — the local research record for her had
+  been deleted in a manual cleanup, and no account-level decision was ever on
+  file, so `stage_for()`'s INBOUND check (which never looks at live Apollo
+  sequence data, only local records) kept firing. Recording any decision
+  silences it; reuses `/decide` exactly as built, no backend change.
+- **Design-critique fixes**: the "Waiting on" column's repeated boilerplate
+  ("Approved, and no copy exists for this account.") collapsed to an em dash
+  on ~20 of 22 rows so the real exceptions stand out; Pending table's
+  contradictory "Approve or decline on the board" text stripped since the
+  buttons are right there; 0% open rate on unsent sequences now reads as an
+  em dash instead of implying a real send; the `it.institution || it.name`
+  fallback bug fixed (the placeholder string `"—"` was truthy, so it never
+  fell through to the contact's name) — same fix is what
+  `leadLabel()`/`accountKeyGuess()` now share with the dismiss and activity-
+  log code paths.
+- **`bridge_server.py` removed** — an orphaned, parallel first attempt at the
+  same "reconcile the Artifact" problem `board_serve.py` actually solved, same
+  Sep 15 story in its own docstring, different default port (8766), zero
+  references anywhere else. `board_serve.err.log`/`.out.log` untracked and
+  gitignored — pure runtime output, was showing as permanently "modified" in
+  every `git status`.
+
+### Scheduling and access
+
+Windows scheduled task **"SEATS Board Server"**: Mon–Fri, 9:00 AM–4:30 PM,
+rechecks every 15 minutes, runs interactively as the logged-in user (no stored
+credentials). Self-heals if the server dies mid-day, which it has before —
+confirmed live during setup, when the watchdog found it already down and
+brought it back on its own. `OOO` marker file in the project root pauses it
+(stops the running server too, if one's up); `scripts/pause_board.ps1` /
+`resume_board.ps1` toggle it. Desktop shortcut **"SEAtS Dashboard.lnk"** →
+`scripts/open_dashboard.ps1`: ensures the bridge is up (respecting OOO), then
+opens the dashboard file.
+
+### Cleanup
+
+`queue/` backlog (11 stale, never-run jobs from 15 September) and
+`queue/briefings/` input-log entries cleared for a fresh start, **except**
+anything tied to an account with a confirmed, live Apollo sequence (Miami,
+Tulsa, Creighton, Wiley, North Dakota, Commonwealth Pennsylvania, Edmonds) —
+those 3 briefing files were kept on purpose. `queue/done/`, `ledger-outbox/`,
+and `decisions/` were never touched by any of this; those are the real audit
+trail, not the backlog.
+
+### Relay, clarified
+
+`ledger-outbox` → Notion relay (`LEDGER-RELAY.md`) is a fully separate, manual
+process — a Cowork session reads the outbox, verifies each record's hash, and
+creates a Notion page, moving the file to `relayed/`. It has nothing to do
+with Apollo, COPY, or SEQUENCE. A record showing "awaiting relay, no Notion
+URL yet" is not a stuck or blocked state for outreach purposes — it just means
+nobody's run that sync yet.
+
+### Left open, unresolved
+
+- `scripts/seed_decisions.py`'s own docstring says "run once, then never
+  again" (the 9 September migration) — flagged as possibly re-run since given
+  a fresh batch of correctly-tagged decisions appeared later, never actually
+  confirmed either way.
+- Root-level `run-context-*.bat` / `run-director-*.bat` files (names match
+  `smoke-test/` session logs) — likely one-off scratch launchers, flagged,
+  never cleaned up.
+- Lyon College needs an Account Context run before Campaign Builder will
+  engage with it at all.
 
 ## 15 September: the dashboard reconciled, a fourth cap added, no git anywhere
 
